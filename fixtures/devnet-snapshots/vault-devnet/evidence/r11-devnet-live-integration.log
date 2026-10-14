@@ -1,0 +1,15 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.23s
+     Running unittests src/lib.rs (target/debug/deps/dg_snapshot-e21f5dabcaa75e0d)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/r11.rs (target/debug/deps/r11-115ce5315b6a41da)
+
+running 1 test
+LIVE DEVNET APPLICATION CAPTURE: PASS SNAP-1b9c616541b93f3ba227b9917dd4d01f7c44e9efe4887eee0b6c018cf6b2ea91 slot 507755995
+test live_devnet_application_capture ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 15 filtered out; finished in 0.96s
+

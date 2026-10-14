@@ -1,0 +1,25 @@
+[package]
+name = "dg-vault-v2"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[lib]
+name = "dg_vault_v2"
+crate-type = ["cdylib", "lib"]
+
+[features]
+no-entrypoint = []
+idl-build = ["anchor-lang/idl-build"]
+cpi = []
+anchor-debug = []
+no-log-ix-name = []
+custom-heap = []
+custom-panic = []
+skip-backing-top-up = []
+# Acceptance-only candidate; never enable for the normal or backing-defect builds.
+r7-broken-balance = []
+r8-repeat-accepted = []
+
+[dependencies]
+anchor-lang.workspace = true

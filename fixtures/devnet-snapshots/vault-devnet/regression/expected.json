@@ -1,0 +1,33 @@
+{
+  "source": {
+    "type": "preservation",
+    "id": "PRESERVE-balance-field"
+  },
+  "status": "FAIL",
+  "evidence": {
+    "account": "vault",
+    "after": {
+      "state": "found",
+      "value": {
+        "kind": "integer",
+        "value": "950000"
+      }
+    },
+    "after_present": true,
+    "before": {
+      "state": "found",
+      "value": {
+        "kind": "integer",
+        "value": "1000000"
+      }
+    },
+    "before_present": true,
+    "category": "FIELD_NOT_PRESERVED",
+    "error_code": null,
+    "expected": null,
+    "field": "balance",
+    "rule": "equal",
+    "rule_id": "balance-field",
+    "status": "FAIL"
+  }
+}

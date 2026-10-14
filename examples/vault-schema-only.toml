@@ -1,0 +1,12 @@
+name = "vault-schema-only"
+program_id = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+
+[v1]
+idl = "../target/idl/v1.json"
+
+[v2]
+idl = "../target/idl/v2.json"
+
+[[accounts]]
+v1 = "VaultV1"
+v2 = "VaultV2"

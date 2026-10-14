@@ -1,0 +1,9 @@
+[workspace]
+members = ["programs/dg-vault-v1", "programs/dg-vault-v2", "programs/dg-r5-fixture", "programs/dg-r6-fixture-v1", "programs/dg-r6-fixture-v2", "programs/dg-escrow-v1", "programs/dg-escrow-v2", "crates/dg-cli", "crates/dg-analysis", "crates/dg-config", "crates/dg-state", "crates/dg-runtime", "crates/dg-regression", "crates/dg-snapshot", "crates/dg-policy", "crates/dg-service"]
+resolver = "2"
+
+[workspace.dependencies]
+anchor-lang = "=1.2.0"
+
+[profile.release]
+overflow-checks = true

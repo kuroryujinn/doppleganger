@@ -1,0 +1,26 @@
+schema_version = 1
+
+[project]
+name = "vault-migration"
+framework = "anchor"
+
+[versions.v1]
+program_path = "../../target/deploy/v1/dg_vault_v1.so"
+idl = "../../target/idl/v1.json"
+program_id = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+
+[versions.v2]
+program_path = "../../target/deploy/v2/dg_vault_v2.so"
+idl = "../../target/idl/v2.json"
+program_id = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+
+[migration]
+instruction = "migrate"
+
+[migration.account_mapping]
+vault = "vault"
+owner = "owner"
+system_program = "system_program"
+
+[fixture]
+name = "vault"

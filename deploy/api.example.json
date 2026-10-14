@@ -1,0 +1,12 @@
+{
+  "storage_root": "/var/lib/doppelganger",
+  "bind": "127.0.0.1:8787",
+  "tokens": [
+    {
+      "owner": "developer",
+      "sha256": "REPLACE_WITH_SHA256_OF_A_RANDOM_BEARER_TOKEN"
+    }
+  ],
+  "cors_origins": ["http://localhost:5173"],
+  "request_timeout_seconds": 120
+}

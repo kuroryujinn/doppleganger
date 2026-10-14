@@ -1,0 +1,71 @@
+schema_version = 1
+
+[project]
+name = "vault-regression"
+framework = "anchor"
+
+[versions.v1]
+program_path = "../../target/deploy/v1/dg_vault_v1.so"
+idl = "../../target/idl/v1.json"
+program_id = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+
+[versions.v2]
+program_path = "../../target/deploy/r8-broken/dg_vault_v2.so"
+idl = "../../target/idl/v2.json"
+program_id = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+
+# Public local test identities only. Never fund these addresses on a real network.
+[addresses.owner]
+type = "signer"
+lamports = "u64:10000000000"
+test_seed = [11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11]
+
+[addresses.program]
+type = "program"
+version = "v1"
+
+[addresses.system_program]
+type = "literal"
+address = "11111111111111111111111111111111"
+
+[addresses.vault]
+type = "pda"
+program = "v1"
+seeds = [{ const = "vault" }, { pubkey = "$owner" }]
+
+[fixture]
+name = "vault-runtime"
+payer = "owner"
+
+[[fixture.account]]
+name = "vault"
+type = "VaultV1"
+address = "$vault"
+owner = "$program"
+lamports = 0
+
+[[fixture.initialize]]
+instruction = "initialize"
+account_mapping = { vault = "vault", owner = "owner", system_program = "system_program" }
+
+[[fixture.setup]]
+instruction = "deposit"
+account_mapping = { vault = "vault", owner = "owner", system_program = "system_program" }
+args = { amount = "u64:1000000" }
+
+[[migration_targets]]
+name = "vault"
+address = "$vault"
+v1_type = "VaultV1"
+v2_type = "VaultV2"
+
+[migration]
+instruction = "migrate"
+account_mapping = { vault = "vault", owner = "owner", system_program = "system_program" }
+
+[[scenario]]
+id = "repeat-migration"
+type = "repeat_migration"
+first = "success"
+second = "error"
+expected_error = 3002

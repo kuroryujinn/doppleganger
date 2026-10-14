@@ -1,0 +1,192 @@
+schema_version = 1
+
+[project]
+name = "escrow-runtime-broken"
+framework = "anchor"
+
+[versions.v1]
+program_path = "../../target/deploy/escrow-v1/dg_escrow_v1.so"
+idl = "../../fixtures/escrow/idl/v1.json"
+program_id = "11111111111111111111111111111112"
+
+[versions.v2]
+program_path = "../../target/deploy/escrow-broken/dg_escrow_v2.so"
+idl = "../../fixtures/escrow/idl/v2.json"
+program_id = "11111111111111111111111111111112"
+
+# Public deterministic identities for local testing only. Never fund on a cluster.
+[addresses.initializer]
+type = "signer"
+test_seed = [31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31, 31]
+lamports = "u64:10000000000"
+
+[addresses.beneficiary]
+type = "signer"
+test_seed = [32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32]
+lamports = "u64:1000000000"
+
+[addresses.stranger]
+type = "signer"
+test_seed = [33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33, 33]
+lamports = "u64:1000000000"
+
+[addresses.arbitrator]
+type = "literal"
+address = "3qbR1eZRqXUWroWKKYhbDmR3FfqTHfqSU8zZSxtANzYh"
+
+[addresses.program]
+type = "program"
+version = "v1"
+
+[addresses.system_program]
+type = "literal"
+address = "11111111111111111111111111111111"
+
+[addresses.escrow]
+type = "pda"
+program = "v1"
+seeds = [{ const = "escrow" }, { pubkey = "$initializer" }, { pubkey = "$beneficiary" }]
+
+[fixture]
+name = "two-party-funded-escrow"
+payer = "initializer"
+
+[[fixture.account]]
+name = "escrow"
+type = "EscrowV1"
+address = "$escrow"
+owner = "$program"
+lamports = 0
+
+[[fixture.initialize]]
+instruction = "initialize_escrow"
+account_mapping = { escrow = "escrow", initializer = "initializer", beneficiary = "beneficiary", system_program = "system_program" }
+args = { amount = "u64:1000000" }
+
+[[fixture.setup]]
+instruction = "fund"
+account_mapping = { escrow = "escrow", initializer = "initializer", system_program = "system_program" }
+
+[[migration_targets]]
+name = "escrow"
+address = "$escrow"
+v1_type = "EscrowV1"
+v2_type = "EscrowV2"
+
+[migration]
+instruction = "migrate_escrow"
+account_mapping = { escrow = "escrow", initializer = "initializer", system_program = "system_program" }
+args = { deadline = "i64:4102444800", arbitrator = "$arbitrator", fail_after_write = false }
+
+[[preservation]]
+id = "initializer-retained"
+account = "escrow"
+field = "initializer"
+rule = "equal"
+
+[[preservation]]
+id = "beneficiary-retained"
+account = "escrow"
+field = "beneficiary"
+rule = "equal"
+
+[[preservation]]
+id = "amount-retained"
+account = "escrow"
+field = "amount"
+rule = "equal"
+
+[[preservation]]
+id = "status-retained"
+account = "escrow"
+field = "status"
+rule = "equal"
+
+[[preservation]]
+id = "deadline-initialized"
+account = "escrow"
+field = "deadline"
+rule = "initialized"
+
+[[preservation]]
+id = "deadline-default"
+account = "escrow"
+field = "deadline"
+rule = "default"
+value = "i64:4102444800"
+
+[[preservation]]
+id = "arbitrator-initialized"
+account = "escrow"
+field = "arbitrator"
+rule = "initialized"
+
+[[preservation]]
+id = "arbitrator-default"
+account = "escrow"
+field = "arbitrator"
+rule = "default"
+value = "3qbR1eZRqXUWroWKKYhbDmR3FfqTHfqSU8zZSxtANzYh"
+
+[[preservation]]
+id = "escrow-owner"
+account = "escrow"
+rule = "owner_preserved"
+
+[[preservation]]
+id = "escrow-address"
+account = "escrow"
+rule = "pda_preserved"
+
+[[preservation]]
+id = "escrow-size"
+account = "escrow"
+rule = "account_size_minimum"
+value = 121
+
+[[scenario]]
+id = "standard"
+type = "standard_migration"
+expected = "success"
+
+[[scenario]]
+id = "unauthorized"
+type = "unauthorized_migration"
+signer_account = "initializer"
+signer_override = "stranger"
+expected = "error"
+expected_error = 6003
+state_unchanged = true
+
+[[scenario]]
+id = "repeat"
+type = "repeat_migration"
+first = "success"
+second = "error"
+expected_error = 3002
+
+[[scenario]]
+id = "rollback"
+type = "failed_migration_rollback"
+expected = "error"
+expected_error = 6007
+[scenario.migration]
+instruction = "migrate_escrow"
+account_mapping = { escrow = "escrow", initializer = "initializer", system_program = "system_program" }
+args = { deadline = "i64:4102444800", arbitrator = "$arbitrator", fail_after_write = true }
+
+[[scenario]]
+id = "unmigrated"
+type = "unmigrated_state_against_v2"
+instruction = "release"
+account_mapping = { escrow = "escrow", beneficiary = "beneficiary" }
+expected = "error"
+expected_error = 3002
+state_unchanged = true
+
+[[scenario]]
+id = "post-migration"
+type = "post_migration_instruction"
+instruction = "release"
+account_mapping = { escrow = "escrow", beneficiary = "beneficiary" }
+expected = "success"

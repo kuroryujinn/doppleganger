@@ -1,0 +1,132 @@
+/* The manual uses quiet surfaces, a narrow reading measure and flat controls. */
+:root {
+  --vp-font-family-base: "Segoe UI", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --vp-font-family-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --vp-c-brand-1: #a1442c;
+  --vp-c-brand-2: #853923;
+  --vp-c-brand-3: #a1442c;
+  --vp-c-brand-soft: #a1442c0a;
+  --vp-c-bg: #fdfcf9;
+  --vp-c-bg-alt: #f4f2ed;
+  --vp-c-bg-soft: #f0eee8;
+  --vp-c-text-1: #242725;
+  --vp-c-text-2: #676a64;
+  --vp-c-text-3: #787b74;
+  --vp-c-divider: #deddd6;
+  --vp-sidebar-width: 256px;
+  --vp-nav-height: 60px;
+  --vp-code-font-size: 12.5px;
+  --vp-code-line-height: 1.8;
+  --vp-code-block-bg: #f3f2ed;
+  --vp-code-bg: #efeee8;
+  --vp-c-default-soft: #edebe5;
+}
+.dark {
+  --vp-c-brand-1: #dc997e;
+  --vp-c-brand-2: #efb098;
+  --vp-c-brand-3: #c6856d;
+  --vp-c-brand-soft: #dc997e12;
+  --vp-c-bg: #202321;
+  --vp-c-bg-alt: #1a1d1b;
+  --vp-c-bg-soft: #292c28;
+  --vp-c-text-1: #e4e2d9;
+  --vp-c-text-2: #afb1a6;
+  --vp-c-text-3: #9fa295;
+  --vp-c-divider: #3c4038;
+  --vp-code-block-bg: #191c1a;
+  --vp-code-bg: #2c302a;
+  --vp-c-default-soft: #2c302a;
+}
+
+/* Masthead */
+.VPNavBar { border-bottom: 1px solid var(--vp-c-divider); }
+.VPNavBar .divider { display: none; }
+.VPNavBarTitle .title { gap: 9px; font-size: 15px; letter-spacing: -.025em; font-weight: 650; }
+.VPNavBarTitle.has-sidebar .title { border-bottom-color: transparent; }
+.wordmark-symbol { width: 25px; height: 25px; flex: none; color: var(--vp-c-brand-1); }
+.wordmark-edition { margin-left: 2px; padding-left: 10px; border-left: 1px solid var(--vp-c-divider); font: 10px var(--vp-font-family-mono); letter-spacing: .08em; color: var(--vp-c-text-2); }
+.VPNavBarMenuLink { font-size: 12px !important; }
+.VPNavBarSearch .DocSearch-Button { border: 1px solid var(--vp-c-divider); border-radius: 2px; background: transparent; min-width: 192px; height: 32px; }
+.DocSearch-Button .DocSearch-Button-Placeholder { font-size: 12px; }
+.DocSearch-Button .DocSearch-Button-Key { border: 0; border-radius: 0; box-shadow: none; font-size: 10px; background: var(--vp-c-bg-alt); }
+
+/* Left index */
+.VPSidebar { border-right: 1px solid var(--vp-c-divider); }
+.sidebar-edition { display: grid; gap: 10px; padding: 4px 0 24px; margin-bottom: 8px; }
+.edition-label { font: 10px var(--vp-font-family-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--vp-c-text-2); }
+.edition-version { font-size: 12px; font-weight: 600; }
+.edition-platform { color: var(--vp-c-text-2); font-size: 11px; font-weight: 400; margin-left: 12px; }
+.VPSidebar .group { border-top: 0; padding: 0 0 20px; }
+.VPSidebar .group + .group { border-top: 0; padding-top: 0; }
+.VPSidebar .VPSidebarItem.level-0 { padding-bottom: 0; }
+.VPSidebarItem.level-0 > .item { margin-bottom: 5px; }
+.VPSidebarItem.level-0 > .item > .text { font: 10px var(--vp-font-family-mono); text-transform: uppercase; letter-spacing: .075em; color: var(--vp-c-text-2); }
+.VPSidebarItem.level-1 .text { font-size: 12px; line-height: 23px; font-weight: 400; padding: 3px 0; }
+.VPSidebarItem.level-1 .item { padding-left: 12px; border-left: 1px solid transparent; }
+.VPSidebarItem.level-1.is-active > .item { border-left-color: var(--vp-c-brand-1); background: var(--vp-c-brand-soft); }
+.VPSidebarItem.level-1.is-active > .item .text { font-weight: 600; }
+.VPSidebarItem .caret { opacity: .6; }
+.VPSidebarItem.collapsed.level-0 { margin-bottom: 0; }
+.VPSidebarItem .item:focus-visible { outline: 2px solid var(--vp-c-brand-1); outline-offset: 3px; }
+
+/* Article */
+.VPDoc .content-container { max-width: 688px !important; }
+.doc-breadcrumbs { display: flex; gap: 8px; flex-wrap: wrap; font: 10px/1.6 var(--vp-font-family-mono); color: var(--vp-c-text-2); margin-bottom: 27px; }
+.doc-breadcrumbs [aria-current] { color: var(--vp-c-text-1); }
+.doc-breadcrumbs a:hover { color: var(--vp-c-brand-1); }
+.vp-doc { font-size: 15px; }
+.vp-doc h1 { font-family: Georgia, "Times New Roman", serif; font-size: 39px; line-height: 1.2; letter-spacing: -.035em; font-weight: 400; margin-bottom: 20px; }
+.vp-doc h1 + p { color: var(--vp-c-text-2); font-size: 16px; line-height: 1.7; margin-bottom: 26px; }
+.vp-doc h2 { margin: 40px 0 14px; padding-top: 0; border-top: 0; font-size: 19px; font-weight: 650; line-height: 1.5; letter-spacing: -.015em; }
+.vp-doc h3 { font-size: 16px; line-height: 1.6; }
+.vp-doc p, .vp-doc li { line-height: 1.75; }
+.vp-doc p { margin: 14px 0; }
+.vp-doc a { font-weight: 500; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.vp-doc :not(pre) > code { border-radius: 0; padding: 2px 5px; font-size: .86em; }
+.vp-doc strong { font-weight: 650; }
+
+/* Commands and reference tables */
+.vp-doc div[class*="language-"] { border: 1px solid var(--vp-c-divider); border-radius: 0; margin: 20px 0; }
+.vp-doc div[class*="language-"] pre { padding: 24px 0 18px; }
+.vp-doc div[class*="language-"] code { padding: 0 20px; }
+.vp-doc div[class*="language-"] > span.lang { font: 9px var(--vp-font-family-mono); letter-spacing: .08em; text-transform: uppercase; top: 7px; right: 12px; color: var(--vp-c-text-2); }
+.vp-doc div[class*="language-"] > button.copy { border-radius: 0; }
+.vp-doc table { font-size: 12.5px; line-height: 1.6; margin: 20px 0; }
+.vp-doc th { background: var(--vp-c-bg-alt); font-weight: 600; }
+.vp-doc th, .vp-doc td { padding: 10px 13px; border-color: var(--vp-c-divider); }
+.vp-doc tr:nth-child(2n) { background: transparent; }
+
+/* Marginal notes, without warning cards */
+.vp-doc .custom-block { border-radius: 0; background: transparent; border: 0; border-left: 2px solid var(--vp-c-divider); padding: 3px 0 3px 17px; font-size: 13px; margin: 24px 0; color: var(--vp-c-text-2); }
+.vp-doc .custom-block.warning { border-left-color: var(--vp-c-brand-1); }
+.vp-doc .custom-block .custom-block-title { font: 10px/1.8 var(--vp-font-family-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--vp-c-text-1); }
+.vp-doc .custom-block p { margin: 5px 0; line-height: 1.7; }
+.vp-doc .custom-block code { background: var(--vp-code-bg); color: var(--vp-c-text-1); }
+
+/* Right reading margin */
+.VPDocAsideOutline .content { border-left-color: var(--vp-c-divider); }
+.VPDocAsideOutline .outline-title { font: 10px/2 var(--vp-font-family-mono); text-transform: uppercase; letter-spacing: .08em; font-weight: 400; margin-bottom: 12px; }
+.VPDocAsideOutline .outline-link { font-size: 11px; line-height: 1.5; padding: 6px 0; white-space: normal; }
+.reference-note { border-top: 1px solid var(--vp-c-divider); margin-top: 24px; padding-top: 16px; color: var(--vp-c-text-2); font-size: 11px; line-height: 1.8; }
+.reference-note > span { display: block; margin-bottom: 6px; font: 9px/1.8 var(--vp-font-family-mono); text-transform: uppercase; letter-spacing: .08em; }
+.VPDocFooter .prev-next { border-top-color: var(--vp-c-divider); }
+.VPDocFooter .pager-link { border: 0; border-radius: 0; padding: 12px 0; }
+.VPDocFooter .pager-link:hover { background: transparent; }
+.VPDocFooter .pager-link .desc { font: 10px/1.8 var(--vp-font-family-mono); text-transform: uppercase; letter-spacing: .06em; }
+.VPLocalSearchBox .shell { border-radius: 2px; }
+.VPLocalSearchBox .search-input { border-radius: 0; }
+
+@media (min-width: 960px) {
+  .VPDoc { padding-top: 44px !important; }
+}
+@media (max-width: 640px) {
+  .vp-doc h1 { font-size: 33px; }
+  .vp-doc { font-size: 14px; }
+  .vp-doc h1 + p { font-size: 15px; }
+  .vp-doc table { max-width: 100%; }
+  .doc-breadcrumbs { font-size: 9px; gap: 6px; margin-bottom: 22px; }
+  .wordmark-edition { display: none; }
+  .VPNavBarTitle .title { font-size: 14px; }
+  .VPNavBarSearch .DocSearch-Button { min-width: 0; height: auto; border: 0; }
+  .vp-doc div[class*="language-"] { border-left: 0; border-right: 0; }
+}

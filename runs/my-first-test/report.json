@@ -1,0 +1,6007 @@
+{
+  "analysis": {
+    "account_sizes": {
+      "VaultV1 -> VaultV2": [
+        {
+          "bytes": 48,
+          "kind": "exact",
+          "minimum_bytes": 48
+        },
+        {
+          "bytes": 56,
+          "kind": "exact",
+          "minimum_bytes": 56
+        }
+      ]
+    },
+    "findings": [
+      {
+        "after": {
+          "kind": "primitive",
+          "value": "u64"
+        },
+        "before": null,
+        "category": "account",
+        "classification": "ACCOUNT_SCHEMA_CHANGE",
+        "explanation": "Field or argument added",
+        "id": "STATIC-0001",
+        "migration_hints": [
+          {
+            "category": "ACCOUNT_SCHEMA_CHANGE",
+            "reason": "Field or argument added",
+            "severity": "high-test",
+            "suggested_test": "Deserialize and migrate existing VaultV1 -> VaultV2 accounts; check preserved fields and initialization",
+            "target": "VaultV1 -> VaultV2"
+          }
+        ],
+        "path": "account.VaultV1 -> VaultV2.withdrawal_limit",
+        "suggested_tests": [
+          {
+            "action": "Deserialize and migrate existing VaultV1 -> VaultV2 accounts; check preserved fields and initialization",
+            "area": "account",
+            "target": "VaultV1 -> VaultV2"
+          }
+        ],
+        "target_name": "VaultV1 -> VaultV2",
+        "target_type": "account"
+      },
+      {
+        "after": [
+          26,
+          72,
+          80,
+          70,
+          37,
+          88,
+          90,
+          39
+        ],
+        "before": [
+          27,
+          177,
+          104,
+          68,
+          34,
+          4,
+          147,
+          92
+        ],
+        "category": "discriminator",
+        "classification": "DISCRIMINATOR_CHANGE",
+        "explanation": "Serialized discriminator changed",
+        "id": "STATIC-0002",
+        "migration_hints": [
+          {
+            "category": "DISCRIMINATOR_CHANGE",
+            "reason": "Serialized discriminator changed",
+            "severity": "critical-test",
+            "suggested_test": "Test old account discriminator compatibility for VaultV1 -> VaultV2",
+            "target": "VaultV1 -> VaultV2"
+          }
+        ],
+        "path": "VaultV1 -> VaultV2.discriminator",
+        "suggested_tests": [
+          {
+            "action": "Test old account discriminator compatibility for VaultV1 -> VaultV2",
+            "area": "discriminator",
+            "target": "VaultV1 -> VaultV2"
+          }
+        ],
+        "target_name": "VaultV1 -> VaultV2",
+        "target_type": "account"
+      },
+      {
+        "after": {
+          "code": 6001,
+          "message": "Insufficient balance",
+          "name": "InsufficientBalance"
+        },
+        "before": null,
+        "category": "error",
+        "classification": "ERROR_DEFINITION_CHANGE",
+        "explanation": "Custom error added or removed",
+        "id": "STATIC-0003",
+        "migration_hints": [
+          {
+            "category": "ERROR_DEFINITION_CHANGE",
+            "reason": "Custom error added or removed",
+            "severity": "informational",
+            "suggested_test": "Review InsufficientBalance compatibility",
+            "target": "InsufficientBalance"
+          }
+        ],
+        "path": "InsufficientBalance",
+        "suggested_tests": [
+          {
+            "action": "Review InsufficientBalance compatibility",
+            "area": "error",
+            "target": "InsufficientBalance"
+          }
+        ],
+        "target_name": "InsufficientBalance",
+        "target_type": "error"
+      },
+      {
+        "after": {
+          "code": 6002,
+          "message": "Withdrawal limit exceeded",
+          "name": "LimitExceeded"
+        },
+        "before": null,
+        "category": "error",
+        "classification": "ERROR_DEFINITION_CHANGE",
+        "explanation": "Custom error added or removed",
+        "id": "STATIC-0004",
+        "migration_hints": [
+          {
+            "category": "ERROR_DEFINITION_CHANGE",
+            "reason": "Custom error added or removed",
+            "severity": "informational",
+            "suggested_test": "Review LimitExceeded compatibility",
+            "target": "LimitExceeded"
+          }
+        ],
+        "path": "LimitExceeded",
+        "suggested_tests": [
+          {
+            "action": "Review LimitExceeded compatibility",
+            "area": "error",
+            "target": "LimitExceeded"
+          }
+        ],
+        "target_name": "LimitExceeded",
+        "target_type": "error"
+      },
+      {
+        "after": {
+          "code": 6003,
+          "message": "Unauthorized migration",
+          "name": "Unauthorized"
+        },
+        "before": null,
+        "category": "error",
+        "classification": "ERROR_DEFINITION_CHANGE",
+        "explanation": "Custom error added or removed",
+        "id": "STATIC-0005",
+        "migration_hints": [
+          {
+            "category": "ERROR_DEFINITION_CHANGE",
+            "reason": "Custom error added or removed",
+            "severity": "informational",
+            "suggested_test": "Review Unauthorized compatibility",
+            "target": "Unauthorized"
+          }
+        ],
+        "path": "Unauthorized",
+        "suggested_tests": [
+          {
+            "action": "Review Unauthorized compatibility",
+            "area": "error",
+            "target": "Unauthorized"
+          }
+        ],
+        "target_name": "Unauthorized",
+        "target_type": "error"
+      },
+      {
+        "after": null,
+        "before": {
+          "accounts": [
+            {
+              "name": "vault",
+              "optional": false,
+              "pda": {
+                "program": null,
+                "seeds": [
+                  {
+                    "kind": "const",
+                    "path": null,
+                    "ty": null,
+                    "value": [
+                      118,
+                      97,
+                      117,
+                      108,
+                      116
+                    ]
+                  },
+                  {
+                    "kind": "account",
+                    "path": "owner",
+                    "ty": null,
+                    "value": null
+                  }
+                ]
+              },
+              "signer": false,
+              "writable": true
+            },
+            {
+              "name": "owner",
+              "optional": false,
+              "pda": null,
+              "signer": true,
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "optional": false,
+              "pda": null,
+              "signer": false,
+              "writable": false
+            }
+          ],
+          "args": [],
+          "discriminator": [
+            175,
+            175,
+            109,
+            31,
+            13,
+            152,
+            155,
+            237
+          ],
+          "name": "initialize"
+        },
+        "category": "interface",
+        "classification": "INTERFACE_CHANGE",
+        "explanation": "Instruction added or removed",
+        "id": "STATIC-0006",
+        "migration_hints": [
+          {
+            "category": "INTERFACE_CHANGE",
+            "reason": "Instruction added or removed",
+            "severity": "medium-test",
+            "suggested_test": "Replay existing client calls to initialize",
+            "target": "initialize"
+          }
+        ],
+        "path": "initialize",
+        "suggested_tests": [
+          {
+            "action": "Replay existing client calls to initialize",
+            "area": "interface",
+            "target": "initialize"
+          }
+        ],
+        "target_name": "initialize",
+        "target_type": "instruction"
+      },
+      {
+        "after": {
+          "accounts": [
+            {
+              "name": "vault",
+              "optional": false,
+              "pda": {
+                "program": null,
+                "seeds": [
+                  {
+                    "kind": "const",
+                    "path": null,
+                    "ty": null,
+                    "value": [
+                      118,
+                      97,
+                      117,
+                      108,
+                      116
+                    ]
+                  },
+                  {
+                    "kind": "account",
+                    "path": "owner",
+                    "ty": null,
+                    "value": null
+                  }
+                ]
+              },
+              "signer": false,
+              "writable": true
+            },
+            {
+              "name": "owner",
+              "optional": false,
+              "pda": null,
+              "signer": true,
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "optional": false,
+              "pda": null,
+              "signer": false,
+              "writable": false
+            }
+          ],
+          "args": [],
+          "discriminator": [
+            155,
+            234,
+            231,
+            146,
+            236,
+            158,
+            162,
+            30
+          ],
+          "name": "migrate"
+        },
+        "before": null,
+        "category": "interface",
+        "classification": "INTERFACE_CHANGE",
+        "explanation": "Instruction added or removed",
+        "id": "STATIC-0007",
+        "migration_hints": [
+          {
+            "category": "INTERFACE_CHANGE",
+            "reason": "Instruction added or removed",
+            "severity": "medium-test",
+            "suggested_test": "Replay existing client calls to migrate",
+            "target": "migrate"
+          }
+        ],
+        "path": "migrate",
+        "suggested_tests": [
+          {
+            "action": "Replay existing client calls to migrate",
+            "area": "interface",
+            "target": "migrate"
+          }
+        ],
+        "target_name": "migrate",
+        "target_type": "instruction"
+      },
+      {
+        "after": {
+          "accounts": [
+            {
+              "name": "vault",
+              "optional": false,
+              "pda": {
+                "program": null,
+                "seeds": [
+                  {
+                    "kind": "const",
+                    "path": null,
+                    "ty": null,
+                    "value": [
+                      118,
+                      97,
+                      117,
+                      108,
+                      116
+                    ]
+                  },
+                  {
+                    "kind": "account",
+                    "path": "owner",
+                    "ty": null,
+                    "value": null
+                  }
+                ]
+              },
+              "signer": false,
+              "writable": true
+            },
+            {
+              "name": "owner",
+              "optional": false,
+              "pda": null,
+              "signer": true,
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "optional": false,
+              "pda": null,
+              "signer": false,
+              "writable": false
+            }
+          ],
+          "args": [
+            {
+              "name": "amount",
+              "ty": {
+                "kind": "primitive",
+                "value": "u64"
+              }
+            }
+          ],
+          "discriminator": [
+            183,
+            18,
+            70,
+            156,
+            148,
+            109,
+            161,
+            34
+          ],
+          "name": "withdraw"
+        },
+        "before": null,
+        "category": "interface",
+        "classification": "INTERFACE_CHANGE",
+        "explanation": "Instruction added or removed",
+        "id": "STATIC-0008",
+        "migration_hints": [
+          {
+            "category": "INTERFACE_CHANGE",
+            "reason": "Instruction added or removed",
+            "severity": "medium-test",
+            "suggested_test": "Replay existing client calls to withdraw",
+            "target": "withdraw"
+          }
+        ],
+        "path": "withdraw",
+        "suggested_tests": [
+          {
+            "action": "Replay existing client calls to withdraw",
+            "area": "interface",
+            "target": "withdraw"
+          }
+        ],
+        "target_name": "withdraw",
+        "target_type": "instruction"
+      },
+      {
+        "after": {
+          "bytes": 56,
+          "kind": "exact",
+          "minimum_bytes": 56
+        },
+        "before": {
+          "bytes": 48,
+          "kind": "exact",
+          "minimum_bytes": 48
+        },
+        "category": "size",
+        "classification": "ACCOUNT_SIZE_CHANGE",
+        "explanation": "Exact serialized size increased; existing accounts may require reallocation",
+        "id": "STATIC-0009",
+        "migration_hints": [
+          {
+            "category": "ACCOUNT_SIZE_CHANGE",
+            "reason": "Exact serialized size increased; existing accounts may require reallocation",
+            "severity": "high-test",
+            "suggested_test": "Migrate existing VaultV1 -> VaultV2 accounts; verify data size and rent backing",
+            "target": "VaultV1 -> VaultV2"
+          }
+        ],
+        "path": "account.VaultV1 -> VaultV2.size",
+        "suggested_tests": [
+          {
+            "action": "Migrate existing VaultV1 -> VaultV2 accounts; verify data size and rent backing",
+            "area": "size",
+            "target": "VaultV1 -> VaultV2"
+          }
+        ],
+        "target_name": "VaultV1 -> VaultV2",
+        "target_type": "account"
+      }
+    ],
+    "format_version": 1,
+    "from": {
+      "address": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+      "name": "dg_vault_v1",
+      "version": "0.1.0"
+    },
+    "migration_hints": [
+      {
+        "category": "ACCOUNT_SCHEMA_CHANGE",
+        "reason": "Field or argument added",
+        "severity": "high-test",
+        "suggested_test": "Deserialize and migrate existing VaultV1 -> VaultV2 accounts; check preserved fields and initialization",
+        "target": "VaultV1 -> VaultV2"
+      },
+      {
+        "category": "ACCOUNT_SIZE_CHANGE",
+        "reason": "Exact serialized size increased; existing accounts may require reallocation",
+        "severity": "high-test",
+        "suggested_test": "Migrate existing VaultV1 -> VaultV2 accounts; verify data size and rent backing",
+        "target": "VaultV1 -> VaultV2"
+      },
+      {
+        "category": "DISCRIMINATOR_CHANGE",
+        "reason": "Serialized discriminator changed",
+        "severity": "critical-test",
+        "suggested_test": "Test old account discriminator compatibility for VaultV1 -> VaultV2",
+        "target": "VaultV1 -> VaultV2"
+      },
+      {
+        "category": "ERROR_DEFINITION_CHANGE",
+        "reason": "Custom error added or removed",
+        "severity": "informational",
+        "suggested_test": "Review InsufficientBalance compatibility",
+        "target": "InsufficientBalance"
+      },
+      {
+        "category": "ERROR_DEFINITION_CHANGE",
+        "reason": "Custom error added or removed",
+        "severity": "informational",
+        "suggested_test": "Review LimitExceeded compatibility",
+        "target": "LimitExceeded"
+      },
+      {
+        "category": "ERROR_DEFINITION_CHANGE",
+        "reason": "Custom error added or removed",
+        "severity": "informational",
+        "suggested_test": "Review Unauthorized compatibility",
+        "target": "Unauthorized"
+      },
+      {
+        "category": "INTERFACE_CHANGE",
+        "reason": "Instruction added or removed",
+        "severity": "medium-test",
+        "suggested_test": "Replay existing client calls to initialize",
+        "target": "initialize"
+      },
+      {
+        "category": "INTERFACE_CHANGE",
+        "reason": "Instruction added or removed",
+        "severity": "medium-test",
+        "suggested_test": "Replay existing client calls to migrate",
+        "target": "migrate"
+      },
+      {
+        "category": "INTERFACE_CHANGE",
+        "reason": "Instruction added or removed",
+        "severity": "medium-test",
+        "suggested_test": "Replay existing client calls to withdraw",
+        "target": "withdraw"
+      }
+    ],
+    "normalized_changes": [
+      {
+        "after": {
+          "kind": "primitive",
+          "value": "u64"
+        },
+        "before": null,
+        "classification": "ACCOUNT_SCHEMA_CHANGE",
+        "path": "account.VaultV1 -> VaultV2.withdrawal_limit",
+        "target_name": "VaultV1 -> VaultV2",
+        "target_type": "account"
+      },
+      {
+        "after": [
+          26,
+          72,
+          80,
+          70,
+          37,
+          88,
+          90,
+          39
+        ],
+        "before": [
+          27,
+          177,
+          104,
+          68,
+          34,
+          4,
+          147,
+          92
+        ],
+        "classification": "DISCRIMINATOR_CHANGE",
+        "path": "VaultV1 -> VaultV2.discriminator",
+        "target_name": "VaultV1 -> VaultV2",
+        "target_type": "account"
+      },
+      {
+        "after": {
+          "code": 6001,
+          "message": "Insufficient balance",
+          "name": "InsufficientBalance"
+        },
+        "before": null,
+        "classification": "ERROR_DEFINITION_CHANGE",
+        "path": "InsufficientBalance",
+        "target_name": "InsufficientBalance",
+        "target_type": "error"
+      },
+      {
+        "after": {
+          "code": 6002,
+          "message": "Withdrawal limit exceeded",
+          "name": "LimitExceeded"
+        },
+        "before": null,
+        "classification": "ERROR_DEFINITION_CHANGE",
+        "path": "LimitExceeded",
+        "target_name": "LimitExceeded",
+        "target_type": "error"
+      },
+      {
+        "after": {
+          "code": 6003,
+          "message": "Unauthorized migration",
+          "name": "Unauthorized"
+        },
+        "before": null,
+        "classification": "ERROR_DEFINITION_CHANGE",
+        "path": "Unauthorized",
+        "target_name": "Unauthorized",
+        "target_type": "error"
+      },
+      {
+        "after": null,
+        "before": {
+          "accounts": [
+            {
+              "name": "vault",
+              "optional": false,
+              "pda": {
+                "program": null,
+                "seeds": [
+                  {
+                    "kind": "const",
+                    "path": null,
+                    "ty": null,
+                    "value": [
+                      118,
+                      97,
+                      117,
+                      108,
+                      116
+                    ]
+                  },
+                  {
+                    "kind": "account",
+                    "path": "owner",
+                    "ty": null,
+                    "value": null
+                  }
+                ]
+              },
+              "signer": false,
+              "writable": true
+            },
+            {
+              "name": "owner",
+              "optional": false,
+              "pda": null,
+              "signer": true,
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "optional": false,
+              "pda": null,
+              "signer": false,
+              "writable": false
+            }
+          ],
+          "args": [],
+          "discriminator": [
+            175,
+            175,
+            109,
+            31,
+            13,
+            152,
+            155,
+            237
+          ],
+          "name": "initialize"
+        },
+        "classification": "INTERFACE_CHANGE",
+        "path": "initialize",
+        "target_name": "initialize",
+        "target_type": "instruction"
+      },
+      {
+        "after": {
+          "accounts": [
+            {
+              "name": "vault",
+              "optional": false,
+              "pda": {
+                "program": null,
+                "seeds": [
+                  {
+                    "kind": "const",
+                    "path": null,
+                    "ty": null,
+                    "value": [
+                      118,
+                      97,
+                      117,
+                      108,
+                      116
+                    ]
+                  },
+                  {
+                    "kind": "account",
+                    "path": "owner",
+                    "ty": null,
+                    "value": null
+                  }
+                ]
+              },
+              "signer": false,
+              "writable": true
+            },
+            {
+              "name": "owner",
+              "optional": false,
+              "pda": null,
+              "signer": true,
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "optional": false,
+              "pda": null,
+              "signer": false,
+              "writable": false
+            }
+          ],
+          "args": [],
+          "discriminator": [
+            155,
+            234,
+            231,
+            146,
+            236,
+            158,
+            162,
+            30
+          ],
+          "name": "migrate"
+        },
+        "before": null,
+        "classification": "INTERFACE_CHANGE",
+        "path": "migrate",
+        "target_name": "migrate",
+        "target_type": "instruction"
+      },
+      {
+        "after": {
+          "accounts": [
+            {
+              "name": "vault",
+              "optional": false,
+              "pda": {
+                "program": null,
+                "seeds": [
+                  {
+                    "kind": "const",
+                    "path": null,
+                    "ty": null,
+                    "value": [
+                      118,
+                      97,
+                      117,
+                      108,
+                      116
+                    ]
+                  },
+                  {
+                    "kind": "account",
+                    "path": "owner",
+                    "ty": null,
+                    "value": null
+                  }
+                ]
+              },
+              "signer": false,
+              "writable": true
+            },
+            {
+              "name": "owner",
+              "optional": false,
+              "pda": null,
+              "signer": true,
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "optional": false,
+              "pda": null,
+              "signer": false,
+              "writable": false
+            }
+          ],
+          "args": [
+            {
+              "name": "amount",
+              "ty": {
+                "kind": "primitive",
+                "value": "u64"
+              }
+            }
+          ],
+          "discriminator": [
+            183,
+            18,
+            70,
+            156,
+            148,
+            109,
+            161,
+            34
+          ],
+          "name": "withdraw"
+        },
+        "before": null,
+        "classification": "INTERFACE_CHANGE",
+        "path": "withdraw",
+        "target_name": "withdraw",
+        "target_type": "instruction"
+      },
+      {
+        "after": {
+          "bytes": 56,
+          "kind": "exact",
+          "minimum_bytes": 56
+        },
+        "before": {
+          "bytes": 48,
+          "kind": "exact",
+          "minimum_bytes": 48
+        },
+        "classification": "ACCOUNT_SIZE_CHANGE",
+        "path": "account.VaultV1 -> VaultV2.size",
+        "target_name": "VaultV1 -> VaultV2",
+        "target_type": "account"
+      }
+    ],
+    "project": "vault-runtime",
+    "runtime_executed": false,
+    "suggested_runtime_tests": [
+      {
+        "action": "Deserialize and migrate existing VaultV1 -> VaultV2 accounts; check preserved fields and initialization",
+        "area": "account",
+        "target": "VaultV1 -> VaultV2"
+      },
+      {
+        "action": "Test old account discriminator compatibility for VaultV1 -> VaultV2",
+        "area": "discriminator",
+        "target": "VaultV1 -> VaultV2"
+      },
+      {
+        "action": "Review InsufficientBalance compatibility",
+        "area": "error",
+        "target": "InsufficientBalance"
+      },
+      {
+        "action": "Review LimitExceeded compatibility",
+        "area": "error",
+        "target": "LimitExceeded"
+      },
+      {
+        "action": "Review Unauthorized compatibility",
+        "area": "error",
+        "target": "Unauthorized"
+      },
+      {
+        "action": "Replay existing client calls to initialize",
+        "area": "interface",
+        "target": "initialize"
+      },
+      {
+        "action": "Replay existing client calls to migrate",
+        "area": "interface",
+        "target": "migrate"
+      },
+      {
+        "action": "Replay existing client calls to withdraw",
+        "area": "interface",
+        "target": "withdraw"
+      },
+      {
+        "action": "Migrate existing VaultV1 -> VaultV2 accounts; verify data size and rent backing",
+        "area": "size",
+        "target": "VaultV1 -> VaultV2"
+      }
+    ],
+    "summary": {
+      "account": 1,
+      "discriminator": 1,
+      "error": 3,
+      "interface": 3,
+      "size": 1
+    },
+    "to": {
+      "address": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+      "name": "dg_vault_v2",
+      "version": "0.1.0"
+    }
+  },
+  "artifacts": {
+    "manifest": {
+      "path": "/home/kuro/doppleganger/examples/vault-runtime/doppelganger.toml",
+      "sha256": "93de5afdc8ad4783ed69cde568c6e8315b026f7ac6451948f1e3c43bd6e72b6a"
+    },
+    "policy": {
+      "path": "/home/kuro/doppleganger/examples/vault-runtime/doppelganger-policy.toml",
+      "sha256": "0ead9785aeae110157ab6ffd20eb5b7dc79ddc9a9f124a8059598dd5b9076847"
+    },
+    "v1_binary": {
+      "path": "/home/kuro/doppleganger/target/deploy/v1/dg_vault_v1.so",
+      "sha256": "935e42ea051fea91130d3e80cfdb42282ddaa3080757e422d56ac0fd147641ad"
+    },
+    "v1_idl": {
+      "path": "/home/kuro/doppleganger/target/idl/v1.json",
+      "sha256": "753f04d5b948166bf0665969da56e7757f55701040af6f0b7e5b44ddb87bfc26"
+    },
+    "v2_binary": {
+      "path": "/home/kuro/doppleganger/target/deploy/v2/dg_vault_v2.so",
+      "sha256": "8dbd70bde7d547690d948aa52f7eb743203d6c9f986372be4c351db98d7529b2"
+    },
+    "v2_idl": {
+      "path": "/home/kuro/doppleganger/target/idl/v2.json",
+      "sha256": "725a9ac14d6f1a55d1ee6e267aa4fe840e86806ffee2daabe47f00174457efdf"
+    }
+  },
+  "engine_version": "0.1.0",
+  "execution": {
+    "after_accounts": [
+      {
+        "account_type": "VaultV2",
+        "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+        "decode_error": null,
+        "decoded": {
+          "account_type": "VaultV2",
+          "consumed_bytes": 56,
+          "fields": {
+            "balance": {
+              "kind": "integer",
+              "value": "1000000"
+            },
+            "owner": {
+              "kind": "pubkey",
+              "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+            },
+            "withdrawal_limit": {
+              "kind": "integer",
+              "value": "500000"
+            }
+          },
+          "trailing_bytes": []
+        },
+        "name": "vault",
+        "snapshot": {
+          "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+          "data_length": 56,
+          "executable": false,
+          "lamports": "2280640",
+          "metadata": {},
+          "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+          "raw_data": [
+            26,
+            72,
+            80,
+            70,
+            37,
+            88,
+            90,
+            39,
+            250,
+            72,
+            52,
+            20,
+            127,
+            110,
+            105,
+            12,
+            54,
+            147,
+            239,
+            246,
+            19,
+            54,
+            4,
+            100,
+            3,
+            205,
+            138,
+            226,
+            161,
+            79,
+            49,
+            179,
+            196,
+            7,
+            53,
+            133,
+            105,
+            35,
+            149,
+            101,
+            64,
+            66,
+            15,
+            0,
+            0,
+            0,
+            0,
+            0,
+            32,
+            161,
+            7,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "schema_version": 1
+        }
+      }
+    ],
+    "before_accounts": [
+      {
+        "account_type": "VaultV1",
+        "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+        "decode_error": null,
+        "decoded": {
+          "account_type": "VaultV1",
+          "consumed_bytes": 48,
+          "fields": {
+            "balance": {
+              "kind": "integer",
+              "value": "1000000"
+            },
+            "owner": {
+              "kind": "pubkey",
+              "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+            }
+          },
+          "trailing_bytes": []
+        },
+        "name": "vault",
+        "snapshot": {
+          "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+          "data_length": 48,
+          "executable": false,
+          "lamports": "2224960",
+          "metadata": {},
+          "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+          "raw_data": [
+            27,
+            177,
+            104,
+            68,
+            34,
+            4,
+            147,
+            92,
+            250,
+            72,
+            52,
+            20,
+            127,
+            110,
+            105,
+            12,
+            54,
+            147,
+            239,
+            246,
+            19,
+            54,
+            4,
+            100,
+            3,
+            205,
+            138,
+            226,
+            161,
+            79,
+            49,
+            179,
+            196,
+            7,
+            53,
+            133,
+            105,
+            35,
+            149,
+            101,
+            64,
+            66,
+            15,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "schema_version": 1
+        }
+      }
+    ],
+    "preservation_evaluated": false,
+    "program_swap": {
+      "candidate": {
+        "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v2.json",
+        "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+        "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v2/dg_vault_v2.so"
+      },
+      "loaded": true,
+      "previous": {
+        "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v1.json",
+        "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+        "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v1/dg_vault_v1.so"
+      },
+      "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+    },
+    "project": "vault-runtime",
+    "schema_version": 1,
+    "transaction": {
+      "accounts": [
+        {
+          "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+          "signer": false,
+          "writable": true
+        },
+        {
+          "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "address": "11111111111111111111111111111111",
+          "signer": false,
+          "writable": false
+        }
+      ],
+      "action_index": 0,
+      "compute_units": 6871,
+      "error": null,
+      "error_kind": null,
+      "fee": 5000,
+      "instruction_data": [
+        155,
+        234,
+        231,
+        146,
+        236,
+        158,
+        162,
+        30
+      ],
+      "instruction_name": "migrate",
+      "logs": [
+        "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+        "Program log: Instruction: Migrate",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 6871 of 200000 compute units",
+        "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+      ],
+      "phase": "migration",
+      "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+      "signature": "4spgb2FwqcFPU1Sjqtu8nmLe4umasjPXouej4bMbn7gQxJfKPUD3PwkisGRR77N37TLp7jx5okcR8xYhpcoMxS8W",
+      "signer_public_keys": [
+        "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+      ],
+      "success": true,
+      "transaction_error": null
+    },
+    "v1_program": {
+      "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v1.json",
+      "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+      "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v1/dg_vault_v1.so"
+    },
+    "v2_program": {
+      "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v2.json",
+      "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+      "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v2/dg_vault_v2.so"
+    }
+  },
+  "exit_code": 0,
+  "legacy_unversioned_manifest": false,
+  "lifecycle": {
+    "errors": 0,
+    "failed": 0,
+    "lifecycle_evaluated": true,
+    "passed": 7,
+    "policy_evaluated": false,
+    "preservation_evaluated": false,
+    "project": "vault-runtime",
+    "scenarios": [
+      {
+        "definition": {
+          "account_mapping": {},
+          "arguments": {},
+          "expected": "success",
+          "expected_error": null,
+          "first": null,
+          "fixture": null,
+          "id": "normal-migration",
+          "instruction": null,
+          "migration": null,
+          "second": null,
+          "signer_account": null,
+          "signer_override": null,
+          "state_unchanged": false,
+          "type": "standard_migration"
+        },
+        "diagnostics": [],
+        "id": "normal-migration",
+        "status": "PASS",
+        "steps": [
+          {
+            "after": [
+              {
+                "account_type": "VaultV1",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 0,
+            "observed": null,
+            "operation": "build_world",
+            "program_swap": null,
+            "setup_actions": [
+              {
+                "accounts": [
+                  {
+                    "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                    "signer": false,
+                    "writable": true
+                  },
+                  {
+                    "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                    "signer": true,
+                    "writable": true
+                  },
+                  {
+                    "address": "11111111111111111111111111111111",
+                    "signer": false,
+                    "writable": false
+                  }
+                ],
+                "action_index": 0,
+                "compute_units": 6499,
+                "error": null,
+                "error_kind": null,
+                "fee": 5000,
+                "instruction_data": [
+                  175,
+                  175,
+                  109,
+                  31,
+                  13,
+                  152,
+                  155,
+                  237
+                ],
+                "instruction_name": "initialize",
+                "logs": [
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                  "Program log: Instruction: Initialize",
+                  "Program 11111111111111111111111111111111 invoke [2]",
+                  "Program 11111111111111111111111111111111 success",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 6499 of 200000 compute units",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+                ],
+                "phase": "initialize",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "signature": "2stwGrknfD57fRvH5XSiJSV8st93SjktE87yyLB8pN4aYpnqMdCP2LGgV3uNngMDLnsH9SCvws4YEUfzXkQFd4mC",
+                "signer_public_keys": [
+                  "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                ],
+                "success": true,
+                "transaction_error": null
+              },
+              {
+                "accounts": [
+                  {
+                    "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                    "signer": false,
+                    "writable": true
+                  },
+                  {
+                    "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                    "signer": true,
+                    "writable": true
+                  },
+                  {
+                    "address": "11111111111111111111111111111111",
+                    "signer": false,
+                    "writable": false
+                  }
+                ],
+                "action_index": 0,
+                "compute_units": 5511,
+                "error": null,
+                "error_kind": null,
+                "fee": 5000,
+                "instruction_data": [
+                  242,
+                  35,
+                  198,
+                  137,
+                  82,
+                  225,
+                  242,
+                  182,
+                  64,
+                  66,
+                  15,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "instruction_name": "deposit",
+                "logs": [
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                  "Program log: Instruction: Deposit",
+                  "Program 11111111111111111111111111111111 invoke [2]",
+                  "Program 11111111111111111111111111111111 success",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 5511 of 200000 compute units",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+                ],
+                "phase": "setup",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "signature": "bmh1yJafHyiyZe88qb1iPHTGZspDAmzF6eYSqs8VZDHQkN7syBPnwHQ3FavAj9PTqPFzTPEKFuzReEJ997hr2TR",
+                "signer_public_keys": [
+                  "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                ],
+                "success": true,
+                "transaction_error": null
+              }
+            ],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV1",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 6871,
+              "error": null,
+              "error_kind": null,
+              "fee": 5000,
+              "instruction_data": [
+                155,
+                234,
+                231,
+                146,
+                236,
+                158,
+                162,
+                30
+              ],
+              "instruction_name": "migrate",
+              "logs": [
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                "Program log: Instruction: Migrate",
+                "Program 11111111111111111111111111111111 invoke [2]",
+                "Program 11111111111111111111111111111111 success",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 6871 of 200000 compute units",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+              ],
+              "phase": "migration",
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+              "signature": "4spgb2FwqcFPU1Sjqtu8nmLe4umasjPXouej4bMbn7gQxJfKPUD3PwkisGRR77N37TLp7jx5okcR8xYhpcoMxS8W",
+              "signer_public_keys": [
+                "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+              ],
+              "success": true,
+              "transaction_error": null
+            },
+            "expected": "success",
+            "expected_error": null,
+            "index": 1,
+            "observed": "success",
+            "operation": "migrate",
+            "program_swap": {
+              "candidate": {
+                "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v2.json",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v2/dg_vault_v2.so"
+              },
+              "loaded": true,
+              "previous": {
+                "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v1.json",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v1/dg_vault_v1.so"
+              },
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+            },
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          }
+        ]
+      },
+      {
+        "definition": {
+          "account_mapping": {},
+          "arguments": {},
+          "expected": "error",
+          "expected_error": 2006,
+          "first": null,
+          "fixture": null,
+          "id": "unauthorized-migration",
+          "instruction": null,
+          "migration": null,
+          "second": null,
+          "signer_account": "owner",
+          "signer_override": "stranger",
+          "state_unchanged": true,
+          "type": "unauthorized_migration"
+        },
+        "diagnostics": [],
+        "id": "unauthorized-migration",
+        "status": "PASS",
+        "steps": [
+          {
+            "after": [
+              {
+                "account_type": "VaultV1",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 0,
+            "observed": null,
+            "operation": "build_world",
+            "program_swap": null,
+            "setup_actions": [
+              {
+                "accounts": [
+                  {
+                    "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                    "signer": false,
+                    "writable": true
+                  },
+                  {
+                    "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                    "signer": true,
+                    "writable": true
+                  },
+                  {
+                    "address": "11111111111111111111111111111111",
+                    "signer": false,
+                    "writable": false
+                  }
+                ],
+                "action_index": 0,
+                "compute_units": 6499,
+                "error": null,
+                "error_kind": null,
+                "fee": 5000,
+                "instruction_data": [
+                  175,
+                  175,
+                  109,
+                  31,
+                  13,
+                  152,
+                  155,
+                  237
+                ],
+                "instruction_name": "initialize",
+                "logs": [
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                  "Program log: Instruction: Initialize",
+                  "Program 11111111111111111111111111111111 invoke [2]",
+                  "Program 11111111111111111111111111111111 success",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 6499 of 200000 compute units",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+                ],
+                "phase": "initialize",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "signature": "2stwGrknfD57fRvH5XSiJSV8st93SjktE87yyLB8pN4aYpnqMdCP2LGgV3uNngMDLnsH9SCvws4YEUfzXkQFd4mC",
+                "signer_public_keys": [
+                  "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                ],
+                "success": true,
+                "transaction_error": null
+              },
+              {
+                "accounts": [
+                  {
+                    "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                    "signer": false,
+                    "writable": true
+                  },
+                  {
+                    "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                    "signer": true,
+                    "writable": true
+                  },
+                  {
+                    "address": "11111111111111111111111111111111",
+                    "signer": false,
+                    "writable": false
+                  }
+                ],
+                "action_index": 0,
+                "compute_units": 5511,
+                "error": null,
+                "error_kind": null,
+                "fee": 5000,
+                "instruction_data": [
+                  242,
+                  35,
+                  198,
+                  137,
+                  82,
+                  225,
+                  242,
+                  182,
+                  64,
+                  66,
+                  15,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "instruction_name": "deposit",
+                "logs": [
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                  "Program log: Instruction: Deposit",
+                  "Program 11111111111111111111111111111111 invoke [2]",
+                  "Program 11111111111111111111111111111111 success",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 5511 of 200000 compute units",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+                ],
+                "phase": "setup",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "signature": "bmh1yJafHyiyZe88qb1iPHTGZspDAmzF6eYSqs8VZDHQkN7syBPnwHQ3FavAj9PTqPFzTPEKFuzReEJ997hr2TR",
+                "signer_public_keys": [
+                  "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                ],
+                "success": true,
+                "transaction_error": null
+              }
+            ],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": {
+                  "code": "DISCRIMINATOR",
+                  "message": "account discriminator mismatch",
+                  "offset": 0,
+                  "path": "VaultV2"
+                },
+                "decoded": null,
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV1",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "2iXtA8oeZqUU5pofxK971TCEvFGfems2AcDRaZHKD2pQ",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 6165,
+              "error": "InstructionError(0, Custom(2006))",
+              "error_kind": "program",
+              "fee": 10000,
+              "instruction_data": [
+                155,
+                234,
+                231,
+                146,
+                236,
+                158,
+                162,
+                30
+              ],
+              "instruction_name": "migrate",
+              "logs": [
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                "Program log: Instruction: Migrate",
+                "Program log: AnchorError caused by account: vault. Error Code: ConstraintSeeds. Error Number: 2006. Error Message: A seeds constraint was violated.",
+                "Program log: Left:",
+                "Program log: 5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "Program log: Right:",
+                "Program log: 7oZtp7jJHdGnYGWcpLEpRMJ6F4wQoGUuv3kWcHQbPn9r",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 6165 of 200000 compute units",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS failed: custom program error: 0x7d6"
+              ],
+              "phase": "migration",
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+              "signature": "5qV8zvR1w2QroGwtkjHr2iLXAb3LtDGUuxFMSkUaG3g7znv7Xt6ExnnZdBUMfMRN4d8jUgSKWFQvHjaDcGBJdwFP",
+              "signer_public_keys": [
+                "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                "2iXtA8oeZqUU5pofxK971TCEvFGfems2AcDRaZHKD2pQ"
+              ],
+              "success": false,
+              "transaction_error": {
+                "InstructionError": [
+                  0,
+                  {
+                    "Custom": 2006
+                  }
+                ]
+              }
+            },
+            "expected": "error",
+            "expected_error": 2006,
+            "index": 1,
+            "observed": "error",
+            "operation": "migrate",
+            "program_swap": {
+              "candidate": {
+                "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v2.json",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v2/dg_vault_v2.so"
+              },
+              "loaded": true,
+              "previous": {
+                "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v1.json",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v1/dg_vault_v1.so"
+              },
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+            },
+            "setup_actions": [],
+            "state_unchanged": true,
+            "status": "PASS"
+          }
+        ]
+      },
+      {
+        "definition": {
+          "account_mapping": {},
+          "arguments": {},
+          "expected": null,
+          "expected_error": 3002,
+          "first": "success",
+          "fixture": null,
+          "id": "repeat-migration",
+          "instruction": null,
+          "migration": null,
+          "second": "error",
+          "signer_account": null,
+          "signer_override": null,
+          "state_unchanged": false,
+          "type": "repeat_migration"
+        },
+        "diagnostics": [],
+        "id": "repeat-migration",
+        "status": "PASS",
+        "steps": [
+          {
+            "after": [
+              {
+                "account_type": "VaultV1",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 0,
+            "observed": null,
+            "operation": "build_world",
+            "program_swap": null,
+            "setup_actions": [
+              {
+                "accounts": [
+                  {
+                    "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                    "signer": false,
+                    "writable": true
+                  },
+                  {
+                    "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                    "signer": true,
+                    "writable": true
+                  },
+                  {
+                    "address": "11111111111111111111111111111111",
+                    "signer": false,
+                    "writable": false
+                  }
+                ],
+                "action_index": 0,
+                "compute_units": 6499,
+                "error": null,
+                "error_kind": null,
+                "fee": 5000,
+                "instruction_data": [
+                  175,
+                  175,
+                  109,
+                  31,
+                  13,
+                  152,
+                  155,
+                  237
+                ],
+                "instruction_name": "initialize",
+                "logs": [
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                  "Program log: Instruction: Initialize",
+                  "Program 11111111111111111111111111111111 invoke [2]",
+                  "Program 11111111111111111111111111111111 success",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 6499 of 200000 compute units",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+                ],
+                "phase": "initialize",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "signature": "2stwGrknfD57fRvH5XSiJSV8st93SjktE87yyLB8pN4aYpnqMdCP2LGgV3uNngMDLnsH9SCvws4YEUfzXkQFd4mC",
+                "signer_public_keys": [
+                  "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                ],
+                "success": true,
+                "transaction_error": null
+              },
+              {
+                "accounts": [
+                  {
+                    "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                    "signer": false,
+                    "writable": true
+                  },
+                  {
+                    "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                    "signer": true,
+                    "writable": true
+                  },
+                  {
+                    "address": "11111111111111111111111111111111",
+                    "signer": false,
+                    "writable": false
+                  }
+                ],
+                "action_index": 0,
+                "compute_units": 5511,
+                "error": null,
+                "error_kind": null,
+                "fee": 5000,
+                "instruction_data": [
+                  242,
+                  35,
+                  198,
+                  137,
+                  82,
+                  225,
+                  242,
+                  182,
+                  64,
+                  66,
+                  15,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "instruction_name": "deposit",
+                "logs": [
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                  "Program log: Instruction: Deposit",
+                  "Program 11111111111111111111111111111111 invoke [2]",
+                  "Program 11111111111111111111111111111111 success",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 5511 of 200000 compute units",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+                ],
+                "phase": "setup",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "signature": "bmh1yJafHyiyZe88qb1iPHTGZspDAmzF6eYSqs8VZDHQkN7syBPnwHQ3FavAj9PTqPFzTPEKFuzReEJ997hr2TR",
+                "signer_public_keys": [
+                  "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                ],
+                "success": true,
+                "transaction_error": null
+              }
+            ],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV1",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 6871,
+              "error": null,
+              "error_kind": null,
+              "fee": 5000,
+              "instruction_data": [
+                155,
+                234,
+                231,
+                146,
+                236,
+                158,
+                162,
+                30
+              ],
+              "instruction_name": "migrate",
+              "logs": [
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                "Program log: Instruction: Migrate",
+                "Program 11111111111111111111111111111111 invoke [2]",
+                "Program 11111111111111111111111111111111 success",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 6871 of 200000 compute units",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+              ],
+              "phase": "migration",
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+              "signature": "4spgb2FwqcFPU1Sjqtu8nmLe4umasjPXouej4bMbn7gQxJfKPUD3PwkisGRR77N37TLp7jx5okcR8xYhpcoMxS8W",
+              "signer_public_keys": [
+                "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+              ],
+              "success": true,
+              "transaction_error": null
+            },
+            "expected": "success",
+            "expected_error": null,
+            "index": 1,
+            "observed": "success",
+            "operation": "migrate",
+            "program_swap": {
+              "candidate": {
+                "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v2.json",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v2/dg_vault_v2.so"
+              },
+              "loaded": true,
+              "previous": {
+                "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v1.json",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v1/dg_vault_v1.so"
+              },
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+            },
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV2",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 2889,
+              "error": "InstructionError(0, Custom(3002))",
+              "error_kind": "program",
+              "fee": 5000,
+              "instruction_data": [
+                155,
+                234,
+                231,
+                146,
+                236,
+                158,
+                162,
+                30
+              ],
+              "instruction_name": "migrate",
+              "logs": [
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                "Program log: Instruction: Migrate",
+                "Program log: AnchorError caused by account: vault. Error Code: AccountDiscriminatorMismatch. Error Number: 3002. Error Message: Account discriminator did not match what was expected.",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 2889 of 200000 compute units",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS failed: custom program error: 0xbba"
+              ],
+              "phase": "instruction",
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+              "signature": "xkqCAVjRZbNGhCpyQawn46PGDbLx7tS9h5Kpu4xh862pnZngrjLDL4MACkp4ZqkN8KuGuk4iDM9apJ6ZsLtTvqH",
+              "signer_public_keys": [
+                "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+              ],
+              "success": false,
+              "transaction_error": {
+                "InstructionError": [
+                  0,
+                  {
+                    "Custom": 3002
+                  }
+                ]
+              }
+            },
+            "expected": "error",
+            "expected_error": 3002,
+            "index": 2,
+            "observed": "error",
+            "operation": "migrate",
+            "program_swap": null,
+            "setup_actions": [],
+            "state_unchanged": true,
+            "status": "PASS"
+          }
+        ]
+      },
+      {
+        "definition": {
+          "account_mapping": {},
+          "arguments": {},
+          "expected": "error",
+          "expected_error": 2006,
+          "first": null,
+          "fixture": null,
+          "id": "rollback",
+          "instruction": null,
+          "migration": {
+            "account_mapping": {
+              "owner": "stranger",
+              "system_program": "system_program",
+              "vault": "vault"
+            },
+            "arguments": {},
+            "instruction": "migrate"
+          },
+          "second": null,
+          "signer_account": null,
+          "signer_override": null,
+          "state_unchanged": false,
+          "type": "failed_migration_rollback"
+        },
+        "diagnostics": [],
+        "id": "rollback",
+        "status": "PASS",
+        "steps": [
+          {
+            "after": [
+              {
+                "account_type": "VaultV1",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 0,
+            "observed": null,
+            "operation": "build_world",
+            "program_swap": null,
+            "setup_actions": [
+              {
+                "accounts": [
+                  {
+                    "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                    "signer": false,
+                    "writable": true
+                  },
+                  {
+                    "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                    "signer": true,
+                    "writable": true
+                  },
+                  {
+                    "address": "11111111111111111111111111111111",
+                    "signer": false,
+                    "writable": false
+                  }
+                ],
+                "action_index": 0,
+                "compute_units": 6499,
+                "error": null,
+                "error_kind": null,
+                "fee": 5000,
+                "instruction_data": [
+                  175,
+                  175,
+                  109,
+                  31,
+                  13,
+                  152,
+                  155,
+                  237
+                ],
+                "instruction_name": "initialize",
+                "logs": [
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                  "Program log: Instruction: Initialize",
+                  "Program 11111111111111111111111111111111 invoke [2]",
+                  "Program 11111111111111111111111111111111 success",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 6499 of 200000 compute units",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+                ],
+                "phase": "initialize",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "signature": "2stwGrknfD57fRvH5XSiJSV8st93SjktE87yyLB8pN4aYpnqMdCP2LGgV3uNngMDLnsH9SCvws4YEUfzXkQFd4mC",
+                "signer_public_keys": [
+                  "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                ],
+                "success": true,
+                "transaction_error": null
+              },
+              {
+                "accounts": [
+                  {
+                    "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                    "signer": false,
+                    "writable": true
+                  },
+                  {
+                    "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                    "signer": true,
+                    "writable": true
+                  },
+                  {
+                    "address": "11111111111111111111111111111111",
+                    "signer": false,
+                    "writable": false
+                  }
+                ],
+                "action_index": 0,
+                "compute_units": 5511,
+                "error": null,
+                "error_kind": null,
+                "fee": 5000,
+                "instruction_data": [
+                  242,
+                  35,
+                  198,
+                  137,
+                  82,
+                  225,
+                  242,
+                  182,
+                  64,
+                  66,
+                  15,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "instruction_name": "deposit",
+                "logs": [
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                  "Program log: Instruction: Deposit",
+                  "Program 11111111111111111111111111111111 invoke [2]",
+                  "Program 11111111111111111111111111111111 success",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 5511 of 200000 compute units",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+                ],
+                "phase": "setup",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "signature": "bmh1yJafHyiyZe88qb1iPHTGZspDAmzF6eYSqs8VZDHQkN7syBPnwHQ3FavAj9PTqPFzTPEKFuzReEJ997hr2TR",
+                "signer_public_keys": [
+                  "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                ],
+                "success": true,
+                "transaction_error": null
+              }
+            ],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": {
+                  "code": "DISCRIMINATOR",
+                  "message": "account discriminator mismatch",
+                  "offset": 0,
+                  "path": "VaultV2"
+                },
+                "decoded": null,
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV1",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "2iXtA8oeZqUU5pofxK971TCEvFGfems2AcDRaZHKD2pQ",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 6165,
+              "error": "InstructionError(0, Custom(2006))",
+              "error_kind": "program",
+              "fee": 10000,
+              "instruction_data": [
+                155,
+                234,
+                231,
+                146,
+                236,
+                158,
+                162,
+                30
+              ],
+              "instruction_name": "migrate",
+              "logs": [
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                "Program log: Instruction: Migrate",
+                "Program log: AnchorError caused by account: vault. Error Code: ConstraintSeeds. Error Number: 2006. Error Message: A seeds constraint was violated.",
+                "Program log: Left:",
+                "Program log: 5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "Program log: Right:",
+                "Program log: 7oZtp7jJHdGnYGWcpLEpRMJ6F4wQoGUuv3kWcHQbPn9r",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 6165 of 200000 compute units",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS failed: custom program error: 0x7d6"
+              ],
+              "phase": "migration",
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+              "signature": "5qV8zvR1w2QroGwtkjHr2iLXAb3LtDGUuxFMSkUaG3g7znv7Xt6ExnnZdBUMfMRN4d8jUgSKWFQvHjaDcGBJdwFP",
+              "signer_public_keys": [
+                "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                "2iXtA8oeZqUU5pofxK971TCEvFGfems2AcDRaZHKD2pQ"
+              ],
+              "success": false,
+              "transaction_error": {
+                "InstructionError": [
+                  0,
+                  {
+                    "Custom": 2006
+                  }
+                ]
+              }
+            },
+            "expected": "error",
+            "expected_error": 2006,
+            "index": 1,
+            "observed": "error",
+            "operation": "migrate",
+            "program_swap": {
+              "candidate": {
+                "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v2.json",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v2/dg_vault_v2.so"
+              },
+              "loaded": true,
+              "previous": {
+                "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v1.json",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v1/dg_vault_v1.so"
+              },
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+            },
+            "setup_actions": [],
+            "state_unchanged": true,
+            "status": "PASS"
+          }
+        ]
+      },
+      {
+        "definition": {
+          "account_mapping": {},
+          "arguments": {
+            "amount": "u64:1"
+          },
+          "expected": "error",
+          "expected_error": 3002,
+          "first": null,
+          "fixture": null,
+          "id": "unmigrated-v2-operation",
+          "instruction": "withdraw",
+          "migration": null,
+          "second": null,
+          "signer_account": null,
+          "signer_override": null,
+          "state_unchanged": true,
+          "type": "unmigrated_state_against_v2"
+        },
+        "diagnostics": [],
+        "id": "unmigrated-v2-operation",
+        "status": "PASS",
+        "steps": [
+          {
+            "after": [
+              {
+                "account_type": "VaultV1",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 0,
+            "observed": null,
+            "operation": "build_world",
+            "program_swap": null,
+            "setup_actions": [
+              {
+                "accounts": [
+                  {
+                    "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                    "signer": false,
+                    "writable": true
+                  },
+                  {
+                    "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                    "signer": true,
+                    "writable": true
+                  },
+                  {
+                    "address": "11111111111111111111111111111111",
+                    "signer": false,
+                    "writable": false
+                  }
+                ],
+                "action_index": 0,
+                "compute_units": 6499,
+                "error": null,
+                "error_kind": null,
+                "fee": 5000,
+                "instruction_data": [
+                  175,
+                  175,
+                  109,
+                  31,
+                  13,
+                  152,
+                  155,
+                  237
+                ],
+                "instruction_name": "initialize",
+                "logs": [
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                  "Program log: Instruction: Initialize",
+                  "Program 11111111111111111111111111111111 invoke [2]",
+                  "Program 11111111111111111111111111111111 success",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 6499 of 200000 compute units",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+                ],
+                "phase": "initialize",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "signature": "2stwGrknfD57fRvH5XSiJSV8st93SjktE87yyLB8pN4aYpnqMdCP2LGgV3uNngMDLnsH9SCvws4YEUfzXkQFd4mC",
+                "signer_public_keys": [
+                  "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                ],
+                "success": true,
+                "transaction_error": null
+              },
+              {
+                "accounts": [
+                  {
+                    "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                    "signer": false,
+                    "writable": true
+                  },
+                  {
+                    "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                    "signer": true,
+                    "writable": true
+                  },
+                  {
+                    "address": "11111111111111111111111111111111",
+                    "signer": false,
+                    "writable": false
+                  }
+                ],
+                "action_index": 0,
+                "compute_units": 5511,
+                "error": null,
+                "error_kind": null,
+                "fee": 5000,
+                "instruction_data": [
+                  242,
+                  35,
+                  198,
+                  137,
+                  82,
+                  225,
+                  242,
+                  182,
+                  64,
+                  66,
+                  15,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "instruction_name": "deposit",
+                "logs": [
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                  "Program log: Instruction: Deposit",
+                  "Program 11111111111111111111111111111111 invoke [2]",
+                  "Program 11111111111111111111111111111111 success",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 5511 of 200000 compute units",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+                ],
+                "phase": "setup",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "signature": "bmh1yJafHyiyZe88qb1iPHTGZspDAmzF6eYSqs8VZDHQkN7syBPnwHQ3FavAj9PTqPFzTPEKFuzReEJ997hr2TR",
+                "signer_public_keys": [
+                  "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                ],
+                "success": true,
+                "transaction_error": null
+              }
+            ],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": {
+                  "code": "DISCRIMINATOR",
+                  "message": "account discriminator mismatch",
+                  "offset": 0,
+                  "path": "VaultV2"
+                },
+                "decoded": null,
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV1",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 1,
+            "observed": null,
+            "operation": "load_candidate",
+            "program_swap": {
+              "candidate": {
+                "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v2.json",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v2/dg_vault_v2.so"
+              },
+              "loaded": true,
+              "previous": {
+                "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v1.json",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v1/dg_vault_v1.so"
+              },
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+            },
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": {
+                  "code": "DISCRIMINATOR",
+                  "message": "account discriminator mismatch",
+                  "offset": 0,
+                  "path": "VaultV2"
+                },
+                "decoded": null,
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV2",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": {
+                  "code": "DISCRIMINATOR",
+                  "message": "account discriminator mismatch",
+                  "offset": 0,
+                  "path": "VaultV2"
+                },
+                "decoded": null,
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 2892,
+              "error": "InstructionError(0, Custom(3002))",
+              "error_kind": "program",
+              "fee": 5000,
+              "instruction_data": [
+                183,
+                18,
+                70,
+                156,
+                148,
+                109,
+                161,
+                34,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instruction_name": "withdraw",
+              "logs": [
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                "Program log: Instruction: Withdraw",
+                "Program log: AnchorError caused by account: vault. Error Code: AccountDiscriminatorMismatch. Error Number: 3002. Error Message: Account discriminator did not match what was expected.",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 2892 of 200000 compute units",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS failed: custom program error: 0xbba"
+              ],
+              "phase": "instruction",
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+              "signature": "s2PYGhcLBvzHNqNEzaSW5ZwJEmd51UhiEoaFh4jDM8A7xQp4ZcnKjRrUB81EE91c11mJRxJQ7DsToq9SNdThepJ",
+              "signer_public_keys": [
+                "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+              ],
+              "success": false,
+              "transaction_error": {
+                "InstructionError": [
+                  0,
+                  {
+                    "Custom": 3002
+                  }
+                ]
+              }
+            },
+            "expected": "error",
+            "expected_error": 3002,
+            "index": 2,
+            "observed": "error",
+            "operation": "execute_instruction",
+            "program_swap": null,
+            "setup_actions": [],
+            "state_unchanged": true,
+            "status": "PASS"
+          }
+        ]
+      },
+      {
+        "definition": {
+          "account_mapping": {},
+          "arguments": {
+            "amount": "u64:100000"
+          },
+          "expected": "success",
+          "expected_error": null,
+          "first": null,
+          "fixture": null,
+          "id": "post-migration-operation",
+          "instruction": "withdraw",
+          "migration": null,
+          "second": null,
+          "signer_account": null,
+          "signer_override": null,
+          "state_unchanged": false,
+          "type": "post_migration_instruction"
+        },
+        "diagnostics": [],
+        "id": "post-migration-operation",
+        "status": "PASS",
+        "steps": [
+          {
+            "after": [
+              {
+                "account_type": "VaultV1",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 0,
+            "observed": null,
+            "operation": "build_world",
+            "program_swap": null,
+            "setup_actions": [
+              {
+                "accounts": [
+                  {
+                    "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                    "signer": false,
+                    "writable": true
+                  },
+                  {
+                    "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                    "signer": true,
+                    "writable": true
+                  },
+                  {
+                    "address": "11111111111111111111111111111111",
+                    "signer": false,
+                    "writable": false
+                  }
+                ],
+                "action_index": 0,
+                "compute_units": 6499,
+                "error": null,
+                "error_kind": null,
+                "fee": 5000,
+                "instruction_data": [
+                  175,
+                  175,
+                  109,
+                  31,
+                  13,
+                  152,
+                  155,
+                  237
+                ],
+                "instruction_name": "initialize",
+                "logs": [
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                  "Program log: Instruction: Initialize",
+                  "Program 11111111111111111111111111111111 invoke [2]",
+                  "Program 11111111111111111111111111111111 success",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 6499 of 200000 compute units",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+                ],
+                "phase": "initialize",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "signature": "2stwGrknfD57fRvH5XSiJSV8st93SjktE87yyLB8pN4aYpnqMdCP2LGgV3uNngMDLnsH9SCvws4YEUfzXkQFd4mC",
+                "signer_public_keys": [
+                  "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                ],
+                "success": true,
+                "transaction_error": null
+              },
+              {
+                "accounts": [
+                  {
+                    "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                    "signer": false,
+                    "writable": true
+                  },
+                  {
+                    "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                    "signer": true,
+                    "writable": true
+                  },
+                  {
+                    "address": "11111111111111111111111111111111",
+                    "signer": false,
+                    "writable": false
+                  }
+                ],
+                "action_index": 0,
+                "compute_units": 5511,
+                "error": null,
+                "error_kind": null,
+                "fee": 5000,
+                "instruction_data": [
+                  242,
+                  35,
+                  198,
+                  137,
+                  82,
+                  225,
+                  242,
+                  182,
+                  64,
+                  66,
+                  15,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "instruction_name": "deposit",
+                "logs": [
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                  "Program log: Instruction: Deposit",
+                  "Program 11111111111111111111111111111111 invoke [2]",
+                  "Program 11111111111111111111111111111111 success",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 5511 of 200000 compute units",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+                ],
+                "phase": "setup",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "signature": "bmh1yJafHyiyZe88qb1iPHTGZspDAmzF6eYSqs8VZDHQkN7syBPnwHQ3FavAj9PTqPFzTPEKFuzReEJ997hr2TR",
+                "signer_public_keys": [
+                  "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                ],
+                "success": true,
+                "transaction_error": null
+              }
+            ],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV1",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 6871,
+              "error": null,
+              "error_kind": null,
+              "fee": 5000,
+              "instruction_data": [
+                155,
+                234,
+                231,
+                146,
+                236,
+                158,
+                162,
+                30
+              ],
+              "instruction_name": "migrate",
+              "logs": [
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                "Program log: Instruction: Migrate",
+                "Program 11111111111111111111111111111111 invoke [2]",
+                "Program 11111111111111111111111111111111 success",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 6871 of 200000 compute units",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+              ],
+              "phase": "migration",
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+              "signature": "4spgb2FwqcFPU1Sjqtu8nmLe4umasjPXouej4bMbn7gQxJfKPUD3PwkisGRR77N37TLp7jx5okcR8xYhpcoMxS8W",
+              "signer_public_keys": [
+                "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+              ],
+              "success": true,
+              "transaction_error": null
+            },
+            "expected": "success",
+            "expected_error": null,
+            "index": 1,
+            "observed": "success",
+            "operation": "migrate",
+            "program_swap": {
+              "candidate": {
+                "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v2.json",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v2/dg_vault_v2.so"
+              },
+              "loaded": true,
+              "previous": {
+                "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v1.json",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v1/dg_vault_v1.so"
+              },
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+            },
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "900000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2180640",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    160,
+                    187,
+                    13,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV2",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 4120,
+              "error": null,
+              "error_kind": null,
+              "fee": 5000,
+              "instruction_data": [
+                183,
+                18,
+                70,
+                156,
+                148,
+                109,
+                161,
+                34,
+                160,
+                134,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instruction_name": "withdraw",
+              "logs": [
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                "Program log: Instruction: Withdraw",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 4120 of 200000 compute units",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+              ],
+              "phase": "instruction",
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+              "signature": "51KfqThYUYsr2ruFoZYZiuUsmmfBsNDPXYUxLGxJMcrPY2NJNCyH1t1r6NMb7qu5hhnmXS1Lo4gu785DeVZsF1dB",
+              "signer_public_keys": [
+                "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+              ],
+              "success": true,
+              "transaction_error": null
+            },
+            "expected": "success",
+            "expected_error": null,
+            "index": 2,
+            "observed": "success",
+            "operation": "execute_instruction",
+            "program_swap": null,
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          }
+        ]
+      },
+      {
+        "definition": {
+          "account_mapping": {},
+          "arguments": {
+            "amount": "u64:500001"
+          },
+          "expected": "error",
+          "expected_error": 6002,
+          "first": null,
+          "fixture": null,
+          "id": "post-migration-limit",
+          "instruction": "withdraw",
+          "migration": null,
+          "second": null,
+          "signer_account": null,
+          "signer_override": null,
+          "state_unchanged": true,
+          "type": "post_migration_instruction"
+        },
+        "diagnostics": [],
+        "id": "post-migration-limit",
+        "status": "PASS",
+        "steps": [
+          {
+            "after": [
+              {
+                "account_type": "VaultV1",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 0,
+            "observed": null,
+            "operation": "build_world",
+            "program_swap": null,
+            "setup_actions": [
+              {
+                "accounts": [
+                  {
+                    "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                    "signer": false,
+                    "writable": true
+                  },
+                  {
+                    "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                    "signer": true,
+                    "writable": true
+                  },
+                  {
+                    "address": "11111111111111111111111111111111",
+                    "signer": false,
+                    "writable": false
+                  }
+                ],
+                "action_index": 0,
+                "compute_units": 6499,
+                "error": null,
+                "error_kind": null,
+                "fee": 5000,
+                "instruction_data": [
+                  175,
+                  175,
+                  109,
+                  31,
+                  13,
+                  152,
+                  155,
+                  237
+                ],
+                "instruction_name": "initialize",
+                "logs": [
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                  "Program log: Instruction: Initialize",
+                  "Program 11111111111111111111111111111111 invoke [2]",
+                  "Program 11111111111111111111111111111111 success",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 6499 of 200000 compute units",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+                ],
+                "phase": "initialize",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "signature": "2stwGrknfD57fRvH5XSiJSV8st93SjktE87yyLB8pN4aYpnqMdCP2LGgV3uNngMDLnsH9SCvws4YEUfzXkQFd4mC",
+                "signer_public_keys": [
+                  "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                ],
+                "success": true,
+                "transaction_error": null
+              },
+              {
+                "accounts": [
+                  {
+                    "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                    "signer": false,
+                    "writable": true
+                  },
+                  {
+                    "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                    "signer": true,
+                    "writable": true
+                  },
+                  {
+                    "address": "11111111111111111111111111111111",
+                    "signer": false,
+                    "writable": false
+                  }
+                ],
+                "action_index": 0,
+                "compute_units": 5511,
+                "error": null,
+                "error_kind": null,
+                "fee": 5000,
+                "instruction_data": [
+                  242,
+                  35,
+                  198,
+                  137,
+                  82,
+                  225,
+                  242,
+                  182,
+                  64,
+                  66,
+                  15,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "instruction_name": "deposit",
+                "logs": [
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                  "Program log: Instruction: Deposit",
+                  "Program 11111111111111111111111111111111 invoke [2]",
+                  "Program 11111111111111111111111111111111 success",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 5511 of 200000 compute units",
+                  "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+                ],
+                "phase": "setup",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "signature": "bmh1yJafHyiyZe88qb1iPHTGZspDAmzF6eYSqs8VZDHQkN7syBPnwHQ3FavAj9PTqPFzTPEKFuzReEJ997hr2TR",
+                "signer_public_keys": [
+                  "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                ],
+                "success": true,
+                "transaction_error": null
+              }
+            ],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV1",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "2224960",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 6871,
+              "error": null,
+              "error_kind": null,
+              "fee": 5000,
+              "instruction_data": [
+                155,
+                234,
+                231,
+                146,
+                236,
+                158,
+                162,
+                30
+              ],
+              "instruction_name": "migrate",
+              "logs": [
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                "Program log: Instruction: Migrate",
+                "Program 11111111111111111111111111111111 invoke [2]",
+                "Program 11111111111111111111111111111111 success",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 6871 of 200000 compute units",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS success"
+              ],
+              "phase": "migration",
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+              "signature": "4spgb2FwqcFPU1Sjqtu8nmLe4umasjPXouej4bMbn7gQxJfKPUD3PwkisGRR77N37TLp7jx5okcR8xYhpcoMxS8W",
+              "signer_public_keys": [
+                "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+              ],
+              "success": true,
+              "transaction_error": null
+            },
+            "expected": "success",
+            "expected_error": null,
+            "index": 1,
+            "observed": "success",
+            "operation": "migrate",
+            "program_swap": {
+              "candidate": {
+                "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v2.json",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v2/dg_vault_v2.so"
+              },
+              "loaded": true,
+              "previous": {
+                "idl_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/idl/v1.json",
+                "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                "program_path": "/home/kuro/doppleganger/examples/vault-runtime/../../target/deploy/v1/dg_vault_v1.so"
+              },
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+            },
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV2",
+                "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    250,
+                    72,
+                    52,
+                    20,
+                    127,
+                    110,
+                    105,
+                    12,
+                    54,
+                    147,
+                    239,
+                    246,
+                    19,
+                    54,
+                    4,
+                    100,
+                    3,
+                    205,
+                    138,
+                    226,
+                    161,
+                    79,
+                    49,
+                    179,
+                    196,
+                    7,
+                    53,
+                    133,
+                    105,
+                    35,
+                    149,
+                    101,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 5287,
+              "error": "InstructionError(0, Custom(6002))",
+              "error_kind": "program",
+              "fee": 5000,
+              "instruction_data": [
+                183,
+                18,
+                70,
+                156,
+                148,
+                109,
+                161,
+                34,
+                33,
+                161,
+                7,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instruction_name": "withdraw",
+              "logs": [
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS invoke [1]",
+                "Program log: Instruction: Withdraw",
+                "Program log: AnchorError thrown in programs/dg-vault-v2/src/lib.rs:105. Error Code: LimitExceeded. Error Number: 6002. Error Message: Withdrawal limit exceeded.",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS consumed 5287 of 200000 compute units",
+                "Program Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS failed: custom program error: 0x1772"
+              ],
+              "phase": "instruction",
+              "program_id": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+              "signature": "3Abu3biVCsX5HfMkqTKAVe7rzoANyDNEqCMiHJfhMCTGmEFsb2oE2wMnxT2RXTwYEUBFF6GgfXHB53ERMn1dRWjs",
+              "signer_public_keys": [
+                "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+              ],
+              "success": false,
+              "transaction_error": {
+                "InstructionError": [
+                  0,
+                  {
+                    "Custom": 6002
+                  }
+                ]
+              }
+            },
+            "expected": "error",
+            "expected_error": 6002,
+            "index": 2,
+            "observed": "error",
+            "operation": "execute_instruction",
+            "program_swap": null,
+            "setup_actions": [],
+            "state_unchanged": true,
+            "status": "PASS"
+          }
+        ]
+      }
+    ],
+    "schema_version": 1,
+    "total": 7
+  },
+  "lifecycle_evaluated": true,
+  "manifest_schema_version": 1,
+  "migration_executed_locally": true,
+  "policy": {
+    "blocking": 0,
+    "coverage": {
+      "lifecycle": 7,
+      "preservation": 7,
+      "relationships": 3
+    },
+    "decisions": [
+      {
+        "action": "expected",
+        "category": "STATIC",
+        "id": "STATIC-0001",
+        "message": "Reviewed fixture upgrade: Field or argument added"
+      },
+      {
+        "action": "expected",
+        "category": "STATIC",
+        "id": "STATIC-0002",
+        "message": "Reviewed fixture upgrade: Serialized discriminator changed"
+      },
+      {
+        "action": "expected",
+        "category": "STATIC",
+        "id": "STATIC-0003",
+        "message": "Reviewed fixture upgrade: Custom error added or removed"
+      },
+      {
+        "action": "expected",
+        "category": "STATIC",
+        "id": "STATIC-0004",
+        "message": "Reviewed fixture upgrade: Custom error added or removed"
+      },
+      {
+        "action": "expected",
+        "category": "STATIC",
+        "id": "STATIC-0005",
+        "message": "Reviewed fixture upgrade: Custom error added or removed"
+      },
+      {
+        "action": "expected",
+        "category": "STATIC",
+        "id": "STATIC-0006",
+        "message": "Reviewed fixture upgrade: Instruction added or removed"
+      },
+      {
+        "action": "expected",
+        "category": "STATIC",
+        "id": "STATIC-0007",
+        "message": "Reviewed fixture upgrade: Instruction added or removed"
+      },
+      {
+        "action": "expected",
+        "category": "STATIC",
+        "id": "STATIC-0008",
+        "message": "Reviewed fixture upgrade: Instruction added or removed"
+      },
+      {
+        "action": "expected",
+        "category": "STATIC",
+        "id": "STATIC-0009",
+        "message": "Reviewed fixture upgrade: Exact serialized size increased; existing accounts may require reallocation"
+      },
+      {
+        "action": "pass",
+        "category": "PRESERVATION",
+        "id": "PRESERVE-owner-field",
+        "message": "Configured condition satisfied."
+      },
+      {
+        "action": "pass",
+        "category": "PRESERVATION",
+        "id": "PRESERVE-balance-field",
+        "message": "Configured condition satisfied."
+      },
+      {
+        "action": "pass",
+        "category": "PRESERVATION",
+        "id": "PRESERVE-limit-initialized",
+        "message": "Configured condition satisfied."
+      },
+      {
+        "action": "pass",
+        "category": "PRESERVATION",
+        "id": "PRESERVE-limit-default",
+        "message": "Configured condition satisfied."
+      },
+      {
+        "action": "pass",
+        "category": "PRESERVATION",
+        "id": "PRESERVE-program-owner",
+        "message": "Configured condition satisfied."
+      },
+      {
+        "action": "pass",
+        "category": "PRESERVATION",
+        "id": "PRESERVE-account-size",
+        "message": "Configured condition satisfied."
+      },
+      {
+        "action": "pass",
+        "category": "PRESERVATION",
+        "id": "PRESERVE-address-continuity",
+        "message": "Configured condition satisfied."
+      },
+      {
+        "action": "pass",
+        "category": "LIFECYCLE",
+        "id": "normal-migration",
+        "message": "Lifecycle scenario \"normal-migration\": \"PASS\""
+      },
+      {
+        "action": "pass",
+        "category": "LIFECYCLE",
+        "id": "unauthorized-migration",
+        "message": "Lifecycle scenario \"unauthorized-migration\": \"PASS\""
+      },
+      {
+        "action": "pass",
+        "category": "LIFECYCLE",
+        "id": "repeat-migration",
+        "message": "Lifecycle scenario \"repeat-migration\": \"PASS\""
+      },
+      {
+        "action": "pass",
+        "category": "LIFECYCLE",
+        "id": "rollback",
+        "message": "Lifecycle scenario \"rollback\": \"PASS\""
+      },
+      {
+        "action": "pass",
+        "category": "LIFECYCLE",
+        "id": "unmigrated-v2-operation",
+        "message": "Lifecycle scenario \"unmigrated-v2-operation\": \"PASS\""
+      },
+      {
+        "action": "pass",
+        "category": "LIFECYCLE",
+        "id": "post-migration-operation",
+        "message": "Lifecycle scenario \"post-migration-operation\": \"PASS\""
+      },
+      {
+        "action": "pass",
+        "category": "LIFECYCLE",
+        "id": "post-migration-limit",
+        "message": "Lifecycle scenario \"post-migration-limit\": \"PASS\""
+      },
+      {
+        "action": "pass",
+        "category": "MIGRATION",
+        "id": "MIGRATION",
+        "message": "Configured migration must succeed"
+      },
+      {
+        "action": "pass",
+        "category": "RELATIONSHIP",
+        "id": "REL-vault-authority",
+        "message": "Declared relationship satisfied"
+      },
+      {
+        "action": "pass",
+        "category": "RELATIONSHIP",
+        "id": "REL-vault-program",
+        "message": "Declared relationship satisfied"
+      },
+      {
+        "action": "pass",
+        "category": "RELATIONSHIP",
+        "id": "REL-vault-pda",
+        "message": "Declared relationship satisfied"
+      }
+    ],
+    "evaluation_errors": 0,
+    "expected": 9,
+    "ignored": 0,
+    "passed": true,
+    "policy_evaluated": true,
+    "schema_version": 1,
+    "warnings": 0
+  },
+  "policy_evaluated": true,
+  "preservation": {
+    "errors": 0,
+    "evaluations": [
+      {
+        "account": "vault",
+        "after": {
+          "state": "found",
+          "value": {
+            "kind": "pubkey",
+            "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+          }
+        },
+        "after_present": true,
+        "before": {
+          "state": "found",
+          "value": {
+            "kind": "pubkey",
+            "value": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr"
+          }
+        },
+        "before_present": true,
+        "category": null,
+        "error_code": null,
+        "expected": null,
+        "explanation": "Configured condition satisfied.",
+        "field": "owner",
+        "rule": "equal",
+        "rule_id": "owner-field",
+        "status": "PASS"
+      },
+      {
+        "account": "vault",
+        "after": {
+          "state": "found",
+          "value": {
+            "kind": "integer",
+            "value": "1000000"
+          }
+        },
+        "after_present": true,
+        "before": {
+          "state": "found",
+          "value": {
+            "kind": "integer",
+            "value": "1000000"
+          }
+        },
+        "before_present": true,
+        "category": null,
+        "error_code": null,
+        "expected": null,
+        "explanation": "Configured condition satisfied.",
+        "field": "balance",
+        "rule": "equal",
+        "rule_id": "balance-field",
+        "status": "PASS"
+      },
+      {
+        "account": "vault",
+        "after": {
+          "state": "found",
+          "value": {
+            "kind": "integer",
+            "value": "500000"
+          }
+        },
+        "after_present": true,
+        "before": {
+          "state": "missing"
+        },
+        "before_present": true,
+        "category": null,
+        "error_code": null,
+        "expected": null,
+        "explanation": "Configured condition satisfied.",
+        "field": "withdrawal_limit",
+        "rule": "initialized",
+        "rule_id": "limit-initialized",
+        "status": "PASS"
+      },
+      {
+        "account": "vault",
+        "after": {
+          "state": "found",
+          "value": {
+            "kind": "integer",
+            "value": "500000"
+          }
+        },
+        "after_present": true,
+        "before": {
+          "state": "missing"
+        },
+        "before_present": true,
+        "category": null,
+        "error_code": null,
+        "expected": {
+          "kind": "integer",
+          "value": "500000"
+        },
+        "explanation": "Configured condition satisfied.",
+        "field": "withdrawal_limit",
+        "rule": "default",
+        "rule_id": "limit-default",
+        "status": "PASS"
+      },
+      {
+        "account": "vault",
+        "after": {
+          "state": "found",
+          "value": {
+            "kind": "pubkey",
+            "value": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+          }
+        },
+        "after_present": true,
+        "before": {
+          "state": "found",
+          "value": {
+            "kind": "pubkey",
+            "value": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+          }
+        },
+        "before_present": true,
+        "category": null,
+        "error_code": null,
+        "expected": null,
+        "explanation": "Configured condition satisfied.",
+        "field": null,
+        "rule": "owner_preserved",
+        "rule_id": "program-owner",
+        "status": "PASS"
+      },
+      {
+        "account": "vault",
+        "after": {
+          "state": "found",
+          "value": {
+            "kind": "integer",
+            "value": "56"
+          }
+        },
+        "after_present": true,
+        "before": {
+          "state": "found",
+          "value": {
+            "kind": "integer",
+            "value": "48"
+          }
+        },
+        "before_present": true,
+        "category": null,
+        "error_code": null,
+        "expected": {
+          "kind": "integer",
+          "value": "56"
+        },
+        "explanation": "Configured condition satisfied.",
+        "field": null,
+        "rule": "account_size_minimum",
+        "rule_id": "account-size",
+        "status": "PASS"
+      },
+      {
+        "account": "vault",
+        "after": {
+          "state": "found",
+          "value": {
+            "kind": "pubkey",
+            "value": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2"
+          }
+        },
+        "after_present": true,
+        "before": {
+          "state": "found",
+          "value": {
+            "kind": "pubkey",
+            "value": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2"
+          }
+        },
+        "before_present": true,
+        "category": null,
+        "error_code": null,
+        "expected": null,
+        "explanation": "Configured condition satisfied.",
+        "field": null,
+        "rule": "pda_preserved",
+        "rule_id": "address-continuity",
+        "status": "PASS"
+      }
+    ],
+    "failed": 0,
+    "findings": [],
+    "lifecycle_evaluated": false,
+    "migration_signature": "4spgb2FwqcFPU1Sjqtu8nmLe4umasjPXouej4bMbn7gQxJfKPUD3PwkisGRR77N37TLp7jx5okcR8xYhpcoMxS8W",
+    "migration_success": true,
+    "not_applicable": 0,
+    "passed": 7,
+    "policy_evaluated": false,
+    "preservation_evaluated": true,
+    "project": "vault-runtime",
+    "rules": [
+      {
+        "account": "vault",
+        "field": "owner",
+        "id": "owner-field",
+        "rule": "equal",
+        "value": null
+      },
+      {
+        "account": "vault",
+        "field": "balance",
+        "id": "balance-field",
+        "rule": "equal",
+        "value": null
+      },
+      {
+        "account": "vault",
+        "field": "withdrawal_limit",
+        "id": "limit-initialized",
+        "rule": "initialized",
+        "value": null
+      },
+      {
+        "account": "vault",
+        "field": "withdrawal_limit",
+        "id": "limit-default",
+        "rule": "default",
+        "value": "u64:500000"
+      },
+      {
+        "account": "vault",
+        "field": null,
+        "id": "program-owner",
+        "rule": "owner_preserved",
+        "value": null
+      },
+      {
+        "account": "vault",
+        "field": null,
+        "id": "account-size",
+        "rule": "account_size_minimum",
+        "value": 56
+      },
+      {
+        "account": "vault",
+        "field": null,
+        "id": "address-continuity",
+        "rule": "pda_preserved",
+        "value": null
+      }
+    ],
+    "rules_total": 7,
+    "schema_version": 1
+  },
+  "preservation_evaluated": true,
+  "project": "vault-runtime",
+  "relationships": {
+    "edges": [
+      {
+        "account": "vault",
+        "after": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+        "before": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+        "code": null,
+        "expected": "HqznL4EpJTbWZmqqetb4sJPftBUN1s6uNdQURBAfAsBr",
+        "id": "REL-vault-authority",
+        "kind": "authority",
+        "message": "Declared relationship satisfied",
+        "status": "PASS",
+        "target": "$owner"
+      },
+      {
+        "account": "vault",
+        "after": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+        "before": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+        "code": null,
+        "expected": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS",
+        "id": "REL-vault-program",
+        "kind": "program_owner",
+        "message": "Declared relationship satisfied",
+        "status": "PASS",
+        "target": "$program"
+      },
+      {
+        "account": "vault",
+        "after": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+        "before": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+        "code": null,
+        "expected": "5NLYxYfg9ZUnsCxJi6rX84PsA7WuZLBjwp8zHHn3AcW2",
+        "id": "REL-vault-pda",
+        "kind": "pda",
+        "message": "Declared relationship satisfied",
+        "status": "PASS",
+        "target": "$vault"
+      }
+    ],
+    "errors": 0,
+    "failed": 0,
+    "passed": 3,
+    "schema_version": 1,
+    "total": 3
+  },
+  "remote_transactions_sent": false,
+  "result": "PASS",
+  "rpc_write_calls": 0,
+  "run_id": "RUN-de40540a74eda5ca74723f8a11780f990fe184bfc228118b3550de423178fa23",
+  "schema_version": 1,
+  "source": {
+    "kind": "fixture",
+    "remote_transactions_sent": false
+  },
+  "workflow_version": 1
+}

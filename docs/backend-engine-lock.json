@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "engine_version": "0.1.0",
+  "workflow_version": 1,
+  "host": "linux-x86_64",
+  "sha256": "81d88f39b08ee32879e899bde3300ff5bb80170b47fabbc2971792e863249e40",
+  "size_bytes": 19455152,
+  "qualification": "docs/mvp-acceptance.md",
+  "container_image": null,
+  "container_qualified": false
+}

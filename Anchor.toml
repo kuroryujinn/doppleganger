@@ -1,0 +1,9 @@
+[programs.localnet]
+dg_vault_v1 = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+dg_vault_v2 = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+dg_escrow_v1 = "11111111111111111111111111111112"
+dg_escrow_v2 = "11111111111111111111111111111112"
+
+[provider]
+cluster = "Localnet"
+wallet = "~/.config/solana/id.json"

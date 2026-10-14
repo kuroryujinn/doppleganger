@@ -1,0 +1,4 @@
+fb440131278422cdb9361eae347c7022aff767dc4937949be57051d0ff7f29cf  tests/compatibility/anchor-0.30.1/external-legacy.json
+9be56f672bbf487d5cf93380485bca1f017267512637b7a620507cc4fb61a6f2  tests/compatibility/anchor-0.30.1/external.json
+8ac082d4fc3bf61acd1ddcc9148369615b1a0e2358461a7db65c6e24f173566a  tests/compatibility/anchor-1.2.0/escrow-v1.json
+5822397c9eca270582fd7e5cf1ad83720d0c1330d9c8e01bfd7aa3776d49d5d1  tests/compatibility/anchor-1.2.0/escrow-v2.json

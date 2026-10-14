@@ -1,0 +1,250 @@
+{
+  "address": "11111111111111111111111111111112",
+  "metadata": {
+    "name": "dg_escrow_v2",
+    "version": "0.1.0",
+    "spec": "0.1.0"
+  },
+  "instructions": [
+    {
+      "name": "migrate_escrow",
+      "discriminator": [
+        65,
+        111,
+        186,
+        119,
+        58,
+        11,
+        81,
+        209
+      ],
+      "accounts": [
+        {
+          "name": "escrow",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "escrow.initializer"
+              },
+              {
+                "kind": "account",
+                "path": "escrow.beneficiary"
+              }
+            ]
+          }
+        },
+        {
+          "name": "initializer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "deadline",
+          "type": "i64"
+        },
+        {
+          "name": "arbitrator",
+          "type": "pubkey"
+        },
+        {
+          "name": "fail_after_write",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "release",
+      "discriminator": [
+        253,
+        249,
+        15,
+        206,
+        28,
+        127,
+        193,
+        241
+      ],
+      "accounts": [
+        {
+          "name": "escrow",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "escrow.initializer",
+                "account": "EscrowV2"
+              },
+              {
+                "kind": "account",
+                "path": "beneficiary"
+              }
+            ]
+          }
+        },
+        {
+          "name": "beneficiary",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "escrow"
+          ]
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "EscrowV2",
+      "discriminator": [
+        229,
+        26,
+        241,
+        181,
+        158,
+        158,
+        70,
+        190
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidAmount",
+      "msg": "Escrow amount is invalid"
+    },
+    {
+      "code": 6001,
+      "name": "SameParty",
+      "msg": "Escrow parties must be distinct"
+    },
+    {
+      "code": 6002,
+      "name": "WrongState",
+      "msg": "Escrow is not in the required state"
+    },
+    {
+      "code": 6003,
+      "name": "Unauthorized",
+      "msg": "Only the initializer can migrate"
+    },
+    {
+      "code": 6004,
+      "name": "InvalidDeadline",
+      "msg": "Migration deadline must be in the future"
+    },
+    {
+      "code": 6005,
+      "name": "InvalidArbitrator",
+      "msg": "Arbitrator cannot be the zero public key"
+    },
+    {
+      "code": 6006,
+      "name": "Overflow",
+      "msg": "Arithmetic overflow"
+    },
+    {
+      "code": 6007,
+      "name": "DeliberateFailure",
+      "msg": "Controlled migration failure"
+    },
+    {
+      "code": 6008,
+      "name": "Expired",
+      "msg": "Escrow deadline has elapsed"
+    }
+  ],
+  "types": [
+    {
+      "name": "EscrowStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Created"
+          },
+          {
+            "name": "Funded"
+          },
+          {
+            "name": "Released"
+          },
+          {
+            "name": "Refunded"
+          },
+          {
+            "name": "Disputed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EscrowV2",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "initializer",
+            "type": "pubkey"
+          },
+          {
+            "name": "beneficiary",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "deadline",
+            "type": "i64"
+          },
+          {
+            "name": "arbitrator",
+            "type": "pubkey"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "EscrowStatus"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+[addresses.owner]
+lamports = "u64:10000000000"
+test_seed = [
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+    73,
+]
+type = "signer"
+
+[addresses.program]
+type = "program"
+version = "v1"
+
+[addresses.stranger]
+lamports = "u64:1000000000"
+test_seed = [
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+    74,
+]
+type = "signer"
+
+[addresses.system_program]
+address = "11111111111111111111111111111111"
+type = "literal"
+
+[addresses.vault]
+program = "v1"
+type = "pda"
+
+[[addresses.vault.seeds]]
+const = "vault"
+
+[[addresses.vault.seeds]]
+pubkey = "$owner"
+
+[fixture]
+name = "vault-runtime"
+payer = "owner"
+
+[[fixture.account]]
+address = "$vault"
+lamports = 0
+name = "vault"
+owner = "$program"
+type = "VaultV1"
+
+[[fixture.initialize]]
+instruction = "initialize"
+
+[fixture.initialize.account_mapping]
+owner = "owner"
+system_program = "system_program"
+vault = "vault"
+
+[[fixture.setup]]
+instruction = "deposit"
+
+[fixture.setup.account_mapping]
+owner = "owner"
+system_program = "system_program"
+vault = "vault"
+
+[fixture.setup.args]
+amount = "u64:1000000"
+
+[migration]
+instruction = "migrate"
+
+[migration.account_mapping]
+owner = "owner"
+system_program = "system_program"
+vault = "vault"
+
+[[migration_targets]]
+address = "$vault"
+name = "vault"
+v1_type = "VaultV1"
+v2_type = "VaultV2"
+
+[[preservation]]
+account = "vault"
+field = "balance"
+id = "balance-field"
+rule = "equal"
+
+[project]
+framework = "anchor"
+name = "vault-runtime"
+
+[snapshot]
+source = "devnet"
+
+[[snapshot.accounts]]
+address = "$vault"
+name = "vault"
+
+[[snapshot.accounts]]
+address = "$owner"
+name = "owner"
+owner = "$system_program"
+
+[versions.v1]
+idl = "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v1.json"
+program_id = "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT"
+program_path = "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v1.bin"
+
+[versions.v2]
+idl = "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v2.json"
+program_id = "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT"
+program_path = "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v2-broken.bin"

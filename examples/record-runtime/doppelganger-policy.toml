@@ -1,0 +1,12 @@
+schema_version = 1
+[[relationship]]
+id = "authority"
+kind = "authority"
+account = "record"
+field = "authority"
+target = "$owner"
+[[relationship]]
+id = "program-owner"
+kind = "program_owner"
+account = "record"
+target = "$program"

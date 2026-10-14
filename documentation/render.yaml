@@ -1,0 +1,7 @@
+services:
+  - type: web
+    runtime: static
+    name: doppelganger-docs
+    rootDir: documentation
+    buildCommand: npm ci && npm run build
+    staticPublishPath: .vitepress/dist

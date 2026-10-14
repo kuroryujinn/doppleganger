@@ -1,0 +1,4244 @@
+{
+  "artifacts": {
+    "v1_binary": {
+      "path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.bin",
+      "sha256": "b317f089394196bcc45c8c58f10357bc79548aa35c793b196abba9fda627c4ba"
+    },
+    "v1_idl": {
+      "path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.json",
+      "sha256": "801840e40e7c154b8173c7dbd26122042f557bf0b99b29c2f0fca73277794003"
+    },
+    "v2_binary": {
+      "path": "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v2-broken.bin",
+      "sha256": "8684baaa1053fd20557f805896df6121c3e4b4def02494ab04991936ee5af7be"
+    },
+    "v2_idl": {
+      "path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v2.json",
+      "sha256": "94a88f313fbaf282ecf0a9cabd8bcc55f6a9812349bfa6110543f8e095cd01b4"
+    }
+  },
+  "execution": {
+    "after_accounts": [
+      {
+        "account_type": "VaultV2",
+        "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+        "decode_error": null,
+        "decoded": {
+          "account_type": "VaultV2",
+          "consumed_bytes": 56,
+          "fields": {
+            "balance": {
+              "kind": "integer",
+              "value": "950000"
+            },
+            "owner": {
+              "kind": "pubkey",
+              "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+            },
+            "withdrawal_limit": {
+              "kind": "integer",
+              "value": "500000"
+            }
+          },
+          "trailing_bytes": []
+        },
+        "name": "vault",
+        "snapshot": {
+          "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+          "data_length": 56,
+          "executable": false,
+          "lamports": "2280640",
+          "metadata": {},
+          "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+          "raw_data": [
+            26,
+            72,
+            80,
+            70,
+            37,
+            88,
+            90,
+            39,
+            119,
+            44,
+            138,
+            68,
+            43,
+            125,
+            176,
+            110,
+            22,
+            108,
+            251,
+            193,
+            204,
+            188,
+            188,
+            222,
+            111,
+            62,
+            186,
+            118,
+            164,
+            233,
+            142,
+            243,
+            255,
+            197,
+            25,
+            80,
+            34,
+            55,
+            214,
+            239,
+            240,
+            126,
+            14,
+            0,
+            0,
+            0,
+            0,
+            0,
+            32,
+            161,
+            7,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "schema_version": 1
+        }
+      }
+    ],
+    "before_accounts": [
+      {
+        "account_type": "VaultV1",
+        "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+        "decode_error": null,
+        "decoded": {
+          "account_type": "VaultV1",
+          "consumed_bytes": 48,
+          "fields": {
+            "balance": {
+              "kind": "integer",
+              "value": "1000000"
+            },
+            "owner": {
+              "kind": "pubkey",
+              "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+            }
+          },
+          "trailing_bytes": []
+        },
+        "name": "vault",
+        "snapshot": {
+          "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+          "data_length": 48,
+          "executable": false,
+          "lamports": "1894080",
+          "metadata": {},
+          "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+          "raw_data": [
+            27,
+            177,
+            104,
+            68,
+            34,
+            4,
+            147,
+            92,
+            119,
+            44,
+            138,
+            68,
+            43,
+            125,
+            176,
+            110,
+            22,
+            108,
+            251,
+            193,
+            204,
+            188,
+            188,
+            222,
+            111,
+            62,
+            186,
+            118,
+            164,
+            233,
+            142,
+            243,
+            255,
+            197,
+            25,
+            80,
+            34,
+            55,
+            214,
+            239,
+            64,
+            66,
+            15,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "schema_version": 1
+        }
+      }
+    ],
+    "preservation_evaluated": false,
+    "program_swap": {
+      "candidate": {
+        "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v2.json",
+        "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+        "program_path": "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v2-broken.bin"
+      },
+      "loaded": true,
+      "previous": {
+        "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.json",
+        "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+        "program_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.bin"
+      },
+      "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT"
+    },
+    "project": "vault-runtime",
+    "schema_version": 1,
+    "transaction": {
+      "accounts": [
+        {
+          "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+          "signer": false,
+          "writable": true
+        },
+        {
+          "address": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz",
+          "signer": true,
+          "writable": true
+        },
+        {
+          "address": "11111111111111111111111111111111",
+          "signer": false,
+          "writable": false
+        }
+      ],
+      "action_index": 0,
+      "compute_units": 6871,
+      "error": null,
+      "error_kind": null,
+      "fee": 5000,
+      "instruction_data": [
+        155,
+        234,
+        231,
+        146,
+        236,
+        158,
+        162,
+        30
+      ],
+      "instruction_name": "migrate",
+      "logs": [
+        "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT invoke [1]",
+        "Program log: Instruction: Migrate",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT consumed 6871 of 200000 compute units",
+        "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT success"
+      ],
+      "phase": "migration",
+      "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+      "signature": "5G8iJRCngBV1vb5hxJjM589RGunHrj2yMgWQJCHv6RtPrqQCgZBN9Li9Dvi5aYCLsTNEs7YBzw7zWjxXZJt2mMmn",
+      "signer_public_keys": [
+        "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+      ],
+      "success": true,
+      "transaction_error": null
+    },
+    "v1_program": {
+      "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.json",
+      "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+      "program_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.bin"
+    },
+    "v2_program": {
+      "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v2.json",
+      "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+      "program_path": "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v2-broken.bin"
+    }
+  },
+  "lifecycle": {
+    "errors": 0,
+    "failed": 0,
+    "lifecycle_evaluated": true,
+    "passed": 7,
+    "policy_evaluated": false,
+    "preservation_evaluated": false,
+    "project": "vault-runtime",
+    "scenarios": [
+      {
+        "definition": {
+          "account_mapping": {},
+          "arguments": {},
+          "expected": "success",
+          "expected_error": null,
+          "first": null,
+          "fixture": null,
+          "id": "normal-migration",
+          "instruction": null,
+          "migration": null,
+          "second": null,
+          "signer_account": null,
+          "signer_override": null,
+          "state_unchanged": false,
+          "type": "standard_migration"
+        },
+        "diagnostics": [],
+        "id": "normal-migration",
+        "status": "PASS",
+        "steps": [
+          {
+            "after": [
+              {
+                "account_type": "VaultV1",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 0,
+            "observed": null,
+            "operation": "build_world",
+            "program_swap": null,
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "950000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    240,
+                    126,
+                    14,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV1",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 6871,
+              "error": null,
+              "error_kind": null,
+              "fee": 5000,
+              "instruction_data": [
+                155,
+                234,
+                231,
+                146,
+                236,
+                158,
+                162,
+                30
+              ],
+              "instruction_name": "migrate",
+              "logs": [
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT invoke [1]",
+                "Program log: Instruction: Migrate",
+                "Program 11111111111111111111111111111111 invoke [2]",
+                "Program 11111111111111111111111111111111 success",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT consumed 6871 of 200000 compute units",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT success"
+              ],
+              "phase": "migration",
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+              "signature": "5G8iJRCngBV1vb5hxJjM589RGunHrj2yMgWQJCHv6RtPrqQCgZBN9Li9Dvi5aYCLsTNEs7YBzw7zWjxXZJt2mMmn",
+              "signer_public_keys": [
+                "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+              ],
+              "success": true,
+              "transaction_error": null
+            },
+            "expected": "success",
+            "expected_error": null,
+            "index": 1,
+            "observed": "success",
+            "operation": "migrate",
+            "program_swap": {
+              "candidate": {
+                "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v2.json",
+                "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                "program_path": "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v2-broken.bin"
+              },
+              "loaded": true,
+              "previous": {
+                "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.json",
+                "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                "program_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.bin"
+              },
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT"
+            },
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          }
+        ]
+      },
+      {
+        "definition": {
+          "account_mapping": {},
+          "arguments": {},
+          "expected": "error",
+          "expected_error": 2006,
+          "first": null,
+          "fixture": null,
+          "id": "unauthorized-migration",
+          "instruction": null,
+          "migration": null,
+          "second": null,
+          "signer_account": "owner",
+          "signer_override": "stranger",
+          "state_unchanged": true,
+          "type": "unauthorized_migration"
+        },
+        "diagnostics": [],
+        "id": "unauthorized-migration",
+        "status": "PASS",
+        "steps": [
+          {
+            "after": [
+              {
+                "account_type": "VaultV1",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 0,
+            "observed": null,
+            "operation": "build_world",
+            "program_swap": null,
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": {
+                  "code": "DISCRIMINATOR",
+                  "message": "account discriminator mismatch",
+                  "offset": 0,
+                  "path": "VaultV2"
+                },
+                "decoded": null,
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV1",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "4ap9kAPdHiV82d8D73mrtEgwGxBbUxJgyFr1fRGLhide",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 6165,
+              "error": "InstructionError(0, Custom(2006))",
+              "error_kind": "program",
+              "fee": 10000,
+              "instruction_data": [
+                155,
+                234,
+                231,
+                146,
+                236,
+                158,
+                162,
+                30
+              ],
+              "instruction_name": "migrate",
+              "logs": [
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT invoke [1]",
+                "Program log: Instruction: Migrate",
+                "Program log: AnchorError caused by account: vault. Error Code: ConstraintSeeds. Error Number: 2006. Error Message: A seeds constraint was violated.",
+                "Program log: Left:",
+                "Program log: 9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "Program log: Right:",
+                "Program log: DyfH3NCjUR8Wti85VnPzyjQuiTZn5p8jkUsrakh9UtJA",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT consumed 6165 of 200000 compute units",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT failed: custom program error: 0x7d6"
+              ],
+              "phase": "migration",
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+              "signature": "22jHX9LxBfDEEdXzntCrx4tzjZuFvubH9rKSWYjLogpeQajhaDHhJ985Cb5a4BXjcPy5pXV33JoaAfNLp7NY8ACb",
+              "signer_public_keys": [
+                "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz",
+                "4ap9kAPdHiV82d8D73mrtEgwGxBbUxJgyFr1fRGLhide"
+              ],
+              "success": false,
+              "transaction_error": {
+                "InstructionError": [
+                  0,
+                  {
+                    "Custom": 2006
+                  }
+                ]
+              }
+            },
+            "expected": "error",
+            "expected_error": 2006,
+            "index": 1,
+            "observed": "error",
+            "operation": "migrate",
+            "program_swap": {
+              "candidate": {
+                "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v2.json",
+                "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                "program_path": "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v2-broken.bin"
+              },
+              "loaded": true,
+              "previous": {
+                "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.json",
+                "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                "program_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.bin"
+              },
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT"
+            },
+            "setup_actions": [],
+            "state_unchanged": true,
+            "status": "PASS"
+          }
+        ]
+      },
+      {
+        "definition": {
+          "account_mapping": {},
+          "arguments": {},
+          "expected": null,
+          "expected_error": 3002,
+          "first": "success",
+          "fixture": null,
+          "id": "repeat-migration",
+          "instruction": null,
+          "migration": null,
+          "second": "error",
+          "signer_account": null,
+          "signer_override": null,
+          "state_unchanged": false,
+          "type": "repeat_migration"
+        },
+        "diagnostics": [],
+        "id": "repeat-migration",
+        "status": "PASS",
+        "steps": [
+          {
+            "after": [
+              {
+                "account_type": "VaultV1",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 0,
+            "observed": null,
+            "operation": "build_world",
+            "program_swap": null,
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "950000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    240,
+                    126,
+                    14,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV1",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 6871,
+              "error": null,
+              "error_kind": null,
+              "fee": 5000,
+              "instruction_data": [
+                155,
+                234,
+                231,
+                146,
+                236,
+                158,
+                162,
+                30
+              ],
+              "instruction_name": "migrate",
+              "logs": [
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT invoke [1]",
+                "Program log: Instruction: Migrate",
+                "Program 11111111111111111111111111111111 invoke [2]",
+                "Program 11111111111111111111111111111111 success",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT consumed 6871 of 200000 compute units",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT success"
+              ],
+              "phase": "migration",
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+              "signature": "5G8iJRCngBV1vb5hxJjM589RGunHrj2yMgWQJCHv6RtPrqQCgZBN9Li9Dvi5aYCLsTNEs7YBzw7zWjxXZJt2mMmn",
+              "signer_public_keys": [
+                "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+              ],
+              "success": true,
+              "transaction_error": null
+            },
+            "expected": "success",
+            "expected_error": null,
+            "index": 1,
+            "observed": "success",
+            "operation": "migrate",
+            "program_swap": {
+              "candidate": {
+                "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v2.json",
+                "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                "program_path": "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v2-broken.bin"
+              },
+              "loaded": true,
+              "previous": {
+                "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.json",
+                "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                "program_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.bin"
+              },
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT"
+            },
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "950000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    240,
+                    126,
+                    14,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV2",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "950000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    240,
+                    126,
+                    14,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 2889,
+              "error": "InstructionError(0, Custom(3002))",
+              "error_kind": "program",
+              "fee": 5000,
+              "instruction_data": [
+                155,
+                234,
+                231,
+                146,
+                236,
+                158,
+                162,
+                30
+              ],
+              "instruction_name": "migrate",
+              "logs": [
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT invoke [1]",
+                "Program log: Instruction: Migrate",
+                "Program log: AnchorError caused by account: vault. Error Code: AccountDiscriminatorMismatch. Error Number: 3002. Error Message: Account discriminator did not match what was expected.",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT consumed 2889 of 200000 compute units",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT failed: custom program error: 0xbba"
+              ],
+              "phase": "instruction",
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+              "signature": "MMxHmuVhbAA5cwuFnZmpPMWZwjkJTBCj1WZzFWiNrzYVeFfheTATa8Xuicy3vuv1j1GqH2a6w7zzVHg9NeqALCQ",
+              "signer_public_keys": [
+                "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+              ],
+              "success": false,
+              "transaction_error": {
+                "InstructionError": [
+                  0,
+                  {
+                    "Custom": 3002
+                  }
+                ]
+              }
+            },
+            "expected": "error",
+            "expected_error": 3002,
+            "index": 2,
+            "observed": "error",
+            "operation": "migrate",
+            "program_swap": null,
+            "setup_actions": [],
+            "state_unchanged": true,
+            "status": "PASS"
+          }
+        ]
+      },
+      {
+        "definition": {
+          "account_mapping": {},
+          "arguments": {},
+          "expected": "error",
+          "expected_error": 2006,
+          "first": null,
+          "fixture": null,
+          "id": "rollback",
+          "instruction": null,
+          "migration": {
+            "account_mapping": {
+              "owner": "stranger",
+              "system_program": "system_program",
+              "vault": "vault"
+            },
+            "arguments": {},
+            "instruction": "migrate"
+          },
+          "second": null,
+          "signer_account": null,
+          "signer_override": null,
+          "state_unchanged": false,
+          "type": "failed_migration_rollback"
+        },
+        "diagnostics": [],
+        "id": "rollback",
+        "status": "PASS",
+        "steps": [
+          {
+            "after": [
+              {
+                "account_type": "VaultV1",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 0,
+            "observed": null,
+            "operation": "build_world",
+            "program_swap": null,
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": {
+                  "code": "DISCRIMINATOR",
+                  "message": "account discriminator mismatch",
+                  "offset": 0,
+                  "path": "VaultV2"
+                },
+                "decoded": null,
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV1",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "4ap9kAPdHiV82d8D73mrtEgwGxBbUxJgyFr1fRGLhide",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 6165,
+              "error": "InstructionError(0, Custom(2006))",
+              "error_kind": "program",
+              "fee": 10000,
+              "instruction_data": [
+                155,
+                234,
+                231,
+                146,
+                236,
+                158,
+                162,
+                30
+              ],
+              "instruction_name": "migrate",
+              "logs": [
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT invoke [1]",
+                "Program log: Instruction: Migrate",
+                "Program log: AnchorError caused by account: vault. Error Code: ConstraintSeeds. Error Number: 2006. Error Message: A seeds constraint was violated.",
+                "Program log: Left:",
+                "Program log: 9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "Program log: Right:",
+                "Program log: DyfH3NCjUR8Wti85VnPzyjQuiTZn5p8jkUsrakh9UtJA",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT consumed 6165 of 200000 compute units",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT failed: custom program error: 0x7d6"
+              ],
+              "phase": "migration",
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+              "signature": "22jHX9LxBfDEEdXzntCrx4tzjZuFvubH9rKSWYjLogpeQajhaDHhJ985Cb5a4BXjcPy5pXV33JoaAfNLp7NY8ACb",
+              "signer_public_keys": [
+                "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz",
+                "4ap9kAPdHiV82d8D73mrtEgwGxBbUxJgyFr1fRGLhide"
+              ],
+              "success": false,
+              "transaction_error": {
+                "InstructionError": [
+                  0,
+                  {
+                    "Custom": 2006
+                  }
+                ]
+              }
+            },
+            "expected": "error",
+            "expected_error": 2006,
+            "index": 1,
+            "observed": "error",
+            "operation": "migrate",
+            "program_swap": {
+              "candidate": {
+                "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v2.json",
+                "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                "program_path": "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v2-broken.bin"
+              },
+              "loaded": true,
+              "previous": {
+                "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.json",
+                "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                "program_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.bin"
+              },
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT"
+            },
+            "setup_actions": [],
+            "state_unchanged": true,
+            "status": "PASS"
+          }
+        ]
+      },
+      {
+        "definition": {
+          "account_mapping": {},
+          "arguments": {
+            "amount": "u64:1"
+          },
+          "expected": "error",
+          "expected_error": 3002,
+          "first": null,
+          "fixture": null,
+          "id": "unmigrated-v2-operation",
+          "instruction": "withdraw",
+          "migration": null,
+          "second": null,
+          "signer_account": null,
+          "signer_override": null,
+          "state_unchanged": true,
+          "type": "unmigrated_state_against_v2"
+        },
+        "diagnostics": [],
+        "id": "unmigrated-v2-operation",
+        "status": "PASS",
+        "steps": [
+          {
+            "after": [
+              {
+                "account_type": "VaultV1",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 0,
+            "observed": null,
+            "operation": "build_world",
+            "program_swap": null,
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": {
+                  "code": "DISCRIMINATOR",
+                  "message": "account discriminator mismatch",
+                  "offset": 0,
+                  "path": "VaultV2"
+                },
+                "decoded": null,
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV1",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 1,
+            "observed": null,
+            "operation": "load_candidate",
+            "program_swap": {
+              "candidate": {
+                "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v2.json",
+                "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                "program_path": "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v2-broken.bin"
+              },
+              "loaded": true,
+              "previous": {
+                "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.json",
+                "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                "program_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.bin"
+              },
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT"
+            },
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": {
+                  "code": "DISCRIMINATOR",
+                  "message": "account discriminator mismatch",
+                  "offset": 0,
+                  "path": "VaultV2"
+                },
+                "decoded": null,
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV2",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": {
+                  "code": "DISCRIMINATOR",
+                  "message": "account discriminator mismatch",
+                  "offset": 0,
+                  "path": "VaultV2"
+                },
+                "decoded": null,
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 2892,
+              "error": "InstructionError(0, Custom(3002))",
+              "error_kind": "program",
+              "fee": 5000,
+              "instruction_data": [
+                183,
+                18,
+                70,
+                156,
+                148,
+                109,
+                161,
+                34,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instruction_name": "withdraw",
+              "logs": [
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT invoke [1]",
+                "Program log: Instruction: Withdraw",
+                "Program log: AnchorError caused by account: vault. Error Code: AccountDiscriminatorMismatch. Error Number: 3002. Error Message: Account discriminator did not match what was expected.",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT consumed 2892 of 200000 compute units",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT failed: custom program error: 0xbba"
+              ],
+              "phase": "instruction",
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+              "signature": "SSccJLuowASHhj3s1syx5inRiU291Rz3DbWmMvg7yVKRastByqJTc67Du4xiDBkzNebrLRwm2i81nHHjK31F9Np",
+              "signer_public_keys": [
+                "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+              ],
+              "success": false,
+              "transaction_error": {
+                "InstructionError": [
+                  0,
+                  {
+                    "Custom": 3002
+                  }
+                ]
+              }
+            },
+            "expected": "error",
+            "expected_error": 3002,
+            "index": 2,
+            "observed": "error",
+            "operation": "execute_instruction",
+            "program_swap": null,
+            "setup_actions": [],
+            "state_unchanged": true,
+            "status": "PASS"
+          }
+        ]
+      },
+      {
+        "definition": {
+          "account_mapping": {},
+          "arguments": {
+            "amount": "u64:100000"
+          },
+          "expected": "success",
+          "expected_error": null,
+          "first": null,
+          "fixture": null,
+          "id": "post-migration-operation",
+          "instruction": "withdraw",
+          "migration": null,
+          "second": null,
+          "signer_account": null,
+          "signer_override": null,
+          "state_unchanged": false,
+          "type": "post_migration_instruction"
+        },
+        "diagnostics": [],
+        "id": "post-migration-operation",
+        "status": "PASS",
+        "steps": [
+          {
+            "after": [
+              {
+                "account_type": "VaultV1",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 0,
+            "observed": null,
+            "operation": "build_world",
+            "program_swap": null,
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "950000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    240,
+                    126,
+                    14,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV1",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 6871,
+              "error": null,
+              "error_kind": null,
+              "fee": 5000,
+              "instruction_data": [
+                155,
+                234,
+                231,
+                146,
+                236,
+                158,
+                162,
+                30
+              ],
+              "instruction_name": "migrate",
+              "logs": [
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT invoke [1]",
+                "Program log: Instruction: Migrate",
+                "Program 11111111111111111111111111111111 invoke [2]",
+                "Program 11111111111111111111111111111111 success",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT consumed 6871 of 200000 compute units",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT success"
+              ],
+              "phase": "migration",
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+              "signature": "5G8iJRCngBV1vb5hxJjM589RGunHrj2yMgWQJCHv6RtPrqQCgZBN9Li9Dvi5aYCLsTNEs7YBzw7zWjxXZJt2mMmn",
+              "signer_public_keys": [
+                "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+              ],
+              "success": true,
+              "transaction_error": null
+            },
+            "expected": "success",
+            "expected_error": null,
+            "index": 1,
+            "observed": "success",
+            "operation": "migrate",
+            "program_swap": {
+              "candidate": {
+                "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v2.json",
+                "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                "program_path": "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v2-broken.bin"
+              },
+              "loaded": true,
+              "previous": {
+                "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.json",
+                "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                "program_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.bin"
+              },
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT"
+            },
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "850000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2180640",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    80,
+                    248,
+                    12,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV2",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "950000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    240,
+                    126,
+                    14,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 4120,
+              "error": null,
+              "error_kind": null,
+              "fee": 5000,
+              "instruction_data": [
+                183,
+                18,
+                70,
+                156,
+                148,
+                109,
+                161,
+                34,
+                160,
+                134,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instruction_name": "withdraw",
+              "logs": [
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT invoke [1]",
+                "Program log: Instruction: Withdraw",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT consumed 4120 of 200000 compute units",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT success"
+              ],
+              "phase": "instruction",
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+              "signature": "2aMKoma6ECF8p3HTGKqi3eF1fYjg7CZfd4A2sDzjCxFWCRFZBz9iBrxXeZUP4BPwiQosQHtz3fzZPYrzZHcMrFrm",
+              "signer_public_keys": [
+                "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+              ],
+              "success": true,
+              "transaction_error": null
+            },
+            "expected": "success",
+            "expected_error": null,
+            "index": 2,
+            "observed": "success",
+            "operation": "execute_instruction",
+            "program_swap": null,
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          }
+        ]
+      },
+      {
+        "definition": {
+          "account_mapping": {},
+          "arguments": {
+            "amount": "u64:500001"
+          },
+          "expected": "error",
+          "expected_error": 6002,
+          "first": null,
+          "fixture": null,
+          "id": "post-migration-limit",
+          "instruction": "withdraw",
+          "migration": null,
+          "second": null,
+          "signer_account": null,
+          "signer_override": null,
+          "state_unchanged": true,
+          "type": "post_migration_instruction"
+        },
+        "diagnostics": [],
+        "id": "post-migration-limit",
+        "status": "PASS",
+        "steps": [
+          {
+            "after": [
+              {
+                "account_type": "VaultV1",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [],
+            "diagnostics": [],
+            "execution": null,
+            "expected": null,
+            "expected_error": null,
+            "index": 0,
+            "observed": null,
+            "operation": "build_world",
+            "program_swap": null,
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "950000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    240,
+                    126,
+                    14,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV1",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV1",
+                  "consumed_bytes": 48,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "1000000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 48,
+                  "executable": false,
+                  "lamports": "1894080",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    27,
+                    177,
+                    104,
+                    68,
+                    34,
+                    4,
+                    147,
+                    92,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    64,
+                    66,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 6871,
+              "error": null,
+              "error_kind": null,
+              "fee": 5000,
+              "instruction_data": [
+                155,
+                234,
+                231,
+                146,
+                236,
+                158,
+                162,
+                30
+              ],
+              "instruction_name": "migrate",
+              "logs": [
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT invoke [1]",
+                "Program log: Instruction: Migrate",
+                "Program 11111111111111111111111111111111 invoke [2]",
+                "Program 11111111111111111111111111111111 success",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT consumed 6871 of 200000 compute units",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT success"
+              ],
+              "phase": "migration",
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+              "signature": "5G8iJRCngBV1vb5hxJjM589RGunHrj2yMgWQJCHv6RtPrqQCgZBN9Li9Dvi5aYCLsTNEs7YBzw7zWjxXZJt2mMmn",
+              "signer_public_keys": [
+                "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+              ],
+              "success": true,
+              "transaction_error": null
+            },
+            "expected": "success",
+            "expected_error": null,
+            "index": 1,
+            "observed": "success",
+            "operation": "migrate",
+            "program_swap": {
+              "candidate": {
+                "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v2.json",
+                "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                "program_path": "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v2-broken.bin"
+              },
+              "loaded": true,
+              "previous": {
+                "idl_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.json",
+                "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                "program_path": "examples/vault-runtime-devnet/../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.bin"
+              },
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT"
+            },
+            "setup_actions": [],
+            "state_unchanged": false,
+            "status": "PASS"
+          },
+          {
+            "after": [
+              {
+                "account_type": "VaultV2",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "950000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    240,
+                    126,
+                    14,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "before": [
+              {
+                "account_type": "VaultV2",
+                "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                "decode_error": null,
+                "decoded": {
+                  "account_type": "VaultV2",
+                  "consumed_bytes": 56,
+                  "fields": {
+                    "balance": {
+                      "kind": "integer",
+                      "value": "950000"
+                    },
+                    "owner": {
+                      "kind": "pubkey",
+                      "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+                    },
+                    "withdrawal_limit": {
+                      "kind": "integer",
+                      "value": "500000"
+                    }
+                  },
+                  "trailing_bytes": []
+                },
+                "name": "vault",
+                "snapshot": {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "data_length": 56,
+                  "executable": false,
+                  "lamports": "2280640",
+                  "metadata": {},
+                  "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+                  "raw_data": [
+                    26,
+                    72,
+                    80,
+                    70,
+                    37,
+                    88,
+                    90,
+                    39,
+                    119,
+                    44,
+                    138,
+                    68,
+                    43,
+                    125,
+                    176,
+                    110,
+                    22,
+                    108,
+                    251,
+                    193,
+                    204,
+                    188,
+                    188,
+                    222,
+                    111,
+                    62,
+                    186,
+                    118,
+                    164,
+                    233,
+                    142,
+                    243,
+                    255,
+                    197,
+                    25,
+                    80,
+                    34,
+                    55,
+                    214,
+                    239,
+                    240,
+                    126,
+                    14,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    32,
+                    161,
+                    7,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                  ],
+                  "schema_version": 1
+                }
+              }
+            ],
+            "diagnostics": [],
+            "execution": {
+              "accounts": [
+                {
+                  "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+                  "signer": false,
+                  "writable": true
+                },
+                {
+                  "address": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz",
+                  "signer": true,
+                  "writable": true
+                },
+                {
+                  "address": "11111111111111111111111111111111",
+                  "signer": false,
+                  "writable": false
+                }
+              ],
+              "action_index": 0,
+              "compute_units": 5287,
+              "error": "InstructionError(0, Custom(6002))",
+              "error_kind": "program",
+              "fee": 5000,
+              "instruction_data": [
+                183,
+                18,
+                70,
+                156,
+                148,
+                109,
+                161,
+                34,
+                33,
+                161,
+                7,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "instruction_name": "withdraw",
+              "logs": [
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT invoke [1]",
+                "Program log: Instruction: Withdraw",
+                "Program log: AnchorError thrown in programs/dg-vault-v2/src/lib.rs:105. Error Code: LimitExceeded. Error Number: 6002. Error Message: Withdrawal limit exceeded.",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT consumed 5287 of 200000 compute units",
+                "Program DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT failed: custom program error: 0x1772"
+              ],
+              "phase": "instruction",
+              "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+              "signature": "3cBfFaTPYH1n9imcQq3H4iKuhAq34zkQLebgB4HCVNzpdeGboN5za1wtXQwBCVEucjNJQJ23By3ouJxmZ7WxkfDo",
+              "signer_public_keys": [
+                "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+              ],
+              "success": false,
+              "transaction_error": {
+                "InstructionError": [
+                  0,
+                  {
+                    "Custom": 6002
+                  }
+                ]
+              }
+            },
+            "expected": "error",
+            "expected_error": 6002,
+            "index": 2,
+            "observed": "error",
+            "operation": "execute_instruction",
+            "program_swap": null,
+            "setup_actions": [],
+            "state_unchanged": true,
+            "status": "PASS"
+          }
+        ]
+      }
+    ],
+    "schema_version": 1,
+    "total": 7
+  },
+  "lifecycle_evaluated": true,
+  "migration_executed_locally": true,
+  "policy_evaluated": false,
+  "preservation": {
+    "errors": 0,
+    "evaluations": [
+      {
+        "account": "vault",
+        "after": {
+          "state": "found",
+          "value": {
+            "kind": "pubkey",
+            "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+          }
+        },
+        "after_present": true,
+        "before": {
+          "state": "found",
+          "value": {
+            "kind": "pubkey",
+            "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+          }
+        },
+        "before_present": true,
+        "category": null,
+        "error_code": null,
+        "expected": null,
+        "explanation": "Configured condition satisfied.",
+        "field": "owner",
+        "rule": "equal",
+        "rule_id": "owner-field",
+        "status": "PASS"
+      },
+      {
+        "account": "vault",
+        "after": {
+          "state": "found",
+          "value": {
+            "kind": "integer",
+            "value": "950000"
+          }
+        },
+        "after_present": true,
+        "before": {
+          "state": "found",
+          "value": {
+            "kind": "integer",
+            "value": "1000000"
+          }
+        },
+        "before_present": true,
+        "category": "FIELD_NOT_PRESERVED",
+        "error_code": null,
+        "expected": null,
+        "explanation": "Configured condition violated; see before, after and expected evidence.",
+        "field": "balance",
+        "rule": "equal",
+        "rule_id": "balance-field",
+        "status": "FAIL"
+      },
+      {
+        "account": "vault",
+        "after": {
+          "state": "found",
+          "value": {
+            "kind": "integer",
+            "value": "500000"
+          }
+        },
+        "after_present": true,
+        "before": {
+          "state": "missing"
+        },
+        "before_present": true,
+        "category": null,
+        "error_code": null,
+        "expected": null,
+        "explanation": "Configured condition satisfied.",
+        "field": "withdrawal_limit",
+        "rule": "initialized",
+        "rule_id": "limit-initialized",
+        "status": "PASS"
+      },
+      {
+        "account": "vault",
+        "after": {
+          "state": "found",
+          "value": {
+            "kind": "integer",
+            "value": "500000"
+          }
+        },
+        "after_present": true,
+        "before": {
+          "state": "missing"
+        },
+        "before_present": true,
+        "category": null,
+        "error_code": null,
+        "expected": {
+          "kind": "integer",
+          "value": "500000"
+        },
+        "explanation": "Configured condition satisfied.",
+        "field": "withdrawal_limit",
+        "rule": "default",
+        "rule_id": "limit-default",
+        "status": "PASS"
+      },
+      {
+        "account": "vault",
+        "after": {
+          "state": "found",
+          "value": {
+            "kind": "pubkey",
+            "value": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT"
+          }
+        },
+        "after_present": true,
+        "before": {
+          "state": "found",
+          "value": {
+            "kind": "pubkey",
+            "value": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT"
+          }
+        },
+        "before_present": true,
+        "category": null,
+        "error_code": null,
+        "expected": null,
+        "explanation": "Configured condition satisfied.",
+        "field": null,
+        "rule": "owner_preserved",
+        "rule_id": "program-owner",
+        "status": "PASS"
+      },
+      {
+        "account": "vault",
+        "after": {
+          "state": "found",
+          "value": {
+            "kind": "integer",
+            "value": "56"
+          }
+        },
+        "after_present": true,
+        "before": {
+          "state": "found",
+          "value": {
+            "kind": "integer",
+            "value": "48"
+          }
+        },
+        "before_present": true,
+        "category": null,
+        "error_code": null,
+        "expected": {
+          "kind": "integer",
+          "value": "56"
+        },
+        "explanation": "Configured condition satisfied.",
+        "field": null,
+        "rule": "account_size_minimum",
+        "rule_id": "account-size",
+        "status": "PASS"
+      },
+      {
+        "account": "vault",
+        "after": {
+          "state": "found",
+          "value": {
+            "kind": "pubkey",
+            "value": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns"
+          }
+        },
+        "after_present": true,
+        "before": {
+          "state": "found",
+          "value": {
+            "kind": "pubkey",
+            "value": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns"
+          }
+        },
+        "before_present": true,
+        "category": null,
+        "error_code": null,
+        "expected": null,
+        "explanation": "Configured condition satisfied.",
+        "field": null,
+        "rule": "pda_preserved",
+        "rule_id": "address-continuity",
+        "status": "PASS"
+      }
+    ],
+    "failed": 1,
+    "findings": [
+      {
+        "account": "vault",
+        "after": {
+          "state": "found",
+          "value": {
+            "kind": "integer",
+            "value": "950000"
+          }
+        },
+        "after_present": true,
+        "before": {
+          "state": "found",
+          "value": {
+            "kind": "integer",
+            "value": "1000000"
+          }
+        },
+        "before_present": true,
+        "category": "FIELD_NOT_PRESERVED",
+        "error_code": null,
+        "expected": null,
+        "explanation": "Configured condition violated; see before, after and expected evidence.",
+        "field": "balance",
+        "id": "PRESERVE-balance-field",
+        "rule": "equal",
+        "rule_id": "balance-field",
+        "status": "FAIL"
+      }
+    ],
+    "lifecycle_evaluated": false,
+    "migration_signature": "5G8iJRCngBV1vb5hxJjM589RGunHrj2yMgWQJCHv6RtPrqQCgZBN9Li9Dvi5aYCLsTNEs7YBzw7zWjxXZJt2mMmn",
+    "migration_success": true,
+    "not_applicable": 0,
+    "passed": 6,
+    "policy_evaluated": false,
+    "preservation_evaluated": true,
+    "project": "vault-runtime",
+    "rules": [
+      {
+        "account": "vault",
+        "field": "owner",
+        "id": "owner-field",
+        "rule": "equal",
+        "value": null
+      },
+      {
+        "account": "vault",
+        "field": "balance",
+        "id": "balance-field",
+        "rule": "equal",
+        "value": null
+      },
+      {
+        "account": "vault",
+        "field": "withdrawal_limit",
+        "id": "limit-initialized",
+        "rule": "initialized",
+        "value": null
+      },
+      {
+        "account": "vault",
+        "field": "withdrawal_limit",
+        "id": "limit-default",
+        "rule": "default",
+        "value": "u64:500000"
+      },
+      {
+        "account": "vault",
+        "field": null,
+        "id": "program-owner",
+        "rule": "owner_preserved",
+        "value": null
+      },
+      {
+        "account": "vault",
+        "field": null,
+        "id": "account-size",
+        "rule": "account_size_minimum",
+        "value": 56
+      },
+      {
+        "account": "vault",
+        "field": null,
+        "id": "address-continuity",
+        "rule": "pda_preserved",
+        "value": null
+      }
+    ],
+    "rules_total": 7,
+    "schema_version": 1
+  },
+  "preservation_evaluated": true,
+  "project": "vault-runtime",
+  "remote_state_imported": true,
+  "remote_transactions_sent": false,
+  "rpc_write_calls": 0,
+  "schema_version": 1,
+  "snapshot": {
+    "accounts": [
+      {
+        "address": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz",
+        "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "decode_error": null,
+        "decode_status": "not_requested",
+        "decoded": null,
+        "exists": true,
+        "logical_name": "owner",
+        "raw": {
+          "address": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz",
+          "data_length": 0,
+          "executable": false,
+          "lamports": "8095920",
+          "metadata": {},
+          "owner": "11111111111111111111111111111111",
+          "raw_data": [],
+          "schema_version": 1
+        },
+        "record_sha256": "f671c97daf83e0f06aaf2d6bdf4275a4c28fe3bb7f1fe3f7ba0e4de4ac56eb9e",
+        "rent_epoch": "18446744073709551615"
+      },
+      {
+        "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+        "data_sha256": "cb69e4c28d4881547a905c5bf0655513427ef848593576c3dc955f9136cbd389",
+        "decode_error": null,
+        "decode_status": "decoded",
+        "decoded": {
+          "account_type": "VaultV1",
+          "consumed_bytes": 48,
+          "fields": {
+            "balance": {
+              "kind": "integer",
+              "value": "1000000"
+            },
+            "owner": {
+              "kind": "pubkey",
+              "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+            }
+          },
+          "trailing_bytes": []
+        },
+        "exists": true,
+        "logical_name": "vault",
+        "raw": {
+          "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+          "data_length": 48,
+          "executable": false,
+          "lamports": "1894080",
+          "metadata": {},
+          "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+          "raw_data": [
+            27,
+            177,
+            104,
+            68,
+            34,
+            4,
+            147,
+            92,
+            119,
+            44,
+            138,
+            68,
+            43,
+            125,
+            176,
+            110,
+            22,
+            108,
+            251,
+            193,
+            204,
+            188,
+            188,
+            222,
+            111,
+            62,
+            186,
+            118,
+            164,
+            233,
+            142,
+            243,
+            255,
+            197,
+            25,
+            80,
+            34,
+            55,
+            214,
+            239,
+            64,
+            66,
+            15,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "schema_version": 1
+        },
+        "record_sha256": "1801996a979fd0fcd752432bef2017adfdf085e3e7e65019d5229b6b66fba036",
+        "rent_epoch": "18446744073709551615"
+      }
+    ],
+    "provenance": {
+      "acquisition": "rpc",
+      "artifacts": {
+        "v1_binary": {
+          "path": "../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.bin",
+          "sha256": "b317f089394196bcc45c8c58f10357bc79548aa35c793b196abba9fda627c4ba"
+        },
+        "v1_idl": {
+          "path": "../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.json",
+          "sha256": "801840e40e7c154b8173c7dbd26122042f557bf0b99b29c2f0fca73277794003"
+        }
+      },
+      "captured_at_unix": 1791209060,
+      "cluster": "devnet",
+      "commitment": "finalized",
+      "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+      "min_context_slot": null,
+      "non_atomic_capture": false,
+      "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+      "rpc_origin": "https://api.devnet.solana.com",
+      "slot": 507756125,
+      "tool_version": "0.1.0"
+    },
+    "schema_version": 1,
+    "snapshot_id": "SNAP-2faa4a615a91f96cd13118f2824feef28e25b9020d359ea4b3b8fa6dc56e8e04",
+    "snapshot_sha256": "550545bdee55508afffdecbb9afc07b18cf9acd2b48d4ba739b5cf315013a47f"
+  },
+  "source": {
+    "cluster": "devnet",
+    "slot": 507756125,
+    "snapshot_sha256": "550545bdee55508afffdecbb9afc07b18cf9acd2b48d4ba739b5cf315013a47f"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "SNAP-2faa4a615a91f96cd13118f2824feef28e25b9020d359ea4b3b8fa6dc56e8e04",
+  "snapshot_sha256": "550545bdee55508afffdecbb9afc07b18cf9acd2b48d4ba739b5cf315013a47f",
+  "provenance": {
+    "cluster": "devnet",
+    "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+    "rpc_origin": "https://api.devnet.solana.com",
+    "acquisition": "rpc",
+    "slot": 507756125,
+    "min_context_slot": null,
+    "commitment": "finalized",
+    "captured_at_unix": 1791209060,
+    "non_atomic_capture": false,
+    "program_id": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+    "tool_version": "0.1.0",
+    "artifacts": {
+      "v1_binary": {
+        "path": "../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.bin",
+        "sha256": "b317f089394196bcc45c8c58f10357bc79548aa35c793b196abba9fda627c4ba"
+      },
+      "v1_idl": {
+        "path": "../../fixtures/devnet-snapshots/vault-devnet/artifacts/v1.json",
+        "sha256": "801840e40e7c154b8173c7dbd26122042f557bf0b99b29c2f0fca73277794003"
+      }
+    }
+  },
+  "accounts": [
+    {
+      "logical_name": "owner",
+      "address": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz",
+      "exists": true,
+      "raw": {
+        "schema_version": 1,
+        "address": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz",
+        "owner": "11111111111111111111111111111111",
+        "lamports": "8095920",
+        "executable": false,
+        "data_length": 0,
+        "raw_data": [],
+        "metadata": {}
+      },
+      "rent_epoch": "18446744073709551615",
+      "decoded": null,
+      "decode_error": null,
+      "decode_status": "not_requested",
+      "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "record_sha256": "f671c97daf83e0f06aaf2d6bdf4275a4c28fe3bb7f1fe3f7ba0e4de4ac56eb9e"
+    },
+    {
+      "logical_name": "vault",
+      "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+      "exists": true,
+      "raw": {
+        "schema_version": 1,
+        "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+        "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+        "lamports": "1894080",
+        "executable": false,
+        "data_length": 48,
+        "raw_data": [
+          27,
+          177,
+          104,
+          68,
+          34,
+          4,
+          147,
+          92,
+          119,
+          44,
+          138,
+          68,
+          43,
+          125,
+          176,
+          110,
+          22,
+          108,
+          251,
+          193,
+          204,
+          188,
+          188,
+          222,
+          111,
+          62,
+          186,
+          118,
+          164,
+          233,
+          142,
+          243,
+          255,
+          197,
+          25,
+          80,
+          34,
+          55,
+          214,
+          239,
+          64,
+          66,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "metadata": {}
+      },
+      "rent_epoch": "18446744073709551615",
+      "decoded": {
+        "account_type": "VaultV1",
+        "fields": {
+          "balance": {
+            "kind": "integer",
+            "value": "1000000"
+          },
+          "owner": {
+            "kind": "pubkey",
+            "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+          }
+        },
+        "consumed_bytes": 48,
+        "trailing_bytes": []
+      },
+      "decode_error": null,
+      "decode_status": "decoded",
+      "data_sha256": "cb69e4c28d4881547a905c5bf0655513427ef848593576c3dc955f9136cbd389",
+      "record_sha256": "1801996a979fd0fcd752432bef2017adfdf085e3e7e65019d5229b6b66fba036"
+    }
+  ]
+}

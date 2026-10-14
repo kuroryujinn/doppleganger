@@ -1,0 +1,35 @@
+[package]
+name = "dg-runtime"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+dg-analysis = { path = "../dg-analysis" }
+dg-config = { path = "../dg-config" }
+dg-state = { path = "../dg-state" }
+litesvm = { version = "=0.16.0", features = ["persistence-internal"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10.9"
+solana-account = "=4.3.2"
+solana-address = "=2.6.1"
+solana-instruction = "=3.4.1"
+solana-instruction-error = "=2.4.0"
+solana-message = "=4.4.1"
+solana-signer = "=3.0.1"
+solana-transaction = "=4.1.6"
+solana-transaction-error = { version = "=3.3.2", features = ["serde"] }
+
+[dev-dependencies]
+dg-escrow-v1 = { path = "../../programs/dg-escrow-v1", features = ["no-entrypoint"] }
+dg-escrow-v2 = { path = "../../programs/dg-escrow-v2", features = ["no-entrypoint"] }
+anchor-lang.workspace = true
+dg-r5-fixture = { path = "../../programs/dg-r5-fixture", features = ["no-entrypoint"] }
+dg-vault-v1 = { path = "../../programs/dg-vault-v1", features = ["no-entrypoint"] }
+dg-vault-v2 = { path = "../../programs/dg-vault-v2", features = ["no-entrypoint"] }
+dg-r6-fixture-v1 = { path = "../../programs/dg-r6-fixture-v1", features = ["no-entrypoint"] }
+dg-r6-fixture-v2 = { path = "../../programs/dg-r6-fixture-v2", features = ["no-entrypoint"] }
+toml = "0.9"
+solana-keypair = "=3.1.2"
+solana-clock = "=3.1.1"

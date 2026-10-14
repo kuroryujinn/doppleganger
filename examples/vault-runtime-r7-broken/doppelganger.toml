@@ -1,0 +1,164 @@
+schema_version = 1
+
+[project]
+name = "vault-runtime-r7-broken"
+framework = "anchor"
+
+[versions.v1]
+program_path = "../../target/deploy/v1/dg_vault_v1.so"
+idl = "../../target/idl/v1.json"
+program_id = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+
+[versions.v2]
+program_path = "../../target/deploy/r7-broken/dg_vault_v2.so"
+idl = "../../target/idl/v2.json"
+program_id = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+
+[addresses.owner]
+type = "signer"
+test_seed = [41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41, 41]
+lamports = "u64:10000000000"
+
+[addresses.stranger]
+type = "signer"
+test_seed = [42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42]
+lamports = "u64:1000000000"
+
+[addresses.program]
+type = "program"
+version = "v1"
+
+[addresses.system_program]
+type = "literal"
+address = "11111111111111111111111111111111"
+
+[addresses.vault]
+type = "pda"
+program = "v1"
+seeds = [{ const = "vault" }, { pubkey = "$owner" }]
+
+[fixture]
+name = "vault-runtime"
+payer = "owner"
+
+[[fixture.account]]
+name = "vault"
+type = "VaultV1"
+address = "$vault"
+owner = "$program"
+lamports = 0
+
+[[fixture.initialize]]
+instruction = "initialize"
+account_mapping = { vault = "vault", owner = "owner", system_program = "system_program" }
+
+[[fixture.setup]]
+instruction = "deposit"
+account_mapping = { vault = "vault", owner = "owner", system_program = "system_program" }
+args = { amount = "u64:1000000" }
+
+[[migration_targets]]
+name = "vault"
+address = "$vault"
+v1_type = "VaultV1"
+v2_type = "VaultV2"
+
+[[preservation]]
+id = "owner-field"
+account = "vault"
+field = "owner"
+rule = "equal"
+
+[[preservation]]
+id = "balance-field"
+account = "vault"
+field = "balance"
+rule = "equal"
+
+[[preservation]]
+id = "limit-initialized"
+account = "vault"
+field = "withdrawal_limit"
+rule = "initialized"
+
+[[preservation]]
+id = "limit-default"
+account = "vault"
+field = "withdrawal_limit"
+rule = "default"
+value = "u64:500000"
+
+[[preservation]]
+id = "program-owner"
+account = "vault"
+rule = "owner_preserved"
+
+[[preservation]]
+id = "account-size"
+account = "vault"
+rule = "account_size_minimum"
+value = 56
+
+[[preservation]]
+id = "address-continuity"
+account = "vault"
+rule = "pda_preserved"
+
+[migration]
+instruction = "migrate"
+account_mapping = { vault = "vault", owner = "owner", system_program = "system_program" }
+
+[[scenario]]
+id = "normal-migration"
+type = "standard_migration"
+expected = "success"
+
+[[scenario]]
+id = "unauthorized-migration"
+type = "unauthorized_migration"
+signer_account = "owner"
+signer_override = "stranger"
+expected = "error"
+expected_error = 2006
+state_unchanged = true
+
+[[scenario]]
+id = "repeat-migration"
+type = "repeat_migration"
+first = "success"
+second = "error"
+expected_error = 3002
+
+[[scenario]]
+id = "rollback"
+type = "failed_migration_rollback"
+expected = "error"
+expected_error = 2006
+[scenario.migration]
+instruction = "migrate"
+account_mapping = { vault = "vault", owner = "stranger", system_program = "system_program" }
+
+[[scenario]]
+id = "unmigrated-v2-operation"
+type = "unmigrated_state_against_v2"
+instruction = "withdraw"
+expected = "error"
+expected_error = 3002
+state_unchanged = true
+args = { amount = "u64:1" }
+
+[[scenario]]
+id = "post-migration-operation"
+type = "post_migration_instruction"
+instruction = "withdraw"
+expected = "success"
+args = { amount = "u64:100000" }
+
+[[scenario]]
+id = "post-migration-limit"
+type = "post_migration_instruction"
+instruction = "withdraw"
+expected = "error"
+expected_error = 6002
+state_unchanged = true
+args = { amount = "u64:500001" }

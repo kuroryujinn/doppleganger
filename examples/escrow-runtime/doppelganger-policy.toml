@@ -1,0 +1,140 @@
+# Reviewed expectations for the bundled acceptance application only.
+schema_version = 1
+
+[[relationship]]
+id = "escrow-initializer"
+kind = "authority"
+account = "escrow"
+target = "$initializer"
+field = "initializer"
+
+[[relationship]]
+id = "escrow-beneficiary"
+kind = "authority"
+account = "escrow"
+target = "$beneficiary"
+field = "beneficiary"
+
+[[relationship]]
+id = "escrow-program"
+kind = "program_owner"
+account = "escrow"
+target = "$program"
+
+[[relationship]]
+id = "escrow-pda"
+kind = "pda"
+account = "escrow"
+target = "$escrow"
+
+[[expected_change]]
+classification = "ACCOUNT_SCHEMA_CHANGE"
+path = "account.EscrowV1 -> EscrowV2.arbitrator"
+before_json = "null"
+after_json = "{\"kind\":\"primitive\",\"value\":\"pubkey\"}"
+reason = "Reviewed fixture upgrade: Field or argument added"
+
+[[expected_change]]
+classification = "ACCOUNT_SCHEMA_CHANGE"
+path = "account.EscrowV1 -> EscrowV2.deadline"
+before_json = "null"
+after_json = "{\"kind\":\"primitive\",\"value\":\"i64\"}"
+reason = "Reviewed fixture upgrade: Field or argument added"
+
+[[expected_change]]
+classification = "DISCRIMINATOR_CHANGE"
+path = "EscrowV1 -> EscrowV2.discriminator"
+before_json = "[26,90,193,218,188,251,139,211]"
+after_json = "[229,26,241,181,158,158,70,190]"
+reason = "Reviewed fixture upgrade: Serialized discriminator changed"
+
+[[expected_change]]
+classification = "ERROR_DEFINITION_CHANGE"
+path = "DeliberateFailure"
+before_json = "null"
+after_json = "{\"code\":6007,\"message\":\"Controlled migration failure\",\"name\":\"DeliberateFailure\"}"
+reason = "Reviewed fixture upgrade: Custom error added or removed"
+
+[[expected_change]]
+classification = "ERROR_DEFINITION_CHANGE"
+path = "Expired"
+before_json = "null"
+after_json = "{\"code\":6008,\"message\":\"Escrow deadline has elapsed\",\"name\":\"Expired\"}"
+reason = "Reviewed fixture upgrade: Custom error added or removed"
+
+[[expected_change]]
+classification = "ERROR_MESSAGE_CHANGE"
+path = "error.InvalidAmount.message"
+before_json = "\"Escrow amount must be positive\""
+after_json = "\"Escrow amount is invalid\""
+reason = "Reviewed fixture upgrade: Custom error message changed"
+
+[[expected_change]]
+classification = "ERROR_DEFINITION_CHANGE"
+path = "InvalidArbitrator"
+before_json = "null"
+after_json = "{\"code\":6005,\"message\":\"Arbitrator cannot be the zero public key\",\"name\":\"InvalidArbitrator\"}"
+reason = "Reviewed fixture upgrade: Custom error added or removed"
+
+[[expected_change]]
+classification = "ERROR_DEFINITION_CHANGE"
+path = "InvalidDeadline"
+before_json = "null"
+after_json = "{\"code\":6004,\"message\":\"Migration deadline must be in the future\",\"name\":\"InvalidDeadline\"}"
+reason = "Reviewed fixture upgrade: Custom error added or removed"
+
+[[expected_change]]
+classification = "ERROR_DEFINITION_CHANGE"
+path = "Overflow"
+before_json = "null"
+after_json = "{\"code\":6006,\"message\":\"Arithmetic overflow\",\"name\":\"Overflow\"}"
+reason = "Reviewed fixture upgrade: Custom error added or removed"
+
+[[expected_change]]
+classification = "ERROR_DEFINITION_CHANGE"
+path = "Unauthorized"
+before_json = "null"
+after_json = "{\"code\":6003,\"message\":\"Only the initializer can migrate\",\"name\":\"Unauthorized\"}"
+reason = "Reviewed fixture upgrade: Custom error added or removed"
+
+[[expected_change]]
+classification = "INTERFACE_CHANGE"
+path = "fund"
+before_json = "{\"accounts\":[{\"name\":\"escrow\",\"optional\":false,\"pda\":{\"program\":null,\"seeds\":[{\"kind\":\"const\",\"path\":null,\"ty\":null,\"value\":[101,115,99,114,111,119]},{\"kind\":\"account\",\"path\":\"initializer\",\"ty\":null,\"value\":null},{\"kind\":\"account\",\"path\":\"escrow.beneficiary\",\"ty\":null,\"value\":null}]},\"signer\":false,\"writable\":true},{\"name\":\"initializer\",\"optional\":false,\"pda\":null,\"signer\":true,\"writable\":true},{\"name\":\"system_program\",\"optional\":false,\"pda\":null,\"signer\":false,\"writable\":false}],\"args\":[],\"discriminator\":[218,188,111,221,152,113,174,7],\"name\":\"fund\"}"
+after_json = "null"
+reason = "Reviewed fixture upgrade: Instruction added or removed"
+
+[[expected_change]]
+classification = "INTERFACE_CHANGE"
+path = "initialize_escrow"
+before_json = "{\"accounts\":[{\"name\":\"escrow\",\"optional\":false,\"pda\":{\"program\":null,\"seeds\":[{\"kind\":\"const\",\"path\":null,\"ty\":null,\"value\":[101,115,99,114,111,119]},{\"kind\":\"account\",\"path\":\"initializer\",\"ty\":null,\"value\":null},{\"kind\":\"account\",\"path\":\"beneficiary\",\"ty\":null,\"value\":null}]},\"signer\":false,\"writable\":true},{\"name\":\"initializer\",\"optional\":false,\"pda\":null,\"signer\":true,\"writable\":true},{\"name\":\"beneficiary\",\"optional\":false,\"pda\":null,\"signer\":true,\"writable\":false},{\"name\":\"system_program\",\"optional\":false,\"pda\":null,\"signer\":false,\"writable\":false}],\"args\":[{\"name\":\"amount\",\"ty\":{\"kind\":\"primitive\",\"value\":\"u64\"}}],\"discriminator\":[243,160,77,153,11,92,48,209],\"name\":\"initialize_escrow\"}"
+after_json = "null"
+reason = "Reviewed fixture upgrade: Instruction added or removed"
+
+[[expected_change]]
+classification = "INTERFACE_CHANGE"
+path = "migrate_escrow"
+before_json = "null"
+after_json = "{\"accounts\":[{\"name\":\"escrow\",\"optional\":false,\"pda\":{\"program\":null,\"seeds\":[{\"kind\":\"const\",\"path\":null,\"ty\":null,\"value\":[101,115,99,114,111,119]},{\"kind\":\"account\",\"path\":\"escrow.initializer\",\"ty\":null,\"value\":null},{\"kind\":\"account\",\"path\":\"escrow.beneficiary\",\"ty\":null,\"value\":null}]},\"signer\":false,\"writable\":true},{\"name\":\"initializer\",\"optional\":false,\"pda\":null,\"signer\":true,\"writable\":true},{\"name\":\"system_program\",\"optional\":false,\"pda\":null,\"signer\":false,\"writable\":false}],\"args\":[{\"name\":\"deadline\",\"ty\":{\"kind\":\"primitive\",\"value\":\"i64\"}},{\"name\":\"arbitrator\",\"ty\":{\"kind\":\"primitive\",\"value\":\"pubkey\"}},{\"name\":\"fail_after_write\",\"ty\":{\"kind\":\"primitive\",\"value\":\"bool\"}}],\"discriminator\":[65,111,186,119,58,11,81,209],\"name\":\"migrate_escrow\"}"
+reason = "Reviewed fixture upgrade: Instruction added or removed"
+
+[[expected_change]]
+classification = "INTERFACE_CHANGE"
+path = "release"
+before_json = "null"
+after_json = "{\"accounts\":[{\"name\":\"escrow\",\"optional\":false,\"pda\":{\"program\":null,\"seeds\":[{\"kind\":\"const\",\"path\":null,\"ty\":null,\"value\":[101,115,99,114,111,119]},{\"kind\":\"account\",\"path\":\"escrow.initializer\",\"ty\":null,\"value\":null},{\"kind\":\"account\",\"path\":\"beneficiary\",\"ty\":null,\"value\":null}]},\"signer\":false,\"writable\":true},{\"name\":\"beneficiary\",\"optional\":false,\"pda\":null,\"signer\":true,\"writable\":true}],\"args\":[],\"discriminator\":[253,249,15,206,28,127,193,241],\"name\":\"release\"}"
+reason = "Reviewed fixture upgrade: Instruction added or removed"
+
+[[expected_change]]
+classification = "SERIALIZATION_COMPATIBILITY_CHANGE"
+path = "EscrowStatus.Disputed"
+before_json = "null"
+after_json = "{\"fields\":[],\"index\":4}"
+reason = "Reviewed fixture upgrade: Enum variant added"
+
+[[expected_change]]
+classification = "ACCOUNT_SIZE_CHANGE"
+path = "account.EscrowV1 -> EscrowV2.size"
+before_json = "{\"bytes\":81,\"kind\":\"exact\",\"minimum_bytes\":81}"
+after_json = "{\"bytes\":121,\"kind\":\"exact\",\"minimum_bytes\":121}"
+reason = "Reviewed fixture upgrade: Exact serialized size increased; existing accounts may require reallocation"

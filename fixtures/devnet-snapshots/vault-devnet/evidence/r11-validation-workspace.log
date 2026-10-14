@@ -1,0 +1,663 @@
+   Compiling dg-snapshot v0.1.0 (/home/kuro/doppleganger/crates/dg-snapshot)
+   Compiling dg-cli v0.1.0 (/home/kuro/doppleganger/crates/dg-cli)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 7.51s
+     Running unittests src/lib.rs (target/debug/deps/dg_analysis-2ac0b5d88ae064de)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/phase_00.rs (target/debug/deps/phase_00-f4eca50b8cdce2ef)
+
+running 28 tests
+test account_field_type_change_is_detected_alone ... ok
+test argument_reorder_is_detected_alone ... ok
+test account_discriminator_change_is_detected_alone ... ok
+test event_field_removal_is_detected_alone ... ok
+test argument_type_change_is_detected_alone ... ok
+test account_field_reorder_is_detected_alone ... ok
+test error_code_change_is_detected_alone ... ok
+test enum_indexes_payloads_and_nested_types ... ok
+test account_add_remove_nested_type_and_field_removal ... ok
+test pda_seed_source_is_detected_alone ... ok
+test existing_enum_variants_reordered_change_serialized_indexes ... ok
+test pda_seed_order_is_detected_alone ... ok
+test explicit_account_mapping_works_for_unrelated_names ... ok
+test legacy_account_flags_normalize_and_malformed_flags_fail ... ok
+test event_field_and_discriminator_variants ... ok
+test malformed_and_duplicate_idl_definitions_fail_cleanly ... ok
+test missing_pda_metadata_is_distinct_from_malformed_pda_metadata ... ok
+test account_fields_size_and_dynamic_layout ... ok
+test narrowing_hint_and_test_matrix_are_specific_and_deduplicated ... ok
+test signer_requirement_change_is_detected_alone ... ok
+test pda_and_discriminator_changes ... ok
+test writable_requirement_change_is_detected_alone ... ok
+test instruction_changes_are_independent ... ok
+test pda_seed_sources_order_removal_and_program_override ... ok
+test strings_and_vectors_never_claim_exact_account_size ... ok
+test normalization_is_deterministic_and_rejects_bad_input ... ok
+test events_errors_and_deterministic_test_matrix ... ok
+test report_exposes_typed_changes_without_parsing_explanations ... ok
+
+test result: ok. 28 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running unittests src/main.rs (target/debug/deps/doppelganger-b60c2eee5c62a65a)
+
+running 2 tests
+test schema::tests::detects_schema_and_seed_drift_and_rejects_missing_metadata ... ok
+test project::tests::rejects_unsafe_names_and_empty_account_mapping ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/escrow_r9_cli.rs (target/debug/deps/escrow_r9_cli-40d6db2950260daf)
+
+running 6 tests
+test static_analysis_accepts_escrow_account_mapping ... ok
+test build_reports_real_v1_state_without_migration ... ok
+test broken_preservation_finding_is_not_a_command_failure ... ok
+test good_preservation_has_no_findings ... ok
+test both_candidates_migrate_without_implicit_preservation_verdict ... ok
+test both_candidates_pass_the_same_six_lifecycle_scenarios ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.74s
+
+     Running tests/migration_cli.rs (target/debug/deps/migration_cli-0b6f2243d5d5e790)
+
+running 1 test
+test non_vault_project_registers_and_resolves_migration_binding ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/preflight_cli.rs (target/debug/deps/preflight_cli-4af4c1012fc974db)
+
+running 1 test
+test direct_account_mapping_accepts_non_vault_program ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/runtime_lifecycle_cli.rs (target/debug/deps/runtime_lifecycle_cli-3b6ca41f11a4d6cc)
+
+running 2 tests
+test broken_lifecycle_is_reported_not_exit_policy ... ok
+test good_lifecycle_report ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.97s
+
+     Running tests/runtime_verify_cli.rs (target/debug/deps/runtime_verify_cli-b27bda155c23e36e)
+
+running 2 tests
+test verify_reports_rules_and_keeps_execution_and_policy_separate ... ok
+test broken_candidate_is_execution_success_and_preservation_failure_not_command_failure ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.13s
+
+     Running tests/snapshot_cli.rs (target/debug/deps/snapshot_cli-a600d2482bc0fa31)
+
+running 5 tests
+test tampered_snapshot_and_cli_errors_stop_before_execution ... ok
+test candidate_comparison_and_regression_cli_reproduce_without_rpc ... ok
+test real_devnet_snapshot_regression_reproduces_offline ... ok
+test inspect_and_offline_replay_show_hashes_source_and_scope ... ok
+test lifecycle_regression_embeds_snapshot_and_reproduces_offline ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.72s
+
+     Running unittests src/lib.rs (target/debug/deps/dg_config-b04d893c4d233baf)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/phase_01.rs (target/debug/deps/phase_01-aedab167ab7ab09d)
+
+running 6 tests
+test parser_rejects_missing_versions_and_invalid_project ... ok
+test migration_arguments_accept_full_width_typed_integers ... ok
+test resolves_idl_order_flags_discriminator_and_borsh_arguments ... ok
+test structured_arguments_encode_from_idl_types ... ok
+test load_resolves_paths_and_rejects_missing_artifacts ... ok
+test invalid_instruction_account_and_argument_fail_before_runtime ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/runtime_addresses.rs (target/debug/deps/runtime_addresses-8425c5e2ffb3c20b)
+
+running 9 tests
+test address_reference_depth_is_bounded ... ok
+test literal_program_and_reference_addresses ... ok
+test bad_seeds_and_unknown_references_fail_without_panics ... ok
+test different_program_ids_and_seed_order_produce_distinct_pdas ... ok
+test generated_signer_and_alias_share_one_keypair ... ok
+test constant_pubkey_integer_and_raw_pda_seeds_match_sdk ... ok
+test deterministic_test_signer_and_stable_logical_mapping ... ok
+test fixture_actions_use_generic_builder_and_preserve_order ... ok
+test invalid_fixture_accounts_and_actions_fail_before_execution ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/lib.rs (target/debug/deps/dg_escrow_v1-d296cdf7275d5b15)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/dg_escrow_v2-ee7a1448d1bc88dc)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/dg_r5_fixture-4c1dbc08dfb6eaa0)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/dg_r6_fixture_v1-a0237be3783ddbc4)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/dg_r6_fixture_v2-f5b5dc58b3111d85)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/dg_regression-fd14e1ffd9832f7d)
+
+running 1 test
+test tests::captures_and_replays_preservation_and_lifecycle_failures ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.22s
+
+     Running unittests src/lib.rs (target/debug/deps/dg_runtime-47f9110fbba6ed29)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/escrow_r9.rs (target/debug/deps/escrow_r9-524049ec4fba6998)
+
+running 19 tests
+test good_and_broken_manifests_differ_only_in_name_and_binary ... ok
+test core_sources_match_pre_r9_baseline_without_project_registration ... ok
+test phase_zero_detects_real_escrow_shapes_without_special_handling ... ok
+test v1_multiple_signers_and_two_party_pda_resolve_generically ... ok
+test v1_real_setup_and_decoder_match_independent_typed_state ... ok
+test migration_instruction_and_accounts_match_anchor_encoding ... ok
+test good_preservation_passes_all_eleven_rules ... ok
+test candidate_loading_keeps_the_live_v1_world_and_snapshot ... ok
+test v1_world_needs_no_v2_artifact_or_migration ... ok
+test broken_amount_is_the_only_violation_with_structured_evidence ... ok
+test lifecycle_rollback_after_mutation ... ok
+test lifecycle_standard ... ok
+test lifecycle_unauthorized ... ok
+test lifecycle_unmigrated ... ok
+test good_and_broken_migrations_both_produce_valid_independent_v2_state ... ok
+test lifecycle_repeat ... ok
+test lifecycle_post_migration_beneficiary_release ... ok
+test all_scenarios_start_fresh_in_configured_order_for_both_candidates ... ok
+test deterministic_world_migration_preservation_and_lifecycle_reports ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.10s
+
+     Running tests/runtime_r5.rs (target/debug/deps/runtime_r5-dfa6f2e41a8d2a2e)
+
+running 32 tests
+test missing_program_is_structured ... ok
+test invalid_program_artifacts_fail_cleanly ... ok
+test compiled_action_count_mismatch_is_rejected ... ok
+test malformed_resolved_signer_identity_is_rejected ... ok
+test invalid_synthetic_fields_return_error ... ok
+test insufficient_funding_returns_action_error_without_panicking ... ok
+test missing_required_keypair_is_an_attempted_action_failure ... ok
+test fresh_world_loads_valid_configured_program ... ok
+test fee_payer_alias_reuses_identity ... ok
+test initialization_creates_real_account_and_attaches_required_signer ... ok
+test failure_in_initialization_prevents_setup ... ok
+test multiple_initialization_actions_preserve_declaration_order ... ok
+test decode_failure_retains_raw_state ... ok
+test multiple_observations_keep_configured_order ... ok
+test observation_only_accounts_are_not_synthesized ... ok
+test large_synthetic_account_respects_limits ... ok
+test reports_contain_public_keys_not_private_key_fields ... ok
+test signer_funding_is_exact_and_alias_not_funded_twice ... ok
+test observations_use_actual_owner_lamports_and_bytes ... ok
+test setup_actions_execute_after_initialization_in_order ... ok
+test synthetic_accounts_use_configured_owner_lamports_and_exact_bytes ... ok
+test setup_failure_is_fail_fast_with_context ... ok
+test synthetic_zero_lamport_account_is_retained ... ok
+test synthetic_state_cannot_overwrite_signer ... ok
+test snapshot_limits_fail_with_execution_history ... ok
+test initialization_order_is_enforced_by_program_state ... ok
+test synthetic_binary_payload_is_preserved_exactly ... ok
+test unresolved_observation_binding_fails_cleanly ... ok
+test random_signer_default_still_generates_distinct_keys ... ok
+test zero_funding_is_supported ... ok
+test world_accounts_balances_clock_and_history_are_isolated ... ok
+test test_keys_are_reproducible_and_different_seeds_differ ... ok
+
+test result: ok. 32 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.66s
+
+     Running tests/runtime_r6.rs (target/debug/deps/runtime_r6-9d6be64a99975a70)
+
+running 36 tests
+test duplicate_incompatible_privileges_rejected ... ok
+test duplicate_observation_targets_rejected ... ok
+test internal_runtime_errors_are_distinct_from_submission_and_program_errors ... ok
+test different_program_id_rejected ... ok
+test candidate_idl_id_mismatch_rejected ... ok
+test candidate_load_preserves_committed_v1_state_before_transaction ... ok
+test instruction_order_flags_and_data_match_independent_anchor_encoding ... ok
+test decode_failure_retains_complete_raw_evidence ... ok
+test alias_signer_reuses_identity_and_does_not_sign_with_unused_key ... ok
+test complex_arguments_match_anchor_encoding_and_execute_losslessly ... ok
+test closed_account_is_present_before_and_absent_after ... ok
+test created_account_is_absent_before_and_present_after ... ok
+test configured_discriminator_is_used_even_when_program_rejects_it ... ok
+test attempted_write_realloc_and_transfer_roll_back_but_setup_remains_committed ... ok
+test before_snapshot_does_not_alias_live_state ... ok
+test invalid_argument_rejected_before_candidate_swap ... ok
+test missing_account_mapping_rejected ... ok
+test invalid_elf_load_rejected_without_altering_world ... ok
+test missing_binary_is_structured ... ok
+test missing_instruction_rejected_with_before_evidence ... ok
+test missing_required_signer_keypair_rejected_before_swap ... ok
+test missing_fee_payer_keypair_rejected_before_load ... ok
+test lossless_u64_max_is_encoded_and_executed ... ok
+test deterministic_worlds_produce_identical_execution_reports ... ok
+test non_elf_rejected_without_altering_world ... ok
+test omitted_discriminator_returns_instruction_error ... ok
+test separate_fee_payer_is_signed_alongside_required_authority ... ok
+test program_error_before_mutation_is_execution_evidence ... ok
+test raw_only_target_is_supported ... ok
+test snapshot_capture_failure_retains_transaction_and_before ... ok
+test structured_program_error_can_be_consumed_without_parsing_messages ... ok
+test unresolved_observation_address_returns_binding_error ... ok
+test unknown_account_mapping_rejected ... ok
+test unresolved_logical_account_rejected ... ok
+test success_reallocates_and_decodes_version_specific_models ... ok
+test submission_failure_is_not_reported_as_program_error ... ok
+
+test result: ok. 36 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.71s
+
+     Running tests/runtime_r7.rs (target/debug/deps/runtime_r7-40379348d29b8e95)
+
+running 96 tests
+test ambiguous_binding_rejected ... ok
+test bool_equal ... ok
+test different_enum ... ok
+test default_nested_field_uses_schema ... ok
+test default_new_field_ignores_missing_before ... ok
+test default_matches ... ok
+test default_out_of_range_is_error ... ok
+test decode_error_keeps_raw_and_allows_metadata_rules ... ok
+test after_only_default_does_not_require_before_decoding ... ok
+test different_pubkey ... ok
+test different_integer ... ok
+test default_mismatch_has_expected_evidence ... ok
+test duplicate_explicit_ids_rejected ... ok
+test duplicate_generated_ids_rejected ... ok
+test enum_payload_change ... ok
+test empty_account_config ... ok
+test equal_pubkey ... ok
+test exists_account_absent ... ok
+test deterministic_report_and_stable_generated_ids ... ok
+test equal_integer ... ok
+test exists_account_present ... ok
+test exists_field_missing ... ok
+test compound_defaults_reuse_lossless_encoder_and_decoder ... ok
+test field_absence_does_not_hide_decode_failure ... ok
+test explicit_id_preserved ... ok
+test field_absent_account ... ok
+test default_enum_uses_existing_codec ... ok
+test equal_enum ... ok
+test field_missing ... ok
+test field_invalid_path ... ok
+test field_deep_nested ... ok
+test field_absence_does_not_hide_missing_account ... ok
+test field_nested ... ok
+test exists_field_present ... ok
+test field_non_struct ... ok
+test field_top_level ... ok
+test initialized_cannot_treat_undecodable_before_as_missing ... ok
+test initialized_existing_is_not_applicable ... ok
+test initialized_new_account_passes ... ok
+test initialized_undecodable_after_is_error_even_if_before_exists ... ok
+test invalid_field_path_config ... ok
+test invalid_integer_is_structured_error ... ok
+test lamports_decrease ... ok
+test initialized_missing_fails ... ok
+test minimum_below ... ok
+test missing_account_config ... ok
+test maximum_above ... ok
+test lamports_increase ... ok
+test minimum_equal ... ok
+test lamports_same ... ok
+test initialized_zero_passes ... ok
+test invalid_account_reference ... ok
+test maximum_below ... ok
+test minimum_above ... ok
+test no_rules_does_not_invent_static_requirements ... ok
+test nested_struct_equal ... ok
+test no_integer_string_coercion ... ok
+test non_numeric_value ... ok
+test maximum_equal ... ok
+test multiple_rules_collect_all_counts_and_evidence ... ok
+test not_equal_pass ... ok
+test not_exists_account_removed ... ok
+test not_exists_field_remains ... ok
+test not_exists_field_removed ... ok
+test not_equal_fail ... ok
+test missing_side_is_not_absent_account ... ok
+test option_equal ... ok
+test missing_expected ... ok
+test not_exists_account_remains ... ok
+test missing_required_field ... ok
+test option_none_to_some ... ok
+test owner_after_missing ... ok
+test owner_before_missing ... ok
+test pda_binding_continuity_before_absent ... ok
+test owner_metadata_not_decoded_owner ... ok
+test owner_same ... ok
+test pda_changed ... ok
+test size_above ... ok
+test sequence_order_change ... ok
+test signed_negative_boundary ... ok
+test owner_changed ... ok
+test size_negative_invalid ... ok
+test size_equal ... ok
+test pda_same ... ok
+test pda_binding_continuity_after_absent ... ok
+test size_below ... ok
+test string_equal ... ok
+test unknown_logical_account_is_diagnostic ... ok
+test u128_max_boundary ... ok
+test u64_max_boundary ... ok
+test unexpected_expected ... ok
+test u128_max_default ... ok
+test unknown_rule_type ... ok
+test unexpected_field ... ok
+test vector_equal ... ok
+test wrong_numeric_prefix ... ok
+
+test result: ok. 96 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/runtime_r8.rs (target/debug/deps/runtime_r8-7c23b3980d3e5da1)
+
+running 44 tests
+test config_unknown_type ... ok
+test config_invalid_error_identity ... ok
+test config_missing_instruction ... ok
+test config_missing_signer_override ... ok
+test config_boundary_requires_fixture ... ok
+test config_repeat_requires_both_outcomes ... ok
+test config_incompatible_fields ... ok
+test config_error_code_requires_rejection ... ok
+test config_missing_outcome ... ok
+test lifecycle_module_only_orchestrates_existing_primitives ... ok
+test config_duplicate_explicit_ids ... ok
+test duplicate_generated_ids_rejected ... ok
+test invalid_fixture_reference_is_error ... ok
+test bad_setup_does_not_satisfy_rejection ... ok
+test override_must_select_idl_signer ... ok
+test override_without_keypair_is_engine_error ... ok
+test maximum_u64_fixture_is_lossless ... ok
+test missing_candidate_never_satisfies_expected_error ... ok
+test engine_error_does_not_block_independent_scenarios ... ok
+test raw_comparison_detects_each_account_property ... ok
+test post_migration_stops_if_migration_fails ... ok
+test rollback_after_actual_write_resize_transfer ... ok
+test post_migration_expected_program_rejection ... ok
+test repeat_unexpected_acceptance_fails ... ok
+test repeat_acceptance_can_be_expected ... ok
+test post_migration_operation_success ... ok
+test repeat_uses_same_world_without_reload ... ok
+test standard_engine_failure_is_not_rejection ... ok
+test standard_expected_error ... ok
+test standard_mismatch ... ok
+test standard_unexpected_rejection ... ok
+test unauthorized_unexpected_acceptance ... ok
+test unmigrated_acceptance_is_configurable ... ok
+test standard_success ... ok
+test unauthorized_rejection_and_exact_code ... ok
+test deterministic_reports_and_ids ... ok
+test independent_scenarios_start_fresh ... ok
+test unauthorized_wrong_error_identity_fails ... ok
+test unmigrated_outcome_mismatch ... ok
+test rollback_reports_selected_fee_payer_change ... ok
+test unmigrated_rejects_old_layout_without_migration ... ok
+test unresolved_override_is_engine_error ... ok
+test zero_fixture ... ok
+test scenario_order_and_generated_ids_survive_reordering ... ok
+
+test result: ok. 44 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.90s
+
+     Running tests/vault_equivalence.rs (target/debug/deps/vault_equivalence-54d97b967a95be6e)
+
+running 1 test
+test configured_v1_world_matches_hardcoded_reference_setup ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.39s
+
+     Running tests/vault_r6_acceptance.rs (target/debug/deps/vault_r6_acceptance-8037fdf646fb9864)
+
+running 3 tests
+test vault_program_error_matches_typed_reference ... ok
+test configured_vault_migration_matches_typed_reference ... ok
+test faulty_vault_produces_matching_evidence_without_safety_verdict ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.37s
+
+     Running tests/vault_r7_acceptance.rs (target/debug/deps/vault_r7_acceptance-bd1b2dd93886d86b)
+
+running 4 tests
+test explicit_default_violation_produces_generic_finding_on_faulty_vault ... ok
+test good_vault_matches_overlapping_typed_demo_checks ... ok
+test faulty_backing_fixture_does_not_invent_an_economic_rule ... ok
+test exact_lamports_rule_is_not_a_backing_rule ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.35s
+
+     Running tests/vault_r7_detection_acceptance.rs (target/debug/deps/vault_r7_detection_acceptance-c4e9e979260f2aa9)
+
+running 3 tests
+test manifests_differ_only_in_project_name_and_candidate_binary ... ok
+test broken_candidate_reports_are_identical_across_deterministic_runs ... ok
+test same_rules_pass_good_candidate_and_detect_one_real_balance_violation ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.40s
+
+     Running tests/vault_r8_acceptance.rs (target/debug/deps/vault_r8_acceptance-edbfd67c6383f180)
+
+running 7 tests
+test unmigrated_operation_matches_old_typed_recipe ... ok
+test post_migration_operation_matches_old_typed_recipe ... ok
+test repeated_migration_matches_old_typed_recipe ... ok
+test normal_migration_matches_old_typed_recipe ... ok
+test rollback_matches_old_typed_recipe ... ok
+test unauthorized_matches_old_typed_recipe ... ok
+test post_migration_limit_matches_old_typed_recipe ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.49s
+
+     Running tests/vault_r8_detection_acceptance.rs (target/debug/deps/vault_r8_detection_acceptance-d7a73194d51117fe)
+
+running 3 tests
+test manifests_differ_only_in_name_and_candidate ... ok
+test unchanged_suite_detects_only_repeat_acceptance ... ok
+test complete_reports_repeat_deterministically_for_both_candidates ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.26s
+
+     Running unittests src/lib.rs (target/debug/deps/dg_snapshot-0783b72cd25909ec)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/r11.rs (target/debug/deps/r11-74896650f6bcddae)
+
+running 17 tests
+test live_devnet_application_capture ... ignored, requires an explicitly configured disposable Devnet application
+test live_devnet_capture_only_when_explicitly_enabled ... ok
+test malformed_and_oversized_rpc_accounts_are_rejected ... ok
+test http_rejects_malformed_context_envelope_and_account_count ... ok
+test bounds_and_candidate_compatibility_are_enforced ... ok
+test capture_preserves_data_provenance_and_read_only_calls ... ok
+test full_devnet_genesis_is_accepted_and_truncated_hash_is_rejected ... ok
+test immutable_storage_identity_and_tamper_detection ... ok
+test decode_error_keeps_authoritative_raw_bytes ... ok
+test cluster_slot_owner_and_absence_are_distinct ... ok
+test snapshot_keeps_zero_lamport_accounts_and_changed_state_has_new_identity ... ok
+test http_capture_sends_only_allowed_reads_and_records_batch_context ... ok
+test http_failures_are_structured_and_redacted ... ok
+test unavailable_signers_are_never_forged_and_mismatch_is_explicit ... ok
+test offline_restore_matches_r5_and_good_candidate_is_deterministic ... ok
+test retained_devnet_vault_restores_and_compares_candidates_offline ... ok
+test same_snapshot_compares_candidates_and_r10_reproduces_offline ... ok
+
+test result: ok. 16 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 2.35s
+
+     Running unittests src/lib.rs (target/debug/deps/dg_state-da3c6964dddee718)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/phase_02.rs (target/debug/deps/phase_02-15e5a3d5f3c3c693)
+
+running 23 tests
+test account_and_total_value_limits ... ok
+test malformed_enum_models_fail_cleanly ... ok
+test malformed_tags_are_structured_errors ... ok
+test arbitrary_byte_corpus_never_panics ... ok
+test bool_and_public_key ... ok
+test strings_validate_utf8_and_byte_length ... ok
+test malicious_lengths_and_recursive_types_are_bounded ... ok
+test extra_bytes_require_explicit_policy_and_are_preserved ... ok
+test options_some_and_none ... ok
+test enum_unit_tuple_and_named_variants ... ok
+test nested_enum_payloads_decode_recursively ... ok
+test nested_structs_and_aliases ... ok
+test every_truncation_is_rejected ... ok
+test arrays_and_tuples ... ok
+test unknown_and_unsupported_types_fail_cleanly ... ok
+test vectors_and_bytes ... ok
+test wrong_and_truncated_discriminators ... ok
+test tampered_snapshot_is_rejected ... ok
+test every_integer_width_decodes_independent_wire_bytes ... ok
+test fixture_rejects_missing_bindings_fields_and_duplicates ... ok
+test typed_numeric_boundaries_encode_without_toml_i64_loss ... ok
+test complex_fixture_matches_independent_borsh_serializer ... ok
+test phase_acceptance_fixture_snapshot_and_lossless_json_roundtrip ... ok
+
+test result: ok. 23 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/runtime_snapshots.rs (target/debug/deps/runtime_snapshots-5b6b454da461e091)
+
+running 8 tests
+test arbitrary_bytes_and_zero_lamports_need_no_idl ... ok
+test large_raw_account_and_byte_limit ... ok
+test restore_replaces_state_and_equality_detects_changes ... ok
+test malformed_snapshot_restore_is_atomic ... ok
+test multiple_accounts_missing_account_and_wrong_owner ... ok
+test malformed_raw_metadata_and_duplicates_fail ... ok
+test raw_snapshot_serialization_roundtrip ... ok
+test decoding_checks_observed_owner_and_preserves_raw_failure_evidence ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/lib.rs (target/debug/deps/dg_vault_v1-ad0b6ca0b7ed412b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/dg_vault_v2-b4b48e8fea24ec78)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests dg_analysis
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests dg_config
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests dg_escrow_v1
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests dg_escrow_v2
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests dg_r5_fixture
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests dg_r6_fixture_v1
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests dg_r6_fixture_v2
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests dg_regression
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests dg_runtime
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests dg_snapshot
+
+running 1 test
+test crates/dg-snapshot/src/rpc.rs - rpc::HttpRpc (line 44) - compile fail ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.89s
+
+   Doc-tests dg_state
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests dg_vault_v1
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests dg_vault_v2
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

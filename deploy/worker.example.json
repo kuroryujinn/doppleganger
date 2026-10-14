@@ -1,0 +1,7 @@
+{
+  "storage_root": "/var/lib/doppelganger",
+  "docker": "/usr/bin/docker",
+  "socket": "/run/user/1000/docker.sock",
+  "image": "REPLACE_WITH_LOCALLY_BUILT_SHA256_IMAGE_ID",
+  "timeout_seconds": 300
+}

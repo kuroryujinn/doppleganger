@@ -1,0 +1,21 @@
+[package]
+name = "dg-vault-v1"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[lib]
+name = "dg_vault_v1"
+crate-type = ["cdylib", "lib"]
+
+[features]
+no-entrypoint = []
+idl-build = ["anchor-lang/idl-build"]
+cpi = []
+anchor-debug = []
+no-log-ix-name = []
+custom-heap = []
+custom-panic = []
+
+[dependencies]
+anchor-lang.workspace = true

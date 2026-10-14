@@ -1,0 +1,23 @@
+[package]
+name = "dg-escrow-v2"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[lib]
+name = "dg_escrow_v2"
+crate-type = ["cdylib", "lib"]
+
+[features]
+no-entrypoint = []
+idl-build = ["anchor-lang/idl-build"]
+cpi = []
+anchor-debug = []
+no-log-ix-name = []
+custom-heap = []
+custom-panic = []
+# Acceptance-only defect. Never deploy this fixture.
+r9-broken-amount = []
+
+[dependencies]
+anchor-lang.workspace = true

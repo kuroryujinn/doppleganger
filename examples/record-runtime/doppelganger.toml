@@ -1,0 +1,59 @@
+schema_version = 1
+[project]
+name = "record-runtime"
+framework = "anchor"
+[versions.v1]
+program_id = "9xQeWvG816bUx9EPfEZzU4kL9fVMKcVx5yFvTJTQHnN"
+program_path = "../../target/deploy/r5/dg_r5_fixture.so"
+idl = "../../target/idl/r5.json"
+[versions.v2]
+program_id = "9xQeWvG816bUx9EPfEZzU4kL9fVMKcVx5yFvTJTQHnN"
+program_path = "../../target/deploy/r5/dg_r5_fixture.so"
+idl = "../../target/idl/r5.json"
+[addresses.owner]
+type = "signer"
+lamports = "u64:10000000000"
+test_seed = [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+[addresses.program]
+type = "program"
+version = "v1"
+[addresses.record]
+type = "pda"
+program = "v1"
+seeds = [{ const = "record" }, { pubkey = "$owner" }, { integer = "u8:0" }]
+[fixture]
+name = "record"
+payer = "owner"
+[[fixture.account]]
+name = "record"
+type = "Record"
+address = "$record"
+owner = "$program"
+lamports = "u64:1300000"
+[fixture.account.fields]
+authority = "$owner"
+value = "u64:10"
+[migration]
+instruction = "advance"
+account_mapping = { record = "record", authority = "owner" }
+args = { expected = "u64:10", next = "u64:20" }
+[[migration_targets]]
+name = "record"
+address = "$record"
+v1_type = "Record"
+v2_type = "Record"
+[[preservation]]
+id = "authority"
+account = "record"
+field = "authority"
+rule = "equal"
+[[preservation]]
+id = "advanced"
+account = "record"
+field = "value"
+rule = "default"
+value = "u64:20"
+[[scenario]]
+id = "standard"
+type = "standard_migration"
+expected = "success"

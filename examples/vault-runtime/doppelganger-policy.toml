@@ -1,0 +1,84 @@
+# Reviewed expectations for the bundled acceptance application only.
+schema_version = 1
+
+[[relationship]]
+id = "vault-authority"
+kind = "authority"
+account = "vault"
+target = "$owner"
+field = "owner"
+
+[[relationship]]
+id = "vault-program"
+kind = "program_owner"
+account = "vault"
+target = "$program"
+
+[[relationship]]
+id = "vault-pda"
+kind = "pda"
+account = "vault"
+target = "$vault"
+
+[[expected_change]]
+classification = "ACCOUNT_SCHEMA_CHANGE"
+path = "account.VaultV1 -> VaultV2.withdrawal_limit"
+before_json = "null"
+after_json = "{\"kind\":\"primitive\",\"value\":\"u64\"}"
+reason = "Reviewed fixture upgrade: Field or argument added"
+
+[[expected_change]]
+classification = "DISCRIMINATOR_CHANGE"
+path = "VaultV1 -> VaultV2.discriminator"
+before_json = "[27,177,104,68,34,4,147,92]"
+after_json = "[26,72,80,70,37,88,90,39]"
+reason = "Reviewed fixture upgrade: Serialized discriminator changed"
+
+[[expected_change]]
+classification = "ERROR_DEFINITION_CHANGE"
+path = "InsufficientBalance"
+before_json = "null"
+after_json = "{\"code\":6001,\"message\":\"Insufficient balance\",\"name\":\"InsufficientBalance\"}"
+reason = "Reviewed fixture upgrade: Custom error added or removed"
+
+[[expected_change]]
+classification = "ERROR_DEFINITION_CHANGE"
+path = "LimitExceeded"
+before_json = "null"
+after_json = "{\"code\":6002,\"message\":\"Withdrawal limit exceeded\",\"name\":\"LimitExceeded\"}"
+reason = "Reviewed fixture upgrade: Custom error added or removed"
+
+[[expected_change]]
+classification = "ERROR_DEFINITION_CHANGE"
+path = "Unauthorized"
+before_json = "null"
+after_json = "{\"code\":6003,\"message\":\"Unauthorized migration\",\"name\":\"Unauthorized\"}"
+reason = "Reviewed fixture upgrade: Custom error added or removed"
+
+[[expected_change]]
+classification = "INTERFACE_CHANGE"
+path = "initialize"
+before_json = "{\"accounts\":[{\"name\":\"vault\",\"optional\":false,\"pda\":{\"program\":null,\"seeds\":[{\"kind\":\"const\",\"path\":null,\"ty\":null,\"value\":[118,97,117,108,116]},{\"kind\":\"account\",\"path\":\"owner\",\"ty\":null,\"value\":null}]},\"signer\":false,\"writable\":true},{\"name\":\"owner\",\"optional\":false,\"pda\":null,\"signer\":true,\"writable\":true},{\"name\":\"system_program\",\"optional\":false,\"pda\":null,\"signer\":false,\"writable\":false}],\"args\":[],\"discriminator\":[175,175,109,31,13,152,155,237],\"name\":\"initialize\"}"
+after_json = "null"
+reason = "Reviewed fixture upgrade: Instruction added or removed"
+
+[[expected_change]]
+classification = "INTERFACE_CHANGE"
+path = "migrate"
+before_json = "null"
+after_json = "{\"accounts\":[{\"name\":\"vault\",\"optional\":false,\"pda\":{\"program\":null,\"seeds\":[{\"kind\":\"const\",\"path\":null,\"ty\":null,\"value\":[118,97,117,108,116]},{\"kind\":\"account\",\"path\":\"owner\",\"ty\":null,\"value\":null}]},\"signer\":false,\"writable\":true},{\"name\":\"owner\",\"optional\":false,\"pda\":null,\"signer\":true,\"writable\":true},{\"name\":\"system_program\",\"optional\":false,\"pda\":null,\"signer\":false,\"writable\":false}],\"args\":[],\"discriminator\":[155,234,231,146,236,158,162,30],\"name\":\"migrate\"}"
+reason = "Reviewed fixture upgrade: Instruction added or removed"
+
+[[expected_change]]
+classification = "INTERFACE_CHANGE"
+path = "withdraw"
+before_json = "null"
+after_json = "{\"accounts\":[{\"name\":\"vault\",\"optional\":false,\"pda\":{\"program\":null,\"seeds\":[{\"kind\":\"const\",\"path\":null,\"ty\":null,\"value\":[118,97,117,108,116]},{\"kind\":\"account\",\"path\":\"owner\",\"ty\":null,\"value\":null}]},\"signer\":false,\"writable\":true},{\"name\":\"owner\",\"optional\":false,\"pda\":null,\"signer\":true,\"writable\":true},{\"name\":\"system_program\",\"optional\":false,\"pda\":null,\"signer\":false,\"writable\":false}],\"args\":[{\"name\":\"amount\",\"ty\":{\"kind\":\"primitive\",\"value\":\"u64\"}}],\"discriminator\":[183,18,70,156,148,109,161,34],\"name\":\"withdraw\"}"
+reason = "Reviewed fixture upgrade: Instruction added or removed"
+
+[[expected_change]]
+classification = "ACCOUNT_SIZE_CHANGE"
+path = "account.VaultV1 -> VaultV2.size"
+before_json = "{\"bytes\":48,\"kind\":\"exact\",\"minimum_bytes\":48}"
+after_json = "{\"bytes\":56,\"kind\":\"exact\",\"minimum_bytes\":56}"
+reason = "Reviewed fixture upgrade: Exact serialized size increased; existing accounts may require reallocation"

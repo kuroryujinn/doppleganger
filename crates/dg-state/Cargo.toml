@@ -1,0 +1,17 @@
+[package]
+name = "dg-state"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+dg-analysis = { path = "../dg-analysis" }
+dg-config = { path = "../dg-config" }
+num-bigint = { version = "0.4.8", features = ["serde"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+solana-address = "=2.6.1"
+toml = "0.9"
+
+[dev-dependencies]
+borsh = { version = "1.8.1", features = ["derive"] }

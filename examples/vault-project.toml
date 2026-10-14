@@ -1,0 +1,20 @@
+name = "vault-demo"
+program_id = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+scenario = "vault"
+
+[v1]
+idl = "../target/idl/v1.json"
+binary = "../target/deploy/v1/dg_vault_v1.so"
+
+[v2]
+idl = "../target/idl/v2.json"
+binary = "../target/deploy/v2/dg_vault_v2.so"
+
+[[accounts]]
+v1 = "VaultV1"
+v2 = "VaultV2"
+
+[accounts.pda]
+account = "vault"
+v1_instruction = "deposit"
+v2_instructions = ["migrate", "deposit", "withdraw"]

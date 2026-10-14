@@ -1,0 +1,92 @@
+{
+  "artifacts": {
+    "v1_binary": {
+      "path": "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v1.bin",
+      "sha256": "b317f089394196bcc45c8c58f10357bc79548aa35c793b196abba9fda627c4ba"
+    },
+    "v1_idl": {
+      "path": "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v1.json",
+      "sha256": "801840e40e7c154b8173c7dbd26122042f557bf0b99b29c2f0fca73277794003"
+    },
+    "v2_binary": {
+      "path": "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v2-broken.bin",
+      "sha256": "8684baaa1053fd20557f805896df6121c3e4b4def02494ab04991936ee5af7be"
+    },
+    "v2_idl": {
+      "path": "/home/kuro/doppleganger/fixtures/devnet-snapshots/vault-devnet/artifacts/v2.json",
+      "sha256": "94a88f313fbaf282ecf0a9cabd8bcc55f6a9812349bfa6110543f8e095cd01b4"
+    }
+  },
+  "diagnostics": [],
+  "expected": {
+    "evidence": {
+      "account": "vault",
+      "after": {
+        "state": "found",
+        "value": {
+          "kind": "integer",
+          "value": "950000"
+        }
+      },
+      "after_present": true,
+      "before": {
+        "state": "found",
+        "value": {
+          "kind": "integer",
+          "value": "1000000"
+        }
+      },
+      "before_present": true,
+      "category": "FIELD_NOT_PRESERVED",
+      "error_code": null,
+      "expected": null,
+      "field": "balance",
+      "rule": "equal",
+      "rule_id": "balance-field",
+      "status": "FAIL"
+    },
+    "source": {
+      "id": "PRESERVE-balance-field",
+      "type": "preservation"
+    },
+    "status": "FAIL"
+  },
+  "initial_state_verified": true,
+  "observed": {
+    "evidence": {
+      "account": "vault",
+      "after": {
+        "state": "found",
+        "value": {
+          "kind": "integer",
+          "value": "950000"
+        }
+      },
+      "after_present": true,
+      "before": {
+        "state": "found",
+        "value": {
+          "kind": "integer",
+          "value": "1000000"
+        }
+      },
+      "before_present": true,
+      "category": "FIELD_NOT_PRESERVED",
+      "error_code": null,
+      "expected": null,
+      "field": "balance",
+      "rule": "equal",
+      "rule_id": "balance-field",
+      "status": "FAIL"
+    },
+    "source": {
+      "id": "PRESERVE-balance-field",
+      "type": "preservation"
+    },
+    "status": "FAIL"
+  },
+  "policy_evaluated": false,
+  "regression_id": "REG-df0e19be446d5277b3d0ce16927f3a54c72a2c6e6570ca6f8fbaf9225ab9b627",
+  "result": "REPRODUCED",
+  "schema_version": 1
+}

@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "SNAP-d01594a83fea98ca59831d501483bfe20f97811024a448bea7c47752ff0bf960",
+  "snapshot_sha256": "d01594a83fea98ca59831d501483bfe20f97811024a448bea7c47752ff0bf960",
+  "provenance": {
+    "cluster": "devnet",
+    "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+    "rpc_origin": "https://rpc.example.test",
+    "acquisition": "mock_rpc",
+    "slot": 42,
+    "min_context_slot": 40,
+    "commitment": "finalized",
+    "captured_at_unix": 0,
+    "non_atomic_capture": false,
+    "program_id": "11111111111111111111111111111112",
+    "tool_version": "0.1.0",
+    "artifacts": {
+      "v1_binary": {
+        "path": "../../target/deploy/escrow-v1/dg_escrow_v1.so",
+        "sha256": null
+      },
+      "v1_idl": {
+        "path": "../../fixtures/escrow/idl/v1.json",
+        "sha256": "8ac082d4fc3bf61acd1ddcc9148369615b1a0e2358461a7db65c6e24f173566a"
+      }
+    }
+  },
+  "accounts": [
+    {
+      "logical_name": "beneficiary",
+      "address": "6JhaGdekBjU2RfiYWSjYdQAibx4LfSfTNFEeMUHnUVz7",
+      "exists": true,
+      "raw": {
+        "schema_version": 1,
+        "address": "6JhaGdekBjU2RfiYWSjYdQAibx4LfSfTNFEeMUHnUVz7",
+        "owner": "11111111111111111111111111111111",
+        "lamports": "1000000000",
+        "executable": false,
+        "data_length": 0,
+        "raw_data": [],
+        "metadata": {}
+      },
+      "rent_epoch": "0",
+      "decoded": null,
+      "decode_error": null,
+      "decode_status": "not_requested",
+      "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "record_sha256": "2b590e89b8bad99ca0efb63539707537030103047663f061dae520bf0265d364"
+    },
+    {
+      "logical_name": "escrow",
+      "address": "8xSVG7TbE94Tqjs9XyVoHXHchGVgqgTWFhX2Ht2F13tZ",
+      "exists": true,
+      "raw": {
+        "schema_version": 1,
+        "address": "8xSVG7TbE94Tqjs9XyVoHXHchGVgqgTWFhX2Ht2F13tZ",
+        "owner": "11111111111111111111111111111112",
+        "lamports": "2454640",
+        "executable": false,
+        "data_length": 81,
+        "raw_data": [
+          26,
+          90,
+          193,
+          218,
+          188,
+          251,
+          139,
+          211,
+          67,
+          4,
+          107,
+          254,
+          64,
+          146,
+          179,
+          233,
+          73,
+          148,
+          234,
+          218,
+          21,
+          220,
+          194,
+          13,
+          138,
+          170,
+          7,
+          182,
+          88,
+          253,
+          57,
+          84,
+          235,
+          142,
+          14,
+          251,
+          139,
+          220,
+          165,
+          222,
+          78,
+          211,
+          47,
+          99,
+          191,
+          53,
+          240,
+          238,
+          239,
+          203,
+          37,
+          242,
+          138,
+          46,
+          31,
+          189,
+          200,
+          115,
+          174,
+          40,
+          53,
+          103,
+          27,
+          12,
+          148,
+          96,
+          245,
+          241,
+          46,
+          69,
+          86,
+          168,
+          64,
+          66,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "metadata": {}
+      },
+      "rent_epoch": "18446744073709551615",
+      "decoded": {
+        "account_type": "EscrowV1",
+        "fields": {
+          "amount": {
+            "kind": "integer",
+            "value": "1000000"
+          },
+          "beneficiary": {
+            "kind": "pubkey",
+            "value": "6JhaGdekBjU2RfiYWSjYdQAibx4LfSfTNFEeMUHnUVz7"
+          },
+          "initializer": {
+            "kind": "pubkey",
+            "value": "5WcE8o73vmsSZXeeWTLm3ty3fAJKCnBWRF6VuKUme5nu"
+          },
+          "status": {
+            "kind": "enum",
+            "value": {
+              "variant": "Funded",
+              "fields": {}
+            }
+          }
+        },
+        "consumed_bytes": 81,
+        "trailing_bytes": []
+      },
+      "decode_error": null,
+      "decode_status": "decoded",
+      "data_sha256": "80048d056ccf798656c94ef30799b4a5b24b3190528c88eb0d1dbb0776fb52c8",
+      "record_sha256": "1511f5a82c4a1a8eea308b2d5f33787f5110355c4b5ea6e4716dc5e4aca92733"
+    },
+    {
+      "logical_name": "initializer",
+      "address": "5WcE8o73vmsSZXeeWTLm3ty3fAJKCnBWRF6VuKUme5nu",
+      "exists": true,
+      "raw": {
+        "schema_version": 1,
+        "address": "5WcE8o73vmsSZXeeWTLm3ty3fAJKCnBWRF6VuKUme5nu",
+        "owner": "11111111111111111111111111111111",
+        "lamports": "9997530360",
+        "executable": false,
+        "data_length": 0,
+        "raw_data": [],
+        "metadata": {}
+      },
+      "rent_epoch": "18446744073709551615",
+      "decoded": null,
+      "decode_error": null,
+      "decode_status": "not_requested",
+      "data_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "record_sha256": "a5c690ae5c21077d87bb5d74c129bafa830e48e5c559d8b4dcb489169a8fa6b0"
+    }
+  ]
+}

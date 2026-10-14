@@ -1,0 +1,27 @@
+[package]
+name = "dg-service"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+futures-util = { version = "=0.3.34", default-features = false, features = ["std"] }
+axum = { version = "=0.8.9", features = ["multipart"] }
+subtle = "=2.6.1"
+tower-http = { version = "=0.6.11", features = ["cors"] }
+dg-analysis = { path = "../dg-analysis" }
+dg-config = { path = "../dg-config" }
+dg-policy = { path = "../dg-policy" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10.9"
+sqlx = { version = "=0.9.0", default-features = false, features = ["runtime-tokio", "sqlite"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "time", "process", "io-util", "fs", "signal", "sync", "net"] }
+rustix = { version = "1", features = ["fs"] }
+uuid = { version = "1", features = ["v4"] }
+zip = { version = "=6.0.0", default-features = false, features = ["deflate-flate2-zlib-rs"] }
+
+[dev-dependencies]
+tower = { version = "=0.5.3", features = ["util"] }
+http-body-util = "=0.1.5"
+tempfile = "3"

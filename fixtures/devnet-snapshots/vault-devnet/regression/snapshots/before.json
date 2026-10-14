@@ -1,0 +1,82 @@
+[
+  {
+    "account_type": "VaultV1",
+    "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+    "decode_error": null,
+    "decoded": {
+      "account_type": "VaultV1",
+      "consumed_bytes": 48,
+      "fields": {
+        "balance": {
+          "kind": "integer",
+          "value": "1000000"
+        },
+        "owner": {
+          "kind": "pubkey",
+          "value": "92CudvFbL7Tyw2RkWC7NU1ehdNBSjy8FEG1TsJaN8wgz"
+        }
+      },
+      "trailing_bytes": []
+    },
+    "name": "vault",
+    "snapshot": {
+      "address": "9D4qd9qyKzi5rf3CWw7c5hfcLxh4jYofEsGZ6xtgFgns",
+      "data_length": 48,
+      "executable": false,
+      "lamports": "1894080",
+      "metadata": {},
+      "owner": "DTbPK89xmJH65ay3YyJTZnPnDWsyXU3KNLiEvXQ7bjoT",
+      "raw_data": [
+        27,
+        177,
+        104,
+        68,
+        34,
+        4,
+        147,
+        92,
+        119,
+        44,
+        138,
+        68,
+        43,
+        125,
+        176,
+        110,
+        22,
+        108,
+        251,
+        193,
+        204,
+        188,
+        188,
+        222,
+        111,
+        62,
+        186,
+        118,
+        164,
+        233,
+        142,
+        243,
+        255,
+        197,
+        25,
+        80,
+        34,
+        55,
+        214,
+        239,
+        64,
+        66,
+        15,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "schema_version": 1
+    }
+  }
+]

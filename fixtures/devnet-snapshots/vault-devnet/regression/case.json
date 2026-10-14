@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "id": "REG-df0e19be446d5277b3d0ce16927f3a54c72a2c6e6570ca6f8fbaf9225ab9b627",
+  "project": "vault-runtime",
+  "source_report": "/home/kuro/doppleganger/report/r11-devnet-broken.json",
+  "source": {
+    "type": "preservation",
+    "id": "PRESERVE-balance-field"
+  },
+  "reconstruction": "snapshot_replay",
+  "definition": {
+    "account": "vault",
+    "field": "balance",
+    "id": "balance-field",
+    "rule": "equal",
+    "value": null
+  },
+  "definition_sha256": "15e5d5a0d767cd70aea2e96329361c96970a19757fdd5acc9511f7c721ec23c0",
+  "hashes": {
+    "artifacts.json": "deed30c2e98f78c5f7e35911d7edc071ec8ae0c9fe9c04c8dbad959552447a97",
+    "expected.json": "d94cdc717cfed5902927b5289aa9f5152090be8be53c55fa4ff48d710a6a663d",
+    "manifest.toml": "8240a29d3dda3651c853c0ff2748f81851c81d4bd7384ff8e17fd46eaa934eaf",
+    "snapshots/before.json": "92e7abc170d962d8dc21e974cb1d301c19e8c8141f34fbdacc5db00605d16533",
+    "snapshots/source.json": "dabd0f69eb64529e20f5179a7aa75d28f43f90906ec10eb3714fd7983144117a"
+  }
+}
